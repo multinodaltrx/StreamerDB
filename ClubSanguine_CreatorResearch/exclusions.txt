@@ -1,0 +1,17 @@
+# Research guardrails / exclusions for Club Sanguine creator research
+#
+# These are sensible defaults to keep research focused and high-signal.
+# They are guardrails, not absolute bans — if a creator is an exceptional
+# fit despite matching one of these, note the exception and reasoning
+# rather than silently excluding them.
+
+- Inactive creators (no posts/streams in a long time), unless they are an exceptional fit
+- Pure esports channels (competitive-only, no relevant gameplay coverage)
+- Minecraft-only creators
+- Fortnite-only creators
+- Generic gaming news channels with no gameplay content
+- Clip/reupload channels (no original commentary or content)
+- Channels primarily focused on unrelated AAA walkthroughs (e.g. open-world blockbusters, sports titles, shooters) with no indie/horror/narrative coverage
+- Creators with no meaningful evidence of relevant game coverage
+- Non-English creators, for this initial research phase (may be revisited in a later phase)
+- Extremely large creators/celebrities, unless they show exceptional direct fit with the seed games or genre

@@ -1,0 +1,25 @@
+# Local Claude Code / editor settings
+.claude/
+.vscode/
+.idea/
+
+# Raw scraped YouTube/TwitchTracker page cache (large, regenerable with scripts/yt_harvest.py)
+ClubSanguine_CreatorResearch/exports/harvest/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / environment
+.env
+.env.*
+*.key
+*.pem
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

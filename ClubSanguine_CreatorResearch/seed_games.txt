@@ -1,0 +1,29 @@
+# Seed games for Club Sanguine creator research
+#
+# This is the ORIGINAL seed list. Future research agents (e.g. Astra) may
+# discover additional comparable games during research, but they must NOT
+# modify this original list to add them. Any newly discovered comparable
+# games should be recorded elsewhere (e.g. in notes fields in creators.csv,
+# or in a separate "discovered_games" file created by the research agent),
+# so the original seed set here always remains intact and auditable.
+
+TIER 1 — DIRECT GAMEPLAY MATCH
+- Papers, Please
+- That's Not My Neighbor
+- Not Tonight
+- Contraband Police
+- Quarantine Zone
+
+TIER 2 — STRONG AUDIENCE MATCH
+- The Mortuary Assistant
+- Killer Frequency
+- Buckshot Roulette
+- I'm on Observation Duty
+- Death and Taxes
+
+TIER 3 — AUDIENCE EXPANSION
+- Inscryption
+- World of Horror
+- Fears to Fathom
+- Scarlet Hollow
+- Cult of the Lamb

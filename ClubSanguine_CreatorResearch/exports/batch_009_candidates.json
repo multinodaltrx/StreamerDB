@@ -1,0 +1,96 @@
+[
+ {
+  "channel_id": "UCyTl6FfXjVFjHoYPb7uzQ4Q",
+  "name": "Eustatic",
+  "profile": "https://www.youtube.com/@eustaticXD",
+  "subs": 2620,
+  "games": [
+   "Scrutinized"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=KxRm0keR61c",
+   "https://www.youtube.com/watch?v=Bncj1JySpUg"
+  ],
+  "activity_days": 30,
+  "query": "\"Scrutinized\" gameplay",
+  "notes": "Latest upload ~30d before 2026-10-02 (channel videos tab). 2.62K subscribers. Seed/related evidence by video title: Scrutinized.",
+  "style": "Gameplay commentary / playthroughs",
+  "email": "eustaticxd@gmail.com",
+  "contact": null,
+  "social": null,
+  "twitch": null,
+  "genre": 15,
+  "personality": 4,
+  "indie": 5
+ },
+ {
+  "channel_id": "UCQxRiHV7bwXWnh83Dmtjt8w",
+  "name": "Jaero",
+  "profile": "https://www.youtube.com/@JaeroJ",
+  "subs": 247,
+  "games": [
+   "Scrutinized"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=hx3zzGP3BBA",
+   "https://www.youtube.com/watch?v=wLSSINv-PuI"
+  ],
+  "activity_days": 10,
+  "query": "\"Scrutinized\" gameplay",
+  "notes": "Latest upload ~10d before 2026-10-02 (channel videos tab). 247 subscribers. Seed/related evidence by video title: Scrutinized. Series on Scrutinized.",
+  "style": "Gameplay commentary / playthroughs",
+  "email": "jay288700@gmail.com",
+  "contact": null,
+  "social": null,
+  "twitch": null,
+  "genre": 17,
+  "personality": 5,
+  "indie": 5
+ },
+ {
+  "channel_id": "UCmXOpWE1ddssadTR2ZqUNwQ",
+  "name": "Chill_Will",
+  "profile": "https://www.youtube.com/@Chill_WillGaming",
+  "subs": 434,
+  "games": [
+   "Scrutinized"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=yx-nkFZ7Um0"
+  ],
+  "activity_days": 5,
+  "query": "\"Scrutinized\" gameplay",
+  "notes": "Latest upload ~5d before 2026-10-02 (channel videos tab). 434 subscribers. Seed/related evidence by video title: Scrutinized.",
+  "style": "Gameplay commentary / playthroughs",
+  "email": null,
+  "contact": null,
+  "social": null,
+  "twitch": null,
+  "genre": 11,
+  "personality": 4,
+  "indie": 2
+ },
+ {
+  "channel_id": "UCRaVFo2OMWQFnd5O6wu_CEw",
+  "name": "Rohara VODs",
+  "profile": "https://www.youtube.com/@RoharaVODs",
+  "subs": 43,
+  "games": [
+   "Scrutinized"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=OPniG2XcHSE"
+  ],
+  "activity_days": 60,
+  "query": "\"Scrutinized\" gameplay",
+  "notes": "Latest upload ~60d before 2026-10-02 (channel videos tab). 43 subscribers. Seed/related evidence by video title: Scrutinized.",
+  "style": "Stream VOD archive",
+  "email": null,
+  "contact": null,
+  "social": null,
+  "twitch": "https://www.twitch.tv/rohara",
+  "genre": 11,
+  "personality": 4,
+  "indie": 3
+ }
+]
