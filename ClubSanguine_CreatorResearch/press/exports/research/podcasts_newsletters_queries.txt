@@ -1,0 +1,86 @@
+indie games newsletter substack Steam Next Fest demos picks|9|1
+podcast episode "That's Not My Neighbor"|10|0
+indie horror games podcast submit your game|10|0
+substack "Steam Next Fest" horror demos newsletter|10|4
+"Mortuary Assistant" podcast episode horror games|9|0
+"No, I'm Not a Human" substack|10|0
+WebFetch indiegames.substack.com Next Fest Oct 2025 roundup #1|1|1
+WebFetch whatsinkedinmymind/exploringthegames Next Fest horror post|1|1
+WebFetch mattherus.substack.com Next Fest June 2026 part 2|1|1
+WebFetch lgreviewers.substack.com Next Fest special (rejected: adult-only curator)|1|0
+WebFetch mysterygamedev.substack.com Next Fest mystery demos|1|1
+indiegames.substack.com "Adventures in Indie Gaming" horror|9|1
+substack "Papers, Please" "That's Not My Neighbor" games like|10|0
+WebFetch goodgamelobby.substack.com gaming-Substack shoutout list|8|1
+WebFetch wizwords.net Indie Horror Gamer newsletter (no comparable evidence found; not recorded)|3|0
+WebFetch indieventurepodcast.podbean.com ep33 indie horror|1|1
+"Indie Horror Gamer" Wizwords newsletter demos|10|0
+newsletter.gamediscover.co "That's Not My Neighbor"|9|0
+Game File Totilo "Buckshot Roulette" OR "Papers, Please" newsletter|10|0
+Safe Room podcast horror games "Buckshot Roulette" OR "Mortuary Assistant" OR "Fears to Fathom"|9|0
+Triple Click podcast Inscryption episode|10|0
+WebFetch lowfivegaming / talesfromthebacklog Inscryption episodes (old, not recorded)|3|0
+WebFetch thebesties.substack.com indie games of the future|1|1
+"Watch Out for Fireballs" "Papers, Please"|9|0
+Crate and Crowbar podcast "Buckshot Roulette" OR "Inscryption" OR "Mortuary Assistant"|9|0
+Insert Credit show episode "Papers, Please" OR "Inscryption" OR "Buckshot Roulette"|18|0
+"That's Not My Neighbor" newsletter (substack/buttondown/beehiiv/ghost)|10|0
+"Papers, Please" indie games (substack)|10|3
+Next Fest demos horror (substack/buttondown/beehiiv)|10|5
+WebFetch thepatientgamer / convergenceshow / gameroom / youdonthaveto posts|4|4
+GameDiscoverCo newsletter Buckshot Roulette "Not My Neighbor"|9|0
+Thinky Games newsletter deduction games Next Fest demos roundup|10|1
+podcast "Next Fest" demos episode horror indie 2025|10|2
+Remap Radio podcast "Exit 8" OR "Next Fest" OR "Buckshot Roulette"|9|0
+bloody-disgusting Safe Room podcast "Mortuary Assistant"|9|0
+horror video game podcast episode "Fears to Fathom" OR "Exit 8" OR "That's Not My Neighbor"|30|1
+"Zero Brightness" podcast horror video games hosts website|9|1
+"Zero Brightness" "No More Notes" Buckshot Roulette Exit 8|9|0
+WebFetch rss.com The Devil Made Me View It Exit 8 (film-focused; not recorded)|1|0
+WebFetch thegamerztheory.substack.com Next Fest top 10 (most-played list only; not recorded)|1|0
+WebFetch postgame.substack.com IGF profile (tangential; not recorded)|1|0
+WebFetch dissectinggamedesign.substack.com Papers, Please (design essay; not recorded)|1|0
+best horror video game podcasts indie horror|10|0
+"Buckshot Roulette" podcast episode indie|10|2
+"Papers, Please" podcast episode game club|10|2
+"Gaming in the Wild" podcast 271 Mouthwashing Buckshot Roulette Clover Pit Next Fest|9|1
+gaminginthewild "Next Fest" Mouthwashing Clover Pit|10|1
+Substack archive API newsletter.gamediscover.co: "Not My Neighbor" / "Buckshot Roulette" / "Papers, Please" / "Quarantine Zone"|32|1
+Substack search API "Papers Please game"|20|0
+Substack search API "That's Not My Neighbor"|10|0
+Substack search API "Quarantine Zone The Last Check"|9|2
+Substack search API "Mortuary Assistant"|10|1
+Substack search API "Buckshot Roulette"|7|1
+Substack search API "No I'm Not a Human game"|11|0
+Substack search API "Steam Next Fest demos"|10|4
+Substack search API "Contraband Police"|5|0
+Substack search API "Inscryption review"|7|0
+Substack search API "Exit 8 anomaly game"|9|0
+Substack search API "Fears to Fathom"|8|0
+Substack search API "indie horror demos"|8|0
+Substack search API "Next Fest horror"|9|0
+Substack search API "Strange Horticulture"|6|0
+Substack search API "Return of the Obra Dinn"|9|0
+Substack search API "Shift at Midnight"|10|0
+"Indie Game Arcade" podcast horror demos|10|1
+podcast episode "Quarantine Zone" "The Last Check"|9|0
+podcast episode "No, I'm Not a Human" indie horror game discussion|9|0
+"Little Zoth of Horror" podcast indie horror demos|10|1
+iTunes podcast episode search "Buckshot Roulette"|25|8
+iTunes podcast episode search "That's Not My Neighbor"|25|2
+iTunes podcast episode search "Mortuary Assistant"|25|1
+iTunes podcast episode search "Quarantine Zone"|25|0
+iTunes podcast episode search "No I'm Not a Human"|25|6
+iTunes podcast episode search "Contraband Police"|25|2
+iTunes podcast episode search "Not Tonight game"|25|0
+iTunes podcast episode search "Killer Frequency"|6|0
+iTunes podcast episode search "Steam Next Fest demos"|25|10
+iTunes podcast episode search "Next Fest horror demos"|18|0
+iTunes podcast episode search "Papers, Please"|25|3
+iTunes podcast episode search "Inscryption"|25|1
+iTunes podcast episode search "Exit 8 anomaly"|20|0
+iTunes podcast episode search "Fears to Fathom"|25|0
+iTunes episode-list scans (comparable/Next Fest regex) for 18 candidate shows|18|18
+RSS feed checks (host names, contact lines) for 26 candidate shows|26|26
+Substack archive API per-newsletter evidence checks (16 newsletters)|16|14
+Contact/about page checks: AIIG, Thinky Games, Convergence Showcase, gaminginthewild.carrd.co, GameDiscoverCo, Cubold, GROGPOD, Rand(Nerds), Part Time Gamers, HG101|10|10

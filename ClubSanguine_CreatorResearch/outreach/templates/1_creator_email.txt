@@ -1,0 +1,16 @@
+Subject: {game_title}: a bouncer game for the {game} crowd
+
+Hi {name},
+
+I'm {my_name}, the developer of {game_title}. It's a stylized first-person deduction and dark-comedy horror game where you work the door of a supernatural nightclub: inspect each guest, work out what they really are, and decide who gets in. Think Papers, Please, but some of the guests are vampires.
+
+I came across your {game} video ({evidence_url}), and it seemed like exactly the kind of game your audience enjoys: spotting who's lying, making the wrong call confidently, and dealing with the consequences.
+
+{demo_note}
+
+Steam page: {steam_url}
+Press kit (trailer, screenshots, GIFs): {press_kit_url}
+
+Happy to answer any questions. No pressure at all.
+
+{signature}

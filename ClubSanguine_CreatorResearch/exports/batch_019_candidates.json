@@ -1,0 +1,48 @@
+[
+ {
+  "channel_id": "UCRZzwWjgsq3C_RMIKe7EUcw",
+  "name": "Maddmike",
+  "profile": "https://www.youtube.com/@Maddmike",
+  "subs": 6120,
+  "games": [
+   "World of Horror"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=h4J875fhw3k"
+  ],
+  "activity_days": 21,
+  "query": "\"World of Horror\"",
+  "notes": "Latest upload ~21d before 2026-10-10 (channel videos tab). 6.12K subscribers. Seed/related evidence by video title: World of Horror.",
+  "style": "Game reviews",
+  "email": "michael.maher722@gmail.com",
+  "contact": null,
+  "social": null,
+  "twitch": null,
+  "genre": 12,
+  "personality": 4,
+  "indie": 4
+ },
+ {
+  "channel_id": "UCYhpZj9HM_7mQP-g7tbZM4Q",
+  "name": "supergreatfriend",
+  "profile": "https://www.youtube.com/@supergreatfriend",
+  "subs": 34700,
+  "games": [
+   "World of Horror"
+  ],
+  "evidence": [
+   "https://www.youtube.com/watch?v=P9BEmSgyAtc"
+  ],
+  "activity_days": 0,
+  "query": "\"World of Horror\"",
+  "notes": "Latest upload ~0d before 2026-10-10 (channel videos tab). 34.7K subscribers. Seed/related evidence by video title: World of Horror.",
+  "style": "Gameplay commentary / playthroughs",
+  "email": null,
+  "contact": null,
+  "social": null,
+  "twitch": null,
+  "genre": 12,
+  "personality": 4,
+  "indie": 4
+ }
+]

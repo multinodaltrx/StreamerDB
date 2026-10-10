@@ -1,0 +1,18 @@
+Subject: {game_title}: Papers, Please meets a supernatural nightclub bouncer ({nextfest})
+
+Hi {name},
+
+I came across your writing on games like {game} ({evidence_url}), so I thought {game_title} might be up your street.
+
+{game_title} is a stylized first-person deduction / management / dark-comedy horror game. You're the bouncer at a nightclub for the supernatural: humans, vampires, thralls and stranger things queue at the door, and you use clues, behaviour, dialogue and odd tools to decide who's admitted, turned away, held for questioning, or banished. Wrong calls have consequences.
+
+{demo_note}
+
+Steam page: {steam_url}
+Press kit (trailer, screenshots, fact sheet): {press_kit_url}
+Trailer: {trailer_url}
+
+I'm happy to provide a preview build, answer questions, or do an interview.
+
+Thanks for your time,
+{signature}

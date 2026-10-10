@@ -1,0 +1,727 @@
+{
+ "outlets": [],
+ "journalists": [
+  {
+   "name": "Derek Johnson",
+   "outlets": "Jump Dash Roll",
+   "author_page_url": "https://www.jumpdashroll.com/authors/derek-johnson",
+   "evidence_url_1": "https://www.jumpdashroll.com/article/contraband-police-review",
+   "social_url": "https://x.com/DerekJ1999"
+  },
+  {
+   "name": "Azario Lopez",
+   "outlets": "Noisy Pixel",
+   "author_page_url": "https://noisypixel.net/author/azario-lopez/",
+   "evidence_url_1": "https://noisypixel.net/no-im-not-a-human-review/",
+   "social_url": "https://bsky.app/profile/azario.bsky.social",
+   "notes": "Other socials: https://twitter.com/azariosays"
+  },
+  {
+   "name": "Richard Seagrave",
+   "outlets": "GameSpew",
+   "author_page_url": "https://www.gamespew.com/author/richard-seagrave/",
+   "evidence_url_1": "https://www.gamespew.com/2025/09/no-im-not-a-human-review/",
+   "social_url": "https://bsky.app/profile/dickiedoodah.bsky.social",
+   "notes": "Other socials: https://www.twitter.com/spewer_rich"
+  },
+  {
+   "name": "Chris McMullen",
+   "outlets": "GameSpew",
+   "author_page_url": "https://www.gamespew.com/author/chris-mcmullen/",
+   "evidence_url_1": "https://www.gamespew.com/2026/01/quarantine-zone-the-last-check-impressions/",
+   "social_url": "https://bsky.app/profile/marmaladebus.bsky.social",
+   "public_email": "chrismc@marmaladebus.com",
+   "notes": "Email published in Bluesky bio as chrismc(AT)marmaladebus(DOT)com. Other socials: https://www.twitter.com/MarmaladeBus"
+  },
+  {
+   "name": "Kim Snaith",
+   "outlets": "GameSpew",
+   "author_page_url": "https://www.gamespew.com/author/kim-snaith/",
+   "evidence_url_1": "https://www.gamespew.com/2024/04/buckshot-roulette-review/",
+   "social_url": "https://bsky.app/profile/kimsnaith.bsky.social",
+   "public_email": "kim@gamespew.com",
+   "notes": "Email published in her Bluesky bio. Other socials: https://www.twitter.com/ichangedmyname"
+  },
+  {
+   "name": "Lyle Pendle",
+   "outlets": "Loot Level Chill; GodisaGeek",
+   "author_page_url": "https://lootlevelchill.com/author/lyle-pendle/",
+   "evidence_url_1": "https://godisageek.com/2023/06/lil-guardsman-blends-papers-please-with-a-lucasarts-adventure-hands-on-preview/",
+   "social_url": "https://bsky.app/profile/better-than-botw.bsky.social"
+  },
+  {
+   "name": "Harrison Abbott",
+   "outlets": "Bloody Disgusting",
+   "author_page_url": "https://bloody-disgusting.com/author/harrison-abbott/",
+   "evidence_url_1": "https://bloody-disgusting.com/video-games/3726393/the-mortuary-assistant-review-narratively-involving-mechanically-inventive-and-technically-flawed/",
+   "social_url": "https://bsky.app/profile/harrisonabbott.bsky.social",
+   "notes": "Other socials: https://boxd.it/469M3"
+  },
+  {
+   "name": "TheOvermatt",
+   "outlets": "Indie Game Reviewer",
+   "author_page_url": "https://indiegamereviewer.com/author/mattp89/",
+   "evidence_url_1": "https://indiegamereviewer.com/steam-next-fest-june-2026-the-overmatts-top-picks/",
+   "social_url": "https://bsky.app/profile/theovermatt.bsky.social",
+   "notes": "Bluesky profile name Matt Poulter (PhD candidate, gaming writer), matching IGR bio."
+  },
+  {
+   "name": "Mr. Wapojif",
+   "outlets": "Professional Moron",
+   "author_page_url": "https://professionalmoron.com/author/thespammock/",
+   "evidence_url_1": "https://professionalmoron.com/2025/05/11/thats-not-my-neighbour/",
+   "social_url": "https://bsky.app/profile/professional-moron.bsky.social",
+   "notes": "Other socials: https://www.instagram.com/professional_moron/"
+  },
+  {
+   "name": "Matt Buckley",
+   "outlets": "FinallyGotAroundTo",
+   "author_page_url": "https://mattherus.substack.com/",
+   "evidence_url_1": "https://mattherus.substack.com/p/my-favorite-demos-of-steam-next-fest",
+   "social_url": "https://bsky.app/profile/mattherus.bsky.social"
+  },
+  {
+   "name": "Jackson Lustberg",
+   "outlets": "GamingTrend",
+   "author_page_url": "https://gamingtrend.com/author/jackson-lustberg/",
+   "evidence_url_1": "https://gamingtrend.com/reviews/contraband-police-review-the-choice-is-yours/",
+   "social_url": "https://bsky.app/profile/jax111.bsky.social"
+  },
+  {
+   "name": "Chris Sutcliffe",
+   "outlets": "GameRoom",
+   "author_page_url": "https://gameroom.substack.com/",
+   "evidence_url_1": "https://gameroom.substack.com/p/the-best-demos-of-steam-next-fest",
+   "social_url": "https://bsky.app/profile/chrissutcliffe.bsky.social",
+   "public_email": "chrismsutcliffe@gmail.com",
+   "notes": "Email published on GameRoom Substack About page. Other socials: http://chrissutcliffe.com"
+  },
+  {
+   "name": "Rachael Brearton",
+   "outlets": "Indie Hive",
+   "author_page_url": "https://indie-hive.com/author/rachael-brearton/",
+   "evidence_url_1": "https://indie-hive.com/death-and-taxes/amp/",
+   "notes": "Other socials: https://x.com/RachaelBrearton (personal X linked on https://indie-hive.com/about/)"
+  },
+  {
+   "name": "Christopher Livingston",
+   "outlets": "PC Gamer",
+   "author_page_url": "https://www.pcgamer.com/uk/author/christopher-livingston/",
+   "evidence_url_1": "https://www.pcgamer.com/games/sim/quarantine-zone-the-last-check-review/",
+   "social_url": "https://bsky.app/profile/chrislivingston.bsky.social",
+   "notes": "Bluesky bio: Senior Editor at PC Gamer; states he has no Twitter/X account (any X account claiming to be him is not him); lists clivingston@pcgamer.com."
+  },
+  {
+   "name": "Joe Donnelly",
+   "outlets": "PC Gamer",
+   "author_page_url": "https://www.pcgamer.com/uk/author/joe-donnelly/",
+   "evidence_url_1": "https://www.pcgamer.com/games/horror/an-overlooked-visitor-will-kill-you-no-im-not-a-human-is-one-of-the-weirdest-horror-games-to-have-ever-graced-the-pc-gaming-show-play-its-super-unsettling-demo/",
+   "social_url": "https://bsky.app/profile/deaco2000.bsky.social",
+   "notes": "Bluesky bio (2026) lists Content and Audience Editor, The Herald; ex-PC Gamer/GamesRadar - may have left PC Gamer."
+  },
+  {
+   "name": "Elie Gould",
+   "outlets": "PC Gamer",
+   "author_page_url": "https://www.pcgamer.com/uk/author/elie-gould/",
+   "evidence_url_1": "https://www.pcgamer.com/games/horror/the-mailroom-is-a-scarier-version-of-papers-please-set-in-the-devils-corporate-office-thats-full-of-frogs-and-toilet-paper/",
+   "social_url": "https://bsky.app/profile/eliegould.bsky.social",
+   "notes": "Bluesky bio: News Writer @pcgamer.com, \"Resident Horror Correspondent\"."
+  },
+  {
+   "name": "Joshua Wolens",
+   "outlets": "PC Gamer",
+   "author_page_url": "https://www.pcgamer.com/uk/author/joshua-wolens/",
+   "evidence_url_1": "https://www.pcgamer.com/games/horror/who-needs-silent-hill-the-anxiety-horror-game-im-most-looking-forward-to-is-this-freakish-grotesque-thing-about-who-you-let-stay-at-your-house-in-the-apocalypse/",
+   "social_url": "https://bsky.app/profile/joshuawolens.bsky.social",
+   "notes": "Bluesky profile posts links to his PC Gamer articles."
+  },
+  {
+   "name": "Rick Lane",
+   "outlets": "PC Gamer",
+   "evidence_url_1": "https://www.pcgamer.com/games/sim/gate-guard-simulator-is-papers-please-with-fewer-terrorists-more-geese-and-the-chance-to-throw-people-into-a-moat/",
+   "social_url": "https://bsky.app/profile/ricklane.bsky.social",
+   "public_email": "rick@ricklane.co.uk",
+   "notes": "Bluesky bio: freelance journalist (Guardian, PC Gamer, NME, Eurogamer); publishes contact email rick@ricklane.co.uk. PC Gamer author page: https://www.pcgamer.com/author/rlane/"
+  },
+  {
+   "name": "Issy van der Velde",
+   "outlets": "PC Gamer",
+   "author_page_url": "https://www.pcgamer.com/author/issy-van-der-velde/",
+   "evidence_url_1": "https://www.pcgamer.com/games/horror/night-plane-is-a-horror-game-designed-to-scare-me-specifically-because-i-hate-flying-and-deer-demons/",
+   "social_url": "https://bsky.app/profile/aslowmachine.bsky.social",
+   "notes": "Bluesky bio matches PC Gamer bio (PC Gaming Show deputy editor, MCV 30 under 30)."
+  },
+  {
+   "name": "Carli Velocci",
+   "outlets": "GamesRadar+",
+   "author_page_url": "https://www.gamesradar.com/author/carli-velocci/",
+   "evidence_url_1": "https://www.gamesradar.com/games/horror/this-is-incredibly-rare-how-mouthwashing-quietly-became-2024s-breakout-horror-hit/",
+   "social_url": "https://bsky.app/profile/carlivelocci.com",
+   "notes": "Other socials: https://linktr.ee/velocciraptor . Bluesky bio: freelance writer & editor for video games."
+  },
+  {
+   "name": "Joe Chivers",
+   "outlets": "GamesRadar+",
+   "author_page_url": "https://www.gamesradar.com/author/joe-chivers/",
+   "evidence_url_1": "https://www.gamesradar.com/games/2024-has-quietly-become-the-year-of-cheap-masterpieces/",
+   "social_url": "https://bsky.app/profile/jchivers.bsky.social",
+   "notes": "Bluesky bio gives email as \"jchiverswriter@gmail dot com\" (differs from CSV email; verify which is current)."
+  },
+  {
+   "name": "Zack Zwiezen",
+   "outlets": "Kotaku",
+   "author_page_url": "https://kotaku.com/author/zackzwiezen",
+   "evidence_url_1": "https://kotaku.com/steams-big-new-zombie-game-is-tense-but-comes-at-a-bad-time-2000658992",
+   "social_url": "https://bsky.app/profile/zackzwiezen.com"
+  },
+  {
+   "name": "Hadley Vincent",
+   "outlets": "Destructoid",
+   "author_page_url": "https://www.destructoid.com/author/hadleyvincent/",
+   "evidence_url_1": "https://www.destructoid.com/destructoids-indie-gems-edition-1-visitors-are-at-your-doorstep-and-they-look-just-like-us/",
+   "social_url": "https://www.linkedin.com/in/hadley-m-vincent-5012912a1/",
+   "notes": "LinkedIn linked from Destructoid author page."
+  },
+  {
+   "name": "Zoey Handley",
+   "outlets": "Destructoid",
+   "author_page_url": "https://www.destructoid.com/author/adzuken/",
+   "evidence_url_1": "https://www.destructoid.com/reviews/review-world-of-horror/",
+   "social_url": "https://bsky.app/profile/adzuken.bsky.social",
+   "notes": "Other socials: https://linktr.ee/adzuken . Bluesky bio: formerly at Destructoid, editor of Maximum Utmost, available for freelance."
+  },
+  {
+   "name": "Matthew Schomer",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/matthew-schomer/",
+   "evidence_url_1": "https://gamerant.com/best-zombie-games-steam-quarantine-zone-last-check/",
+   "notes": "Other socials: https://www.linkedin.com/in/matthew-schomer-281735241/"
+  },
+  {
+   "name": "Drew Swanson",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/andrew-a-swanson/",
+   "evidence_url_1": "https://gamerant.com/games-like-silent-hill-no-im-not-human-pathologic-3/",
+   "notes": "Other socials: https://www.instagram.com/drewswanson10/, https://www.linkedin.com/in/drew-swanson10/"
+  },
+  {
+   "name": "Dylan Whitehall",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/dylan-whitehall/",
+   "evidence_url_1": "https://gamerant.com/best-horror-games-try-steam-next-fest-february-2025/",
+   "social_url": "https://bsky.app/profile/darkbd.bsky.social",
+   "notes": "Bluesky bio links his GameRant author page."
+  },
+  {
+   "name": "Nick Rodriguez",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/nicholas-rodriguez-nelson/",
+   "evidence_url_1": "https://gamerant.com/new-steam-game-prescribe-pray-papers-please-medical-sim/",
+   "notes": "Other socials: https://www.instagram.com/nickrodriguezblog/, https://www.linkedin.com/in/nicholas-rodriguez-nelson-1a13b2112/"
+  },
+  {
+   "name": "Daniel Morris",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/daniel-thomas-morris/",
+   "evidence_url_1": "https://gamerant.com/games-like-papers-please-kcd-gate-guard-simulator/",
+   "notes": "Other socials: https://www.linkedin.com/in/daniel-morris-5b7b741b6/"
+  },
+  {
+   "name": "Mohsen Baqery",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/mohsen-bagheri/",
+   "evidence_url_1": "https://gamerant.com/free-pc-game-like-paper-please-not-a-customer/",
+   "notes": "Other socials: https://www.linkedin.com/in/mohsenbaqery/"
+  },
+  {
+   "name": "Branden Lizardi",
+   "outlets": "TheGamer",
+   "author_page_url": "https://www.thegamer.com/author/branden-lizardi/",
+   "evidence_url_1": "https://www.thegamer.com/no-im-not-a-humans-lies-truth-horror-genre/",
+   "notes": "Other socials: https://www.linkedin.com/in/branden-lizardi-b0b643218/"
+  },
+  {
+   "name": "Kaitlyn Peterson",
+   "outlets": "TheGamer",
+   "author_page_url": "https://www.thegamer.com/author/kaitlyn-peterson/",
+   "evidence_url_1": "https://www.thegamer.com/halloween-horror-games-not-scary-spooky-season-fall-vibes/",
+   "social_url": "https://bsky.app/profile/bykaitlyn.bsky.social",
+   "notes": "Bluesky bio: Staff Writer @ The Gamer."
+  },
+  {
+   "name": "Joshua Robertson",
+   "outlets": "TheGamer",
+   "author_page_url": "https://www.thegamer.com/author/joshua-robertson/",
+   "evidence_url_1": "https://www.thegamer.com/triple-i-initiative-showcase-everythingannounced/",
+   "notes": "Other socials: https://www.linkedin.com/in/joshua-robertson-72813320b/"
+  },
+  {
+   "name": "Marina DelGreco",
+   "outlets": "TechRaptor",
+   "author_page_url": "https://techraptor.net/author/Marina-DelGreco",
+   "evidence_url_1": "https://techraptor.net/gaming/reviews/mortuary-assistant-review",
+   "notes": "Other socials: https://www.linkedin.com/in/marina-delgreco/"
+  },
+  {
+   "name": "William Worrall",
+   "outlets": "TechRaptor",
+   "author_page_url": "https://techraptor.net/author/William-Worrall",
+   "evidence_url_1": "https://techraptor.net/gaming/features/whats-deal-with-analog-horror-games",
+   "notes": "Other socials: https://www.linkedin.com/in/william-worrall-73913017a/"
+  },
+  {
+   "name": "Aaron Boehm",
+   "outlets": "Bloody Disgusting",
+   "author_page_url": "https://bloody-disgusting.com/author/baron_aim/",
+   "evidence_url_1": "https://bloody-disgusting.com/video-games/3937706/six-game-demos-worth-checking-out-during-februarys-steam-next-fest/",
+   "social_url": "https://bsky.app/profile/baronaim.bsky.social",
+   "notes": "Bluesky bio: Level Designer, formerly Twisted Pixel; writing at Bloody Disgusting."
+  },
+  {
+   "name": "Justin Wood",
+   "outlets": "Dread Central",
+   "author_page_url": "https://www.dreadcentral.com/author/justin-woods/",
+   "evidence_url_1": "https://www.dreadcentral.com/reviews/492570/killer-frequency-review-long-time-listener-first-time-killer/",
+   "social_url": "https://bsky.app/profile/justinwood.bsky.social",
+   "notes": "Bluesky bio: now Marketing Manager @ DreadXP (horror publisher); previously writer at Dread Central/CGM."
+  },
+  {
+   "name": "Ken Allsop",
+   "outlets": "PCGamesN",
+   "author_page_url": "https://www.pcgamesn.com/author/ken-allsop",
+   "evidence_url_1": "https://www.pcgamesn.com/split/new-horror-game-out-now",
+   "social_url": "https://bsky.app/profile/keny2ken.bsky.social",
+   "notes": "Bluesky profile posts links to his PCGamesN reviews."
+  },
+  {
+   "name": "Kyle LeClair",
+   "outlets": "Hardcore Gamer",
+   "author_page_url": "https://hardcoregamer.com/author/kyle-leclair/",
+   "evidence_url_1": "https://hardcoregamer.com/review-buckshot-roulette/",
+   "notes": "Other socials: https://twitter.com/SlyDante777"
+  },
+  {
+   "name": "Nat Smith",
+   "outlets": "PCGamesN",
+   "author_page_url": "https://www.pcgamesn.com/author/nat-smith",
+   "evidence_url_1": "https://www.pcgamesn.com/steam/next-fest-best-demos-october-2024",
+   "social_url": "https://x.com/stottybairn",
+   "public_email": "natalie.smith@network-n.com"
+  },
+  {
+   "name": "Chris M Sutcliffe",
+   "outlets": "GameRoom",
+   "author_page_url": "https://substack.com/@gameroom",
+   "evidence_url_1": "https://gameroom.substack.com/p/the-best-demos-of-steam-next-fest",
+   "public_email": "chrismsutcliffe@gmail.com",
+   "notes": "Other socials: http://chrissutcliffe.com (email published obfuscated as chrismsutcliffe[at]gmail.com on GameRoom About page)"
+  },
+  {
+   "name": "Rachel Kaser",
+   "outlets": "GamesBeat",
+   "author_page_url": "https://gamesbeat.com/author/rachelkaser/",
+   "evidence_url_1": "https://gamesbeat.com/the-steam-next-fest-demos-i-enjoyed-the-most-kaser-focus/",
+   "social_url": "https://twitter.com/rachelkaser",
+   "notes": "Social from older author bios (Windows Central/GamesBeat era); may be outdated."
+  },
+  {
+   "name": "Robin Bea",
+   "outlets": "Inverse",
+   "author_page_url": "https://www.inverse.com/profile/robin-bea-53955560",
+   "evidence_url_1": "https://nc.inverse.com/gaming/best-pc-games-steam-next-fest-demos-2025",
+   "social_url": "https://bsky.app/profile/robinbombus.bsky.social",
+   "public_email": "robin.bea@inverse.com",
+   "notes": "Other socials: https://robinbea.carrd.co/"
+  },
+  {
+   "name": "Tristan Jurkovich",
+   "outlets": "Game Rant",
+   "author_page_url": "https://gamerant.com/author/tjur/",
+   "evidence_url_1": "https://gamerant.com/best-steam-next-fest-demos/",
+   "social_url": "https://twitter.com/jediwheatpenny",
+   "notes": "Other socials: https://www.linkedin.com/in/tristan-jurkovich-47118ba5, https://www.youtube.com/user/ReActionExaminer"
+  },
+  {
+   "name": "Harry Alston",
+   "outlets": "TheGamer",
+   "author_page_url": "https://www.thegamer.com/author/harry-alston/",
+   "evidence_url_1": "https://www.thegamer.com/best-steam-next-fest-games-demos-june-2026/",
+   "social_url": "https://twitter.com/alstontowers"
+  },
+  {
+   "name": "Alan Hazelden",
+   "outlets": "Thinky Games",
+   "author_page_url": "https://thinkygames.com/features/alan-hazeldens-thinky-third-thursday-october-2025-next-fest-highlights/",
+   "evidence_url_1": "https://thinkygames.com/features/alan-hazeldens-thinky-third-thursday-june-2024",
+   "social_url": "https://bsky.app/profile/draknek.bsky.social",
+   "public_email": "alan@draknek.org",
+   "notes": "Other socials: https://mastodon.gamedev.place/@draknek, https://alan.draknek.org/"
+  },
+  {
+   "name": "John Walker",
+   "outlets": "Kotaku",
+   "author_page_url": "https://kotaku.com/author/rebotherer",
+   "evidence_url_1": "https://kotaku.com/best-free-demos-next-fest-painkiller-reanimal-steam-2000634620",
+   "social_url": "https://twitter.com/game_treasure",
+   "notes": "Same John Walker who runs Buried Treasure (Kotaku handle rebotherer); X is the Buried Treasure account he runs. Contact page: https://buried-treasure.org/contact/"
+  },
+  {
+   "name": "Josh Bycer",
+   "outlets": "Set Side B; Game Wisdom",
+   "author_page_url": "https://setsideb.com/",
+   "evidence_url_1": "https://setsideb.com/steam-nextfest-2025-coverage-part-9/",
+   "notes": "Other socials: https://bsky.app/profile/gwbycer.bsky.social, https://game-wisdom.com/"
+  },
+  {
+   "name": "Eric Van Allen",
+   "outlets": "Destructoid",
+   "author_page_url": "https://www.destructoid.com/author/ericvanallen/",
+   "evidence_url_1": "https://www.destructoid.com/steam-next-fest-2023-demos-to-try-roundup-pc/",
+   "social_url": "https://bsky.app/profile/seamoosi.bsky.social",
+   "public_email": "eric@gameinformer.com",
+   "notes": "Now at Game Informer (joined 2025); email and Bluesky from his Game Informer bio https://www.gameinformer.com/user/seamoosi"
+  },
+  {
+   "name": "Yuliya Geikhman",
+   "outlets": "Screen Rant",
+   "author_page_url": "https://screenrant.com/author/yuliya-geikhman/",
+   "evidence_url_1": "https://screenrant.com/steam-next-fest-best-game-demos-list/",
+   "social_url": "https://x.com/TheLittoface",
+   "public_email": "ygeikhman@gmail.com"
+  },
+  {
+   "name": "Thomas Cole Simmonds",
+   "outlets": "TYPEDBYTOM",
+   "author_page_url": "https://typedbytom.substack.com/",
+   "evidence_url_1": "https://typedbytom.substack.com/p/steam-next-fest",
+   "social_url": "https://www.tomsimmonds.com/portfolio",
+   "contact_preference": "About page: get in touch via info.typedbytom@gmail.com (suggestions for interview posts welcome)",
+   "notes": "Other socials: https://www.printbytom.com/ (personal sites; no social profiles listed)"
+  },
+  {
+   "name": "Daniel Trock",
+   "outlets": "DualShockers",
+   "author_page_url": "https://www.dualshockers.com/author/daniel-trock/",
+   "evidence_url_1": "https://www.dualshockers.com/coolest-demos-from-steam-next-fest-february-2026/",
+   "social_url": "https://www.linkedin.com/in/daniel-trock-a40046138/"
+  },
+  {
+   "name": "Monica Phillips",
+   "outlets": "DualShockers",
+   "author_page_url": "https://www.dualshockers.com/author/monica-phillips/",
+   "evidence_url_1": "https://www.dualshockers.com/coolest-demos-steam-next-fest-june-2025/",
+   "social_url": "https://twitter.com/CutieMonica",
+   "public_email": "cutiemonicayt@gmail.com",
+   "notes": "Other socials: https://www.youtube.com/@cutiemonica446, https://www.twitch.tv/cutiemonica"
+  },
+  {
+   "name": "Mark O'Callaghan",
+   "outlets": "CBR",
+   "author_page_url": "https://www.cbr.com/author/mark-o-callaghan/",
+   "evidence_url_1": "https://www.cbr.com/best-steam-next-fest-demos-february-2026/",
+   "social_url": "https://x.com/Lilmarko512",
+   "notes": "Other socials: https://www.linkedin.com/in/mark-ocallaghan-58604a264/"
+  },
+  {
+   "name": "David Jagneaux",
+   "outlets": "CBR",
+   "author_page_url": "https://www.cbr.com/author/david-jagneaux/",
+   "evidence_url_1": "https://www.cbr.com/11-must-play-steam-next-fest-demos-2025/",
+   "social_url": "https://x.com/David_Jagneaux",
+   "public_email": "contact@davidjagneaux.com",
+   "notes": "Other socials: https://www.threads.com/@david_jagneaux, https://www.instagram.com/david_jagneaux/, https://www.linkedin.com/in/davidjagneaux/, https://linktr.ee/davidjagneaux"
+  },
+  {
+   "name": "Kris Holt",
+   "outlets": "Engadget",
+   "author_page_url": "https://www.engadget.com/author/kris-holt/",
+   "evidence_url_1": "https://engadget.com/2198112/steam-next-fest-demos-a-virtual-boy-inspired-shooter-and-other-new-indie-games-worth-checking-out",
+   "social_url": "https://www.linkedin.com/in/kristoferholt"
+  },
+  {
+   "name": "Amanda Gorecki",
+   "outlets": "The Indie Game Cafe",
+   "author_page_url": "https://theindiegamecafe.substack.com/",
+   "evidence_url_1": "https://theindiegamecafe.substack.com/p/june25-next-fest",
+   "public_email": "theindiegamecafe@gmail.com",
+   "contact_preference": "Newsletter About page invites game developers to email theindiegamecafe@gmail.com; also a contact form https://forms.gle/YseE1ECFvSggHYDY6"
+  },
+  {
+   "name": "lydocia",
+   "outlets": "Rambling Reviews",
+   "evidence_url_1": "https://ramblingreviews.substack.com/p/demofest",
+   "contact_preference": "Contact form on newsletter: https://ramblingreviews.substack.com/contact",
+   "notes": "Real first name Amy (About page)."
+  },
+  {
+   "name": "Seyran Dalipouski (Sey)",
+   "outlets": "Good Game Lobby",
+   "author_page_url": "https://goodgamelobby.substack.com",
+   "evidence_url_1": "https://goodgamelobby.substack.com/p/steam-next-fest-2025-february-despelote-haste-broken-worlds-isle-of-reveries-wheel-world-goodlands",
+   "social_url": "https://bsky.app/profile/goodgamelobby.com",
+   "public_email": "seyran@goodgamelobby.com",
+   "contact_preference": "About page: reach out by email or on socials",
+   "notes": "Other socials: https://www.threads.com/@goodgamelobby, https://www.youtube.com/@goodgamelobby, https://www.tiktok.com/@goodgamelobby"
+  },
+  {
+   "name": "Margot",
+   "outlets": "Margot Plays Video Games",
+   "author_page_url": "https://margotplays.substack.com",
+   "evidence_url_1": "https://margotplays.substack.com/p/lists-steam-next-fest-demos-oct-2025",
+   "public_email": "margotplays21@gmail.com",
+   "contact_preference": "Open to commissions, review keys and collaboration; pitches by email; offers Next Fest/demo coverage (paid rates on request)"
+  },
+  {
+   "name": "Shawn (Searanex)",
+   "outlets": "The Part Time Gamers",
+   "author_page_url": "https://caffeineinducedproductions.com/theparttimegamers/",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/the-part-time-gamers-ep-122-papers-please/id1620747273?i=1000752387517",
+   "social_url": "https://bsky.app/profile/searanex.bsky.social",
+   "notes": "Other socials: https://youtube.com/@searanex"
+  },
+  {
+   "name": "September (Nineof12)",
+   "outlets": "The Part Time Gamers",
+   "author_page_url": "https://nineof12.com",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/the-part-time-gamers-ep-122-papers-please/id1620747273?i=1000752387517",
+   "social_url": "https://www.youtube.com/@nineof12",
+   "contact_preference": "Contact form on nineof12.com",
+   "notes": "Other socials: https://www.twitch.tv/nineof12"
+  },
+  {
+   "name": "Goncalo Santos",
+   "outlets": "Adventures in Indie Gaming",
+   "author_page_url": "https://indiegames.substack.com/p/final-destination-quarantine-zone",
+   "evidence_url_1": "https://indiegames.substack.com/p/final-destination-quarantine-zone",
+   "social_url": "https://substack.com/@mushwrites",
+   "notes": "Other socials: https://buttonmusher.substack.com/ (his Button Musher newsletter, linked from AIIG post)"
+  },
+  {
+   "name": "Simon Carless",
+   "outlets": "GameDiscoverCo newsletter",
+   "author_page_url": "https://newsletter.gamediscover.co/about",
+   "evidence_url_1": "https://newsletter.gamediscover.co/p/contraband-police-how-it-hit-big",
+   "social_url": "https://www.linkedin.com/in/simoncarless/"
+  },
+  {
+   "name": "Scott V. Burger",
+   "outlets": "GROGPOD Roguelike Podcast",
+   "author_page_url": "http://grogpod.zone/",
+   "evidence_url_1": "http://grogpod.zone/2025-05-21-buckshot/",
+   "public_email": "grogpodzone@gmail.com",
+   "contact_preference": "Show contact page: email grogpodzone at gmail.com; episode requests via Google form https://forms.gle/jcPaSrzzT467Z9x6A",
+   "notes": "Show email (not personal). Other socials (show): https://mastodon.gamedev.place/@grogpod, https://www.youtube.com/@grogpod_roguelike_podcast"
+  },
+  {
+   "name": "James Mastromarino",
+   "outlets": "Games with James",
+   "author_page_url": "https://gameswithjames.substack.com/p/catching-up-with-buckshot-roulette",
+   "evidence_url_1": "https://gameswithjames.substack.com/p/catching-up-with-buckshot-roulette",
+   "social_url": "https://bsky.app/profile/mastromarino.bsky.social",
+   "public_email": "jmastromarino@npr.org",
+   "contact_preference": "Bluesky bio: Tips? jmastromarino@npr.org (edits NPR gaming section / Here & Now)"
+  },
+  {
+   "name": "PushingUpRoses",
+   "outlets": "Save Your Game",
+   "author_page_url": "https://zencastr.com/Save-Your-Game",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/episode-72-no-im-not-a-human-clock-tower/id1729089915?i=1000734025362",
+   "social_url": "https://bsky.app/profile/pushinguproses.bsky.social",
+   "notes": "Other socials: https://linktr.ee/pushinguproses"
+  },
+  {
+   "name": "Matt Aukamp",
+   "outlets": "Save Your Game",
+   "author_page_url": "https://zencastr.com/Save-Your-Game",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/episode-72-no-im-not-a-human-clock-tower/id1729089915?i=1000734025362",
+   "social_url": "https://bsky.app/profile/mattaukamp.bsky.social"
+  },
+  {
+   "name": "Joseph Hooper",
+   "outlets": "Crossplay Conversations",
+   "author_page_url": "https://podcasts.apple.com/us/podcast/crossplay-conversations-a-video-game-podcast/id1697540223",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/and-roger-henry-halfhead-no-im-not-a-human-reviews-episode-57/id1697540223?i=1000729307488",
+   "social_url": "https://bsky.app/profile/th3hoopman.bsky.social",
+   "public_email": "joseph.cantpause@gmail.com",
+   "notes": "Other socials: https://www.youtube.com/@cantpause, https://bsky.app/profile/crossplayconvos.bsky.social (show)"
+  },
+  {
+   "name": "Jacob McCourt",
+   "outlets": "Crossplay Conversations",
+   "author_page_url": "https://podcasts.apple.com/us/podcast/crossplay-conversations-a-video-game-podcast/id1697540223",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/and-roger-henry-halfhead-no-im-not-a-human-reviews-episode-57/id1697540223?i=1000729307488",
+   "social_url": "https://bsky.app/profile/jacob.bsky.social",
+   "public_email": "me@JacobMcCourt.com",
+   "notes": "Bluesky bio also lists mccojaco@gmail.com. Other socials: https://linktr.ee/jacobmccourt, https://bsky.app/profile/crossplayconvos.bsky.social (show)"
+  },
+  {
+   "name": "Maddy Myers",
+   "outlets": "Triple Click",
+   "author_page_url": "https://maximumfun.org/podcasts/triple-click/",
+   "evidence_url_1": "https://maximumfun.org/episodes/triple-click/triple-play-papers-please/",
+   "public_email": "team@mothership.blog",
+   "notes": "Email is the Mothership team inbox listed in her Bluesky bio (team-at-mothership-dot-blog); she is EIC of Mothership"
+  },
+  {
+   "name": "Jason Schreier",
+   "outlets": "Triple Click",
+   "author_page_url": "https://maximumfun.org/podcasts/triple-click/",
+   "evidence_url_1": "https://maximumfun.org/episodes/triple-click/triple-play-papers-please/",
+   "public_email": "jschreier@gmail.com"
+  },
+  {
+   "name": "Chris Plante",
+   "outlets": "The Besties",
+   "author_page_url": "https://thebesties.substack.com",
+   "evidence_url_1": "https://thebesties.substack.com/p/the-indie-games-of-the-future",
+   "social_url": "https://bsky.app/profile/plante.bsky.social",
+   "notes": "Other socials: https://postgame.substack.com/"
+  },
+  {
+   "name": "Russ Frushtick",
+   "outlets": "The Besties",
+   "author_page_url": "https://thebesties.substack.com",
+   "evidence_url_1": "https://thebesties.substack.com/p/the-indie-games-of-the-future",
+   "social_url": "https://bsky.app/profile/russfrushtick.bsky.social"
+  },
+  {
+   "name": "Luke Lewis",
+   "outlets": "Crossplay Conversations",
+   "author_page_url": "https://podcasts.apple.com/us/podcast/crossplay-conversations-a-video-game-podcast/id1697540223",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/and-roger-henry-halfhead-no-im-not-a-human-reviews-episode-57/id1697540223?i=1000729307488",
+   "notes": "Other socials: https://bsky.app/profile/lukewarmgames.bsky.social (his LukeWarmGames Podcast), https://bsky.app/profile/crossplayconvos.bsky.social (show)"
+  },
+  {
+   "name": "Danny O'Dwyer",
+   "outlets": "Noclip Crewcast",
+   "author_page_url": "https://www.noclip.video",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/cataclismo-dungeons-of-hinterberg-buckshot-roulette/id1385062988?i=1000663404063",
+   "social_url": "https://bsky.app/profile/dannyodwyer.bsky.social"
+  },
+  {
+   "name": "Gary Butterfield",
+   "outlets": "Watch Out for Fireballs!",
+   "author_page_url": "https://www.patreon.com/collection/800722",
+   "evidence_url_1": "https://www.patreon.com/duckfeedtv/posts/watch-out-for-139110885",
+   "social_url": "https://bsky.app/profile/garybutterfield.bsky.social"
+  },
+  {
+   "name": "Kaye Ross",
+   "outlets": "Watch Out for Fireballs!",
+   "author_page_url": "https://www.patreon.com/collection/800722",
+   "evidence_url_1": "https://www.patreon.com/duckfeedtv/posts/watch-out-for-139110885",
+   "social_url": "https://bsky.app/profile/kaye.zone",
+   "notes": "Other socials: https://twitch.tv/duckfeedtv (show)"
+  },
+  {
+   "name": "CGDannyB (Danny)",
+   "outlets": "Playlog Podcast",
+   "author_page_url": "https://podcasters.spotify.com/pod/show/cgdannyb",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/cgdannyb/episodes/We-Found-Hidden-Gems-at-Steam-Next-Fest--Playlog-Podcast-EP--103-e3l82i3",
+   "social_url": "https://bsky.app/profile/cgdannyb.bsky.social",
+   "public_email": "CGDannyB.ttv@gmail.com",
+   "contact_preference": "Bluesky bio lists this as business email",
+   "notes": "Other socials: https://solo.to/cgdannyb, https://bsky.app/profile/playlogpodcast.bsky.social (show)"
+  },
+  {
+   "name": "Rachel Watts",
+   "outlets": "Indieventure",
+   "author_page_url": "https://indieventurepodcast.podbean.com",
+   "evidence_url_1": "https://indieventurepodcast.podbean.com/e/extra-demos-we-played-during-steam-next-fest-feb-2026-with-robin-bea/",
+   "social_url": "https://bsky.app/profile/rachelwatts.bsky.social"
+  },
+  {
+   "name": "Colette Bennett",
+   "outlets": "Colette & Matt Have Entered the Chat",
+   "author_page_url": "https://haveenteredthechat.com",
+   "evidence_url_1": "https://haveenteredthechat.com/episodes/255-security-51-homm-olden-era-rhR5JEJr",
+   "social_url": "https://bsky.app/profile/hellococobee.bsky.social"
+  },
+  {
+   "name": "Matt Silverman",
+   "outlets": "Colette & Matt Have Entered the Chat",
+   "author_page_url": "https://haveenteredthechat.com",
+   "evidence_url_1": "https://haveenteredthechat.com/episodes/255-security-51-homm-olden-era-rhR5JEJr",
+   "social_url": "https://bsky.app/profile/mattsilverman.bsky.social"
+  },
+  {
+   "name": "Matt Martens",
+   "outlets": "Old Gamer's Almanac",
+   "author_page_url": "https://oldgamersalmanac.podbean.com",
+   "evidence_url_1": "https://oldgamersalmanac.podbean.com/e/steam-next-fest-demos-zero-parades-vampire-crawlers-panzer-dragoon-ii-remake-and-more/",
+   "notes": "Other socials: https://bsky.app/profile/oldgamersalmanac.bsky.social (show account, names Matt Martens as co-host)"
+  },
+  {
+   "name": "Hunter Donaldson",
+   "outlets": "Old Gamer's Almanac",
+   "author_page_url": "https://oldgamersalmanac.podbean.com",
+   "evidence_url_1": "https://oldgamersalmanac.podbean.com/e/steam-next-fest-demos-zero-parades-vampire-crawlers-panzer-dragoon-ii-remake-and-more/",
+   "notes": "Other socials: https://bsky.app/profile/oldgamersalmanac.bsky.social (show account, names Hunter Donaldson as co-host)"
+  },
+  {
+   "name": "Brendon Bigley",
+   "outlets": "Overworld Weekly",
+   "author_page_url": "https://overworld.vg",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/itswavelengths/episodes/Even-More-Great-Steam-Next-Fest-Demos-February-2026-e3fmn00",
+   "social_url": "https://bsky.app/profile/bb.wavelengths.online"
+  },
+  {
+   "name": "Marcus Stewart",
+   "outlets": "The Game Informer Show",
+   "author_page_url": "https://www.spreaker.com/podcast/the-game-informer-show--6639255",
+   "evidence_url_1": "https://www.spreaker.com/episode/resident-evil-requiem-our-favorite-steam-next-fest-demos--70343003",
+   "social_url": "https://bsky.app/profile/marcusstewart7.bsky.social",
+   "public_email": "marcus@gameinformer.com",
+   "contact_preference": "Bluesky bio: business inquiries to marcus@gameinformer.com",
+   "notes": "Other socials: https://www.twitch.tv/marcusstreamsgames"
+  },
+  {
+   "name": "Tommy Dassalo",
+   "outlets": "Filthy Casuals",
+   "author_page_url": "http://filthycasuals.com.au",
+   "evidence_url_1": "https://shows.acast.com/filthycasualswithtommydassalobenvernelandadamknox/episodes/episode-435-mario-vs-donkey-kong-buckshot-roulette",
+   "public_email": "filthycasuals.pod@gmail.com",
+   "contact_preference": "Show site: email filthycasuals.pod@gmail.com (listed for advertising enquiries); packages via Ben Vernel parcel locker listed on site",
+   "notes": "Show email, not personal. Other socials (show): https://twitter.com/filthycaspod, https://www.instagram.com/filthycasualspodcast/, https://www.twitch.tv/filthycasualspod"
+  },
+  {
+   "name": "Ben Vernel",
+   "outlets": "Filthy Casuals",
+   "author_page_url": "http://filthycasuals.com.au",
+   "evidence_url_1": "https://shows.acast.com/filthycasualswithtommydassalobenvernelandadamknox/episodes/episode-435-mario-vs-donkey-kong-buckshot-roulette",
+   "public_email": "filthycasuals.pod@gmail.com",
+   "contact_preference": "Show site: email filthycasuals.pod@gmail.com (listed for advertising enquiries); packages to Ben Vernel parcel locker listed on site",
+   "notes": "Show email, not personal. Other socials (show): https://twitter.com/filthycaspod, https://www.instagram.com/filthycasualspodcast/, https://www.twitch.tv/filthycasualspod"
+  },
+  {
+   "name": "Dominic Tarason",
+   "outlets": "Convergence Radar",
+   "author_page_url": "https://convergenceshow.substack.com/p/the-convergence-radar-33-player-hell",
+   "evidence_url_1": "https://convergenceshow.substack.com/p/the-convergence-radar-33-player-hell",
+   "public_email": "Dominic@SteamHype.com",
+   "notes": "Both emails published (obfuscated) on his site https://dominictarason.carrd.co/: Dominic@SteamHype.com and JDTarason@Gmail.com (personal vs business labels not verified). Other socials: https://twitter.com/DominicTarason (marked deprecated), https://store.steampowered.com/curator/43135575"
+  },
+  {
+   "name": "Liam Richardson",
+   "outlets": "Indieventure",
+   "author_page_url": "https://indieventurepodcast.podbean.com",
+   "evidence_url_1": "https://indieventurepodcast.podbean.com/e/extra-demos-we-played-during-steam-next-fest-feb-2026-with-robin-bea/",
+   "social_url": "https://bsky.app/profile/sevenoutoften.co.uk",
+   "notes": "Other socials: https://www.youtube.com/@SevenOutOfTen"
+  },
+  {
+   "name": "Alex Aldridge",
+   "outlets": "A Winner Is You",
+   "author_page_url": "https://goombastomp.com/category/podcast/a-winner-is-you/",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/episode-132-no-im-not-a-human/id1547186438?i=1000753470960",
+   "notes": "Other socials: https://bsky.app/profile/winnerisyou.bsky.social (show account naming Alex Aldridge and David Smillie)"
+  },
+  {
+   "name": "David Smillie",
+   "outlets": "A Winner Is You",
+   "author_page_url": "https://goombastomp.com/category/podcast/a-winner-is-you/",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/episode-132-no-im-not-a-human/id1547186438?i=1000753470960",
+   "notes": "Other socials: https://bsky.app/profile/winnerisyou.bsky.social (show account naming Alex Aldridge and David Smillie)"
+  }
+ ]
+}

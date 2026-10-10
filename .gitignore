@@ -23,3 +23,6 @@ venv/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Dashboard dependencies (dist/ is committed so the app runs with Python alone)
+ClubSanguine_CreatorResearch/dashboard/node_modules/

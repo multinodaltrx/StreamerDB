@@ -1,10 +1,15 @@
-# HANDOVER — Club Sanguine creator research
+# HANDOVER — Club Sanguine creator and press research
 
 **Read this before doing anything.** Last updated 2026-10-10 by the previous agent. The repository files are the source of truth. If anything here disagrees with the data, trust the data: run the status commands in section 3 first.
 
 ## 1. What this project is
 
-We are building an evidence-backed database of YouTube/Twitch creators whose audiences would enjoy **Club Sanguine**, an indie "Papers, Please meets supernatural nightclub bouncer" game. The owner is Omar (omar.t@xeleration.net).
+We are building evidence-backed databases for **Club Sanguine**, an indie "Papers, Please meets supernatural nightclub bouncer" game. The owner is Omar (omar.t@xeleration.net). There are two databases:
+
+- **Creators:** YouTube/Twitch creators whose audiences would enjoy the game, in `creators.csv`.
+- **Press:** journalists and outlets to pitch the press kit to before **Steam Next Fest, February 2027**, in `press/`. Coverage should help creators find the game on their own.
+
+The owner works through both from the **Outreach Desk**, a local dashboard (see section 7).
 
 Read these, in order:
 
@@ -12,32 +17,50 @@ Read these, in order:
 2. `ASTRA_INSTRUCTIONS.md` — the research-agent rules: batch workflow and end-of-batch report fields.
 3. `seed_games.txt` and `exclusions.txt`.
 4. `tools/REVIEW_RUBRIC.md` — how candidates are judged in practice.
-5. `exports/batches_004-016_report.md` — the latest run report.
+5. `exports/batches_004-016_report.md` — the latest creator run report.
+6. `press/PRESS_RESEARCH_GUIDE.md` and `press/exports/press_batch_001_report.md` — the press DB rules and its first batch.
 
-**MODE: RESEARCH ONLY.**
-- Never email, DM, post, submit forms, message Discord, or request Steam keys.
-- Never change `outreach_status`.
+**MODE: RESEARCH (agents) + MANUAL OUTREACH (owner only).**
+- Agents and tools never email, DM, post, submit forms, message Discord, or request Steam keys. The owner sends every message personally.
+- The Outreach Desk only prepares messages and records what the owner did, in `outreach/outreach_log.csv`. Agents never write to that log on the owner's behalf.
+- Never change `outreach_status` in `creators.csv`; outreach state lives only in the log.
 - Collect only publicly published contact routes.
 - Never bypass YouTube's sign-in/captcha email gate, and never guess emails.
 - Unverifiable data is written as `Unknown`. Never fabricate metrics, URLs, contacts, countries or game coverage.
 
 ## 2. Current state (2026-10-10)
 
-`creators.csv` has **1,598 creators** (C0001–C1598, Batches 001–016). `validate_data.py` reports 0 issues, every row has evidence, and every tier matches the scorer.
+`creators.csv` has **1,798 creators** (C0001–C1798, Batches 001–019). `validate_data.py` reports 0 issues, every row has evidence, and every tier matches the scorer.
 
 | Metric | Value |
 |---|---|
-| Tiers | S 6 · A 185 · B 1,024 · C 383 · high priority 14 |
-| Contact routes | 893 YouTube-gated business email · 193 public email · 170 Discord / website · 266 social profile only · 76 Unknown |
-| Twitch | 883 rows have a Twitch URL; only 42 have TwitchTracker average viewers (see known issues) |
-| Searches logged | 506 rows in `search_history.csv` |
+| Tiers | S 7 · A 200 · B 1,160 · C 431 · high priority 15 |
+| Contact routes | 990 YouTube-gated business email · 220 public email · 197 Discord / website · 313 social profile only · 78 Unknown |
+| Socials | `exports/creator_links.csv` has 5,041 About-page links (Twitch, X, Bluesky, Instagram, TikTok, Discord, sites) for 1,592 creators |
+| Twitch | 998 rows have a Twitch URL; only 77 have TwitchTracker average viewers (see known issues) |
+| Searches logged | 650 rows in `search_history.csv` |
+
+**Press DB** (`press/`, Press Batches 001–002, 2026-10-10). `validate_press.py` reports 0 issues.
+
+| Metric | Value |
+|---|---|
+| Outlets | 185: 85 indie sites, 39 major outlets, 28 podcasts, 21 newsletters, 11 YouTube press, 1 curator. Tiers S 12 · A 16 · B 44 · C 72 · LT 41 |
+| Journalists | 284. Tiers S 4 · A 10 · B 39 · C 107 · LT 124. 100 have Next Fest roundups on record |
+| Contact routes | Outlets: 82 public email · 39 submission form · 30 social only. Journalists: 68 personal email; others reach through their outlet's email, form or social, which the Desk shows on their card |
+| Searches logged | 394 rows in `press/search_history.csv` |
 
 **Where things stand:**
-- **Last batch:** Batch 016 (98 rows). The next import should start at **Batch 017**.
-- **Review queue:** chunk 0 in `exports/review_log/` is a reconstructed list of 798 already-rejected channels; it keeps them from being re-reviewed. **164 new candidates** from search plan 6 are ready to review. Start with `python tools/review.py next 82 --quiet`, which creates chunk 1.
-- **Outreach:** not started. The owner still needs to review S/A and high-priority creators.
+- **Last batch:** Batch 019 (2 rows; 017 and 018 hold the other 198). The next import should start at **Batch 020**.
+- **Review queue:** `exports/review_log/` holds chunk 0 (798 reconstructed rejections) and chunks 1–5 (412 reviewed: 202 accepted, 210 rejected). Nothing is waiting; a new cycle needs new searches (section 5).
+- **Harvest cache:** rebuilt on this machine. It holds 1,721 channel pages and About pages for every creator in the DB plus all reviewed candidates. It's gitignored, so it's local only.
+- **Outreach:** the Outreach Desk and `start_all.ps1` are built and tested, and the log is empty. The owner still needs to fill in `outreach/config.json` (`steam_url`, `press_kit_url`, `trailer_url`, `nextfest_start`).
+- **Environment:** set up on 2026-10-10 with Python 3.12 (`%LOCALAPPDATA%\Programs\Python\Python312\python.exe`, which may not be on PATH in old shells) and Node 24 LTS (only needed to rebuild the dashboard UI).
 
 ### Decisions the owner already made (don't re-ask)
+
+- **Press DB (2026-10-10):** a separate DB of journalists and outlets covering indie sites and blogs, major outlets, Next Fest roundup writers, and podcasts and newsletters. The target is **Next Fest, February 2027**.
+- **Outreach tool:** a local web dashboard built with React, not a CLI or spreadsheet. The owner asked for something "more professional than an HTML page".
+- **Creator DB to 3,000:** the next step, but **only after the owner explicitly approves it.**
 
 - **Scale:** the owner wanted as many creators as possible. Targets went 300 → 600 → 1,500, and all were reached. Don't start new discovery runs without being asked.
 - **Contact rule:** accept new creators only if they show **at least one public contact route**. That means:
@@ -66,6 +89,9 @@ python scripts/creator_db.py check      # schema + row count
 python scripts/creator_db.py stats      # tiers / status / platform / high-priority
 python scripts/validate_data.py         # read-only data-quality report (expect 0 issues)
 python tools/review.py summary          # cached candidates, filter reasons, ready-to-review count
+python scripts/press_db.py check        # press schema + row counts
+python scripts/press_db.py stats        # press types / tiers / contact routes
+python scripts/validate_press.py        # read-only press report (expect 0 issues)
 ```
 
 ## 4. Layout
@@ -75,6 +101,22 @@ python tools/review.py summary          # cached candidates, filter reasons, rea
 | `creators.csv` | The database (40 columns, schema in `scripts/creator_db.py:FIELDNAMES`) |
 | `search_history.csv` | Every search: query, filter, results, new and qualified counts |
 | `scripts/creator_db.py` | `check` / `stats` / `dedupe` / `upsert`. Dedupe keys, in order: channel ID → Twitch username → profile URL → name. `Unknown` is never used as a key; merges only fill `Unknown` or empty fields. |
+| `press/outlets.csv`, `press/journalists.csv` | Press DB (schemas in `scripts/press_db.py`: `OUTLET_FIELDS` / `JOURNALIST_FIELDS`) |
+| `press/search_history.csv` | Every press search |
+| `press/PRESS_RESEARCH_GUIDE.md` | Rules, evidence standard, JSON batch format and judgement-score rubric for press research |
+| `press/exports/research/*.json` | Exactly what each press research segment produced (re-importable) |
+| `scripts/press_db.py` | `check` / `stats` / `dedupe` / `import <batch.json> "<label>"` |
+| `scripts/score_press.py` | `recalc`: 4 components derived from fields plus 2 judgement scores, tiers as for creators |
+| `scripts/validate_press.py` | Read-only press validator |
+| `start_all.ps1` | One-click launcher: starts the server if needed, then a terminal picker (ASCII art, lists, contact cards, a "message them" key, logging) |
+| `tools/outreach_app.py` | The Outreach Desk server: 127.0.0.1 only, standard library, serves `dashboard/dist` plus the JSON API (`/api/data`, `/api/find`, `/api/contact`, `/api/stats`, `/api/log`, `/api/reveal`) |
+| `tools/build_creator_links.py` | Exports every creator's About-page links to `exports/creator_links.csv`. `--missing` lists creators without a cached About page |
+| `tools/run_plan.sh` | Runs a search plan file through `yt_harvest.py search` |
+| `dashboard/` | React + TypeScript + Mantine UI source. `dist/` is committed, so Node is only needed to change the UI |
+| `outreach/outreach_log.csv` | Append-only log of every action the owner records. A contact's status is its latest row |
+| `outreach/revealed_contacts.csv` | Gated YouTube emails the owner revealed by hand and saved in the dashboard |
+| `outreach/config.json` | Steam / press-kit / trailer URLs, Next Fest dates, signature, daily target, follow-up days |
+| `outreach/templates/*.txt` | Message templates. `Subject:` on the first line; `{name}`, `{game}`, `{evidence_url}`, `{steam_url}`, `{press_kit_url}` and any other config key as placeholders |
 | `scripts/score_creator.py` | `recalc`: deterministic fit_score (sum of 8 components) and tier (S ≥85, A ≥70, B ≥55, C ≥40) |
 | `scripts/validate_data.py` | Read-only validator |
 | `scripts/yt_harvest.py` | Read-only YouTube/TwitchTracker fetcher with cache (see below). `GAMES` is the title-matching list (seed tiers 1–3 plus "related" games). |
@@ -85,9 +127,10 @@ python tools/review.py summary          # cached candidates, filter reasons, rea
 | `tools/REVIEW_RUBRIC.md` | Reviewer rubric with examples |
 | `exports/review_log/` | Frozen chunks, `pool_cK.json` (accepted) and `rejected_cK.json` |
 | `exports/batch_NNN_candidates*.json` | Exactly what was imported per batch |
-| `exports/*_report.md` | Batch reports (001, 002, 003, and combined 004–016) |
+| `exports/*_report.md` | Batch reports (001, 002, 003, combined 004–016, combined 017–019) |
+| `exports/creator_links.csv` | Every public About-page link per creator (`creator_id,title,url`); rebuilt by `tools/build_creator_links.py` |
 | `exports/discovered_games.md` | Related games used for expansion (the seed list is never edited) |
-| `exports/harvest/` | **Local only (gitignored).** Cache of 470 searches, 5,525 channel pages, 3,335 About pages and 878 Twitch lookups. If it's missing, rebuild it with the commands below; everything is cached by ID. |
+| `exports/harvest/` | **Local only (gitignored).** Rebuilt on 2026-10-10 with plans 7–9: 1,721 channel pages and 2,402 About pages, including every creator in the DB. The older cache from runs 1–2 is not on this machine. If it's missing, rebuild it with the commands below; everything is cached by ID. |
 
 ### `yt_harvest.py` commands
 
@@ -110,14 +153,14 @@ Useful `--sp` values:
 
 ## 5. How to continue (one discovery cycle)
 
-1. **Search.** Write a query plan of `query|sp|pages|force` lines, with **LF line endings**, and loop it through `yt_harvest.py search`. Use query families that worked: `"<game>" gameplay / let's play / part 1 / stream`, plus newest and this-year filters.
+1. **Search.** Write a query plan of `query|sp|pages|force` lines, with **LF line endings**, in `exports/review_log/plans/planN.txt`, and run `bash tools/run_plan.sh <plan>`. Plans 7–9 are there as examples. Use query families that worked: `"<game>" gameplay / let's play / part 1 / stream`, plus newest and this-year filters.
    - **New seeds:** count recurring titles in accepted creators' recent uploads and pick the inspection / impostor / anomaly / odd-job ones. Add them to `GAMES` as `"related"` (this is how Animaly Bar, Shift at Midnight, Who's at the Door and others were found). Record them in `exports/discovered_games.md`, never in `seed_games.txt`.
 2. **Fetch.** Run `bash tools/pipeline.sh <tag>`. It takes about 3 seconds per channel per worker. Run it in the background.
 3. **Review.** Run `python tools/review.py next 90 --quiet`, then show and decide each chunk using `tools/REVIEW_RUBRIC.md`.
    - Previously this was done by parallel subagents, one per chunk, each told to read the rubric, `show K`, and `decide K` once.
    - That costs about 70K tokens per 90-line chunk, and acceptance runs about 40–65%.
    - Spot-check flagged or uncertain lines, especially "second channel of X", VOD channels, and creators with non-English descriptions.
-4. **Import.** Back up `creators.csv` first, then run `python tools/import_pools.py 17 1 2` (Batch 017 onward, review_log chunks 1–2).
+4. **Import.** Back up `creators.csv` first, then run `python tools/import_pools.py 20 6 7` (Batch 020 onward, review_log chunks 6 and up; chunks 1–5 are already imported). Then run `python tools/build_creator_links.py` so the new creators' socials reach the Desk.
    - Afterwards, check any "merged into existing" rows. So far every merge has been a main/VOD pair sharing a Twitch username, which is correct.
 5. **Log.** Append one `search_history.csv` row per query, then write a batch report with the ASTRA end-of-batch fields. The previous reports' generator logic is reproduced in their structure.
 6. **Stop and report** to the owner after each discovery cycle.
@@ -144,14 +187,64 @@ Useful `--sp` values:
 - **`last_active_date`** is derived from YouTube's relative "N days ago" label at fetch time.
 - **The previous scratchpad was wiped,** which is why tools now live in `tools/` and logs in `exports/review_log/`. Keep all state inside the repo.
 
-## 7. Suggested next steps (ask the owner which)
+## 7. Press DB and Outreach Desk
 
-1. Help the owner review S/A and high-priority creators. For example, produce a shortlist sorted by fit_score with contact routes.
-2. Review the 164 ready plan-6 candidates (chunks 1–2), then import them as Batch 017+.
-3. Retry Twitch metrics once TwitchTracker stops rate-limiting:
+**Start everything:** `powershell -ExecutionPolicy Bypass -File .\start_all.ps1`, or right-click → Run with PowerShell. It finds Python, builds `dashboard/dist` if it's missing, starts the server hidden if it isn't already running, and opens the terminal picker:
+- **Menu:** `D` dashboard · `C` creators · `J` journalists · `O` outlets · `T` today · `F` follow-ups due · `A` everyone · `Q` quit (offers to stop the server).
+- **Lists** take a quick filter (search, tiers, email-ready, include contacted), then show a 15-row paged table.
+- **Contact card keys:**
+  - `M` **message them**: opens the best route. For email it opens your mail app with the message pre-filled. For a DM, Discord or form, it copies the message and opens the page. For a gated YouTube email, it opens the About page and lets you save the email you reveal.
+  - `1–n` open any social or link · `E1–3` open evidence
+  - `V`/`C`/`A`/`T` view message, copy message, copy email, switch template
+  - `L` log contacted · `K` skip · `R` replied · `I` interested · `Y` key sent · `G` covered · `D` declined · `U` undo · `O` note
+  - `N`/`P` next/prev · `B` back
+- **Best-route order:** public email → outlet email (for journalists) → gated YouTube About → Discord → submission or contact form → social DM → website.
+
+**Run the dashboard only:** `python tools/outreach_app.py`. It opens http://127.0.0.1:8765. Restart it after any change to `tools/outreach_app.py`.
+
+What it does:
+- **Reach panel:** each contact's drawer has a big **Message them** button using the same best-route logic as above, then icon buttons for every public social and contact link.
+- **Tabs:** Creators · Journalists · Outlets · Today · Follow-ups · Pipeline.
+- **Filters:** tier, status, contact route, games, subscribers, activity, outlet type and Next Fest writers.
+- **Build today's list** queues the top N not-yet-contacted contacts from the current filter.
+- **Work through** opens a drawer with links, evidence, a copyable or editable filled message, and an "Open in mail app" button.
+- **Shortcuts:** `m` logs a contact and moves to the next one; `j`/`k` next/prev; `c` copy message; `e` copy email; `s` skip.
+- **Follow-ups** appear automatically `follow_up_days` after a contact if there's no reply.
+- **Deep links:** `#C0002` opens a contact directly.
+- **UI changes:** `cd dashboard && npm install && npm run build`. Use `npm run dev` for hot reload; it proxies `/api` to the Python server.
+
+**Adding press records:** follow `press/PRESS_RESEARCH_GUIDE.md` and write a JSON batch. Then run:
+1. `python scripts/press_db.py import <file> "Press Batch NNN (<segment>)"`
+2. `python scripts/score_press.py recalc`
+3. `python scripts/validate_press.py`
+
+Log the queries in `press/search_history.csv` and write a report in `press/exports/`.
+
+**Press dedupe gotchas (learned in Batch 001):**
+- **Shared hosting:** many outlets live on YouTube, Substack, Apple Podcasts, Spotify and similar platforms. Those are keyed on the full URL, not the domain (`SHARED_HOSTS`).
+- **Co-hosts:** co-hosts share show pages and social accounts, so a journalist URL match only counts when the first and last names agree (`names_compatible`).
+- **List fields** (`outlets`, `games_covered`, `comparable_coverage`) are unioned on merge.
+- **Partial dates** (`YYYY-MM` / `YYYY`) are scored as the first of the month or year.
+
+**Timeline to Next Fest (February 2027):**
+
+| When | What |
+|---|---|
+| Oct–Nov 2026 | Fill in `outreach/config.json`. Review top press and creator targets in the dashboard. Open the evidence of Batch 002 records marked "seen via listing" (see `press/exports/press_batch_002_report.md`) |
+| Early Jan 2027 | Re-verify the top ~50 press targets (still at the outlet, recent bylines) |
+| Mid-Jan 2027 | Press pitches go out, about 3–4 weeks before the fest |
+| 1–2 weeks before the fest | Creator outreach (`1_creator_email` / `2_creator_dm`) |
+| During the fest | `4_nextfest_reminder` to press and creators, then `5_follow_up` from the Follow-ups tab |
+
+## 8. Suggested next steps (ask the owner which)
+
+1. **Expand the creator DB to about 3,000.** Waiting on owner approval. The harvest cache is rebuilt, so this is new discovery cycles from Batch 020 (section 5). Plans 7–9 yielded about 0.5 accepted creators per search, so about 1,200 more needs roughly 2,400 searches across new seed games.
+2. **Press Batch 003:** Irish and NZ outlets, horror-film sites with a games section, and re-checking the writers who may have moved (Alice Bell, Katharine Castle, Alex McHugh). RPS, Eurogamer, Polygon, IGN, VG247, The Guardian, The Verge and Wired block automated reading. Their bylines came from OpenCritic, Wikipedia and Bluesky.
+3. Help the owner review S/A and high-priority creators and press in the dashboard.
+4. Retry Twitch metrics once TwitchTracker stops rate-limiting:
    ```bash
    python scripts/yt_harvest.py twitch <users>    # delete the 429-cached files in exports/harvest/twitch/ first
    python exports/import_batch.py enrich-contacts
    ```
    Or, with Twitch API keys from the owner, add proper follower and viewer counts plus Twitch-only discovery.
-4. Before outreach, deduplicate remaining second channels by hand, and refresh activity and subscriber data for the shortlist.
+5. Before outreach, deduplicate remaining second channels by hand, and refresh activity and subscriber data for the shortlist.

@@ -1,0 +1,56 @@
+"That's Not My Neighbor" review indie|9|0
+"Quarantine Zone: The Last Check" review|9|3
+"No, I'm Not a Human" review|9|0
+"Contraband Police" review indie|10|3
+"No, I'm Not a Human" game review Trioskaz|10|2
+"That's Not My Neighbor" review doppelganger Nacho Sama|10|0
+"The Mortuary Assistant" review indie horror site|9|2
+indie game review site "submit your game"|10|0
+"Buckshot Roulette" review indie site|10|0
+"I'm on Observation Duty" review|18|0
+"Not Tonight" bouncer game review Panic Barn|10|2
+"Shift at Midnight" review doppelganger|9|0
+games like Papers, Please indie blog list|10|0
+Steam Next Fest best horror demos indie blog 2025|9|3
+indie horror game blog reviews "That's Not My Neighbor" OR "Mortuary Assistant" OR "Fears to Fathom"|9|1
+indie game site "review requests" "press releases" email indie games coverage|9|2
+site:indie-hive.com "Papers, Please" OR "That's Not My Neighbor" OR "Quarantine Zone"|9|1
+site:indiegamesplus.com Papers Please inspection game|9|0
+"Death and Taxes" review indie game Placeholder Gameworks|9|2
+"Killer Frequency" review indie site|9|1
+site:indiegamewebsite.com "Papers, Please" OR "That's Not My Neighbor" OR "Quarantine Zone" OR "Contraband Police"|10|0
+site:heypoorplayer.com "Papers, Please" OR "Mortuary Assistant" OR "Quarantine Zone" OR "No, I'm Not a Human"|9|0
+site:intoindiegames.com Papers Please OR "That's Not My Neighbor" OR "Quarantine Zone"|10|0
+site:noisypixel.net "Quarantine Zone" OR "Mortuary Assistant" OR "Buckshot Roulette" OR "Papers, Please"|9|0
+on-site search (WordPress ?s=) for comparable games + "next fest" on indiegamewebsite.com, heypoorplayer.com, intoindiegames.com, noisypixel.net|32|3
+on-site search for comparable games + "next fest" on thexboxhub.com, godisageek.com, gamingtrend.com, culturedvultures.com, gamegrin.com, gamespew.com, indiegamesplus.com, indiegamereviewer.com, dreadxp.com, rapidreviewsuk.com, finalweapon.net, keengamer.com, superjumpmagazine.com|112|7
+on-site search for comparable games on relyonhorror.com, hardcoregamer.com, cgmagonline.com, cogconnected.com, gaming-respawn.com, wellplayed.com.au, thesixthaxis.com, moviesgamesandtech.com, playerassist.com, digitallydownloaded.net, gamingnexus.com, pixeldynamo.com, gamesasylum.com, saveorquit.com, bloody-disgusting.com|120|1
+"Quarantine Zone" "Papers, Please" zombies review blog indie|9|1
+"That's Not My Neighbor" review Steam 2025 Papers Please horror doorman|10|1
+"Who's at the Door" OR "Scrutinized" OR "Security 51" indie game review|28|3
+indie horror game blog Next Fest demos "No, I'm Not a Human" OR "Quarantine Zone" roundup|9|2
+on-site search for comparable games + "next fest" on buried-treasure.org, dreadcentral.com, tornightfire.com|27|2
+on-site search for death and taxes, inscryption, strange horticulture, beholder, exit 8, fears to fathom, scrutinized, killer frequency on buried-treasure.org|9|1
+substack indie games newsletter Next Fest demos horror "Papers, Please"|10|5
+"Mortuary Assistant" OR "Fears to Fathom" OR "Buckshot Roulette" review horror games website indie horror coverage 2025|18|2
+"Kiosk" OR "Animaly Bar" OR "The Exit 8" indie review site anomaly game|9|2
+"Not Tonight 2" review indie site|18|0
+Substack archive search (papers please, neighbor, quarantine, mortuary, buckshot, not a human, next fest, contraband, inscryption) on indiegames, jilllloydflanagan, ramblingreviews, typedbytom, mattherus, goodgamelobby, gameroom, thebesties substacks|72|5
+opencritic No, I'm Not a Human reviews page (opencritic.com/game/19293)|15|3
+opencritic Quarantine Zone The Last Check reviews|29|2
+opencritic Buckshot Roulette reviews|25|7
+opencritic "The Mortuary Assistant" reviews critics|29|5
+opencritic Contraband Police reviews|22|4
+butwhytho.net "No, I'm Not a Human" OR "Quarantine Zone" OR "That's Not My Neighbor" review|31|0
+gamingtrend "No, I'm Not a Human" review Joey Caplan|9|0
+techraptor "No, I'm Not a Human" review Blair Bishop|9|0
+finalweapon.net "No, I'm Not a Human" review|9|0
+on-site search for comparable games on gamingtrend.com, well-played.com.au, butwhytho.net, techraptor.net, finalweapon.net, fearzinemagazine.com, tornightfire.com, superjumpmagazine.com|64|0
+on-site search for comparable games on relyonhorror.com, cubed3.com, vgamingnews.com, smashjump.com|36|3
+heypoorplayer.com ?s=papers+please|6|0
+finalweapon.net ?s=not+a+human|12|0
+on-site search for next fest + related games on indiegamewebsite.com, nindiespotlight.com, gamegrin.com, rapidreviewsuk.com, intoindiegames.com, startmenu.co.uk, lootlevelchill.com, waytoomany.games|64|3
+hauntedmtl OR "morbidly beautiful" OR "nightmarish conjurings" indie horror video game review "Mortuary Assistant" OR "That's Not My Neighbor" OR "No, I'm Not a Human"|18|0
+"Fears to Fathom" review horror site indie episode|9|1
+"Strange Horticulture" OR "Return of the Obra Dinn" deduction game review indie blog Next Fest|19|3
+Noisy Pixel contact press email review requests|10|0

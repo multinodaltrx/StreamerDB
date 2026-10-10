@@ -12,6 +12,9 @@ python - <<'EOF' > $H/tofetch_$TAG.txt
 import json, os, csv
 c = json.load(open('exports/harvest/candidates.json', encoding='utf-8'))
 db = {r['youtube_channel_id'] for r in csv.DictReader(open('creators.csv', encoding='utf-8'))}
+import glob  # also skip channels already reviewed (and rejected) in earlier chunks
+for f in glob.glob('exports/review_log/chunks/chunk_*.json'):
+    db |= {r['cid'] for r in json.load(open(f, encoding='utf-8'))}
 print('\n'.join(x['channel_id'] for x in c if x['channel_id'] not in db
                 and not os.path.exists(f"exports/harvest/channels/{x['channel_id']}.json")))
 EOF

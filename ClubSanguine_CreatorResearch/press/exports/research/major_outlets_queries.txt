@@ -1,0 +1,54 @@
+"That's Not My Neighbor" review|9|0
+"Quarantine Zone: The Last Check" review|9|0
+"No, I'm Not a Human" review|18|1
+games like Papers, Please|9|0
+site:pcgamer.com "Quarantine Zone" OR "That's Not My Neighbor" OR "No, I'm Not a Human"|9|0
+site:rockpapershotgun.com "That's Not My Neighbor" OR "Quarantine Zone" OR "No, I'm Not a Human"|9|0
+site:gamesradar.com "No, I'm Not a Human" OR "Quarantine Zone" OR "That's Not My Neighbor"|9|1
+site:polygon.com "No, I'm Not a Human" OR "Papers, Please" horror indie|9|0
+No, I'm Not a Human horror visitors (allowed: pcgamer, gamesradar, kotaku, thegamer, gamerant, destructoid, pcgamesn)|10|7
+Quarantine Zone The Last Check (allowed: pcgamer, gamesradar, kotaku, thegamer, gamerant, destructoid, pcgamesn, gamespot)|10|4
+That's Not My Neighbor doppelganger doorman (allowed: pcgamer, gamesradar, kotaku, thegamer, gamerant, destructoid, pcgamesn, gamespot)|10|3
+Papers, Please-like inspection horror indie game (pcgamer.com)|10|6
+That's Not My Neighbor OR Mortuary Assistant OR Buckshot Roulette (pcgamer.com)|28|4
+Papers Please horror indie checkpoint game (gamesradar.com)|10|3
+Steam Next Fest best demos horror (pcgamer.com, gamesradar.com)|20|8
+Papers Please horror inspection game demo Steam (pcgamesn, vg247, siliconera)|0|0
+Papers Please-like horror indie review checkpoint (bloody-disgusting, dreadcentral, techraptor, hardcoregamer)|10|2
+That's Not My Neighbor OR Quarantine Zone OR "Mortuary Assistant" review (gamespot, kotaku, destructoid, techraptor)|30|5
+Rock Paper Shotgun "Papers, Please" horror doppelganger game|10|0
+rockpapershotgun.com + eurogamer.net RSS /feed/tag/games/<slug> for 13 comparable games (direct fetch)|60|9
+No, I'm Not a Human review (techraptor, hardcoregamer, bloody-disgusting, pcgamesn, siliconera, destructoid, thegamer, gamerant)|10|4
+Quarantine Zone Last Check review Papers Please zombie (techraptor, hardcoregamer, bloody-disgusting, pcgamesn, gamespot, destructoid, thegamer, pushsquare, gamepressure)|10|4
+Papers Please-like horror demo doppelganger indie Steam (pcgamesn, siliconera, gamespot, kotaku)|10|3
+Papers Please inspired horror game identify humans demo (bloody-disgusting, dreadxp, dreadcentral, hardcoregamer, techraptor)|10|4
+"Papers, Please Meets Post-Apocalyptic Paranoia" GameSpot|9|0
+Kotaku That's Not My Neighbor OR "No, I'm Not a Human" indie horror (kotaku.com)|20|0
+Papers Please-like horror game Steam demo (thegamer, gamerant, destructoid)|10|7
+GameSpot No I'm Not a Human Papers Please horror post-apocalyptic paranoia preview (gamespot.com)|10|1
+Polygon "No, I'm Not a Human" horror game article|9|0
+IGN "Quarantine Zone: The Last Check" review|9|1
+VG247 "No, I'm Not a Human" OR "Quarantine Zone" OR "That's Not My Neighbor"|10|0
+rockpapershotgun / eurogamer RSS tags batch 2 (inscryption, world-of-horror, fears-to-fathom, mouthwashing, strange-horticulture, etc.; rate-limited 429)|8|1
+polygon.com/feed/horror + ign.com/games/<slug> (direct fetch)|12|0
+That's Not My Neighbor OR No I'm Not a Human OR Buckshot Roulette indie horror (siliconera, nintendolife, pushsquare, purexbox)|29|1
+Papers Please horror inspection game news (dreadxp, gamepressure, gematsu, pcinvasion)|10|2
+indie horror Papers Please style game preview demo (gamesradar, pcgamer)|10|1
+Shift at Midnight OR "I'm on Observation Duty" OR "The Exit 8" anomaly horror (pcgamer, gamesradar, pcgamesn, thegamer)|20|4
+Contraband Police OR "Killer Frequency" OR "Not Tonight" review (pcgamer, gamesradar, pcgamesn, destructoid, techraptor, hardcoregamer)|26|3
+Shift at Midnight doppelganger game review|10|0
+Rock Paper Shotgun Steam Next Fest demos horror|9|1
+Eurogamer indie horror Papers Please-like checkpoint game impressions|10|0
+PCGamesN horror game Papers Please doppelganger inspection Steam new (pcgamesn.com)|10|2
+Destructoid indie horror Papers Please-like game impressions demo (destructoid.com)|10|2
+weird indie horror game demo Steam doppelganger strangers door (pcgamer, gamesradar, kotaku, destructoid)|10|2
+Fears to Fathom OR "World of Horror" OR "Scarlet Hollow" review (pcgamer, gamesradar, destructoid, techraptor, hardcoregamer, pcgamesn, bloody-disgusting)|10|5
+Steam Next Fest demos horror indie roundup 2026 (destructoid, techraptor, hardcoregamer, pcgamesn, bloody-disgusting, thegamer, gamerant, siliconera)|10|4
+Buckshot Roulette OR "Mortuary Assistant" OR "Killer Frequency" review (hardcoregamer, dreadcentral, pcinvasion, destructoid, siliconera)|26|3
+Papers Please horror game Kotaku indie Steam strangers paranoia (kotaku.com)|10|0
+Inscryption OR "Buckshot Roulette" OR "Mouthwashing" indie horror feature (gamesradar, pcgamer)|10|5
+Siliconera horror indie game Steam demo doppelganger OR anomaly OR "Papers, Please" (siliconera.com)|20|1
+gamepressure No I'm Not a Human OR That's Not My Neighbor OR Buckshot Roulette news (gamepressure.com)|10|1
+Kotaku Buckshot Roulette OR Inscryption OR "Mouthwashing" indie horror (kotaku.com)|10|1
+Outlet about/contact pages (pcgamer, gamesradar, RPS, eurogamer, kotaku, destructoid, thegamer, gamerant, techraptor, hardcoregamer, bloody-disgusting, dreadcentral, pcgamesn, siliconera, gamereactor, pcinvasion)|20|16
+Author pages (Future, Gamer Network, Valnet, Gamurs, TechRaptor, BD, DC, Gamepressure, Siliconera, Gamereactor) for social/email|60|60

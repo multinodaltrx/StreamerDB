@@ -1,0 +1,52 @@
+WebFetch rockpapershotgun.com/games/papers-please + /topics/horror (blocked to our agent)|0|0
+WebSearch allowed_domains rockpapershotgun.com / eurogamer.net (API refused: domains blocked)|0|0
+WebFetch polygon.com, vg247.com/feed, theguardian.com, theverge.com, wired.com, ign.com (blocked)|0|0
+WebFetch nintendolife.com / purexbox.com / gamespot.com / unwinnable.com article+contact pages (HTTP 403)|0|0
+WebFetch pushsquare.com/feeds/latest + nintendolife.com/feeds/latest (no bylines)|50|0
+WebFetch aftermath.site homepage/search + tag/steam-next-fest + tag/horror + tips + author pages|50|4
+WebSearch site:aftermath.site comparable games (Buckshot Roulette, CloverPit)|8|2
+WebFetch remapradio.com homepage + contact + video pages|20|3
+WebSearch site:remapradio.com Buckshot Roulette / Mouthwashing|5|2
+WebFetch pastemagazine.com search papers please (games now redirect to endlessmode.com -> avclub.com)|2|1
+WebFetch inverse.com search + Mouthwashing article (Robin Bea already in DB)|3|0
+WebSearch site:nme.com comparable games + nme.com/gaming + author page|30|1
+WebFetch OpenCritic reviews: The Mortuary Assistant|20|1
+WebFetch OpenCritic reviews: No, I'm Not a Human|15|0
+WebFetch OpenCritic reviews: Buckshot Roulette|15|0
+WebFetch OpenCritic reviews: Quarantine Zone: The Last Check|20|0
+WebFetch OpenCritic reviews: World of Horror (pages 1-2)|37|3
+WebFetch OpenCritic reviews: Killer Frequency|20|1
+WebFetch OpenCritic reviews: The Exit 8|9|0
+WebFetch OpenCritic reviews: Strange Antiquities|20|1
+WebFetch OpenCritic reviews: Inscryption (pages 1-2)|40|6
+WebFetch OpenCritic reviews: Not Tonight 2|11|0
+WebFetch OpenCritic reviews: Mouthwashing|20|4
+WebFetch OpenCritic reviews: Home Safety Hotline|12|1
+WebFetch OpenCritic reviews: Look Outside|19|2
+WebFetch OpenCritic reviews: Crow Country|20|6
+WebFetch OpenCritic reviews: The Operator|13|1
+WebFetch OpenCritic reviews: Fear the Spotlight|20|5
+WebFetch OpenCritic reviews: CloverPit|20|0
+WebFetch OpenCritic reviews: Contraband Police|13|2
+WebFetch OpenCritic reviews: The Darkest Files|11|0
+WebFetch OpenCritic reviews: The Roottrees Are Dead|14|1
+WebFetch OpenCritic reviews: Strange Horticulture|16|4
+WebFetch OpenCritic reviews: Hollowbody|20|2
+WebFetch OpenCritic outlet pages: IGN, Nintendo Life; WebSearch Push Square / Pure Xbox outlet pages|80|3
+WebFetch OpenCritic critic pages: Kelsey Raynor, Alice Bell, Katharine Castle, Roland Ingram, David Wildgoose; WebSearch Mark Delaney, Oliver Reynolds|70|6
+WebFetch Wikipedia references: No, I'm Not a Human|17|2
+WebFetch Wikipedia references: Buckshot Roulette|24|4
+WebFetch Wikipedia references: Mouthwashing (video game)|41|7
+WebFetch Wikipedia references: The Exit 8|39|6
+WebFetch Wikipedia references: Papers, Please (2018+)|10|0
+WebFetch Wikipedia references: The Mortuary Assistant|20|2
+WebFetch Wikipedia references: Quarantine Zone, Killer Frequency, Not Tonight, Fears to Fathom, Strange Horticulture, Inscryption|45|3
+WebFetch Bluesky public API actor search (approx. 40 names) for social profiles/bio emails|200|22
+WebSearch bsky Cass Marshall -> rogue.site; WebFetch rogue.site home, editorials, going-rogue, Next Fest roundups|60|4
+WebSearch site:rogue.site Next Fest demos horror|10|5
+WebFetch vikki-blake.com|9|1
+WebFetch author pages: Shacknews Lucas White, PCGamesN Alex McHugh, PC Gamer Ted Litchfield, Siliconera review author box|30|4
+WebSearch "Steam Next Fest best demos 2026" majors|18|0
+WebSearch "No, I'm Not a Human" / "That's Not My Neighbor" major-outlet coverage|18|0
+WebSearch site:purexbox.com Papers, Please / Mortuary Assistant / Exit 8|20|1
+WebSearch site:unwinnable.com comparable games + unwinnable.com/feed (articles 403)|13|1

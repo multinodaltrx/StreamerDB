@@ -1,0 +1,646 @@
+{
+ "outlets": [
+  {
+   "name": "Way Too Many Games",
+   "url": "https://waytoomany.games/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://waytoomany.games/2026/02/02/review-quarantine-zone-the-last-check/",
+   "social_url": "https://x.com/waytoomanygames",
+   "notes": "Other socials: https://www.youtube.com/@WayTooManyGames"
+  },
+  {
+   "name": "Checkpoint Gaming",
+   "url": "https://checkpointgaming.net/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://checkpointgaming.net/reviews/2026/02/quarantine-zone-the-last-check-review-shambling-security-simulation/",
+   "public_email": "checkpoint@joy.org.au"
+  },
+  {
+   "name": "Thumb Culture",
+   "url": "https://www.thumbculture.co.uk/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.thumbculture.co.uk/contraband-police-ps5-review",
+   "social_url": "http://www.twitter.com/thumb_culture",
+   "notes": "Other socials: http://www.instagram.com/thumb_culture, https://www.youtube.com/c/ThumbCultureV2, https://discord.gg/qFJeudm3pd"
+  },
+  {
+   "name": "Jump Dash Roll",
+   "url": "https://www.jumpdashroll.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.jumpdashroll.com/article/contraband-police-review",
+   "social_url": "https://www.twitter.com/jumpdashroll",
+   "notes": "Other socials: https://www.instagram.com/jumpdashroll, https://www.facebook.com/jumpdashroll"
+  },
+  {
+   "name": "Bloody Disgusting",
+   "url": "https://bloody-disgusting.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://bloody-disgusting.com/video-games/3928875/beware-of-zombies-quarantine-zone-the-last-check-is-out-now-on-steam-trailer/",
+   "social_url": "https://twitter.com/bdisgusting",
+   "notes": "Other socials: https://www.tiktok.com/@bdisgusting, https://instagram.com/bdisgusting, https://discord.com/invite/s452vAnDx2, https://www.youtube.com/@BloodyDisgustingHorror. Contact page lists only individual editor emails (no generic tips address), not recorded"
+  },
+  {
+   "name": "GameLuster",
+   "url": "https://gameluster.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://gameluster.com/review-the-mortuary-assistant-i-see-dead-people/",
+   "social_url": "https://twitter.com/Gameluster/",
+   "notes": "Other socials: https://www.instagram.com/gameluster/, https://www.tiktok.com/@gameluster, https://www.youtube.com/user/GameLuster/videos"
+  },
+  {
+   "name": "The Punished Backlog",
+   "url": "https://punishedbacklog.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://punishedbacklog.com/best-demos-steam-next-fest-february-2025/",
+   "social_url": "https://www.twitter.com/punishedbacklog",
+   "notes": "Other socials: https://www.instagram.com/punishedbacklog, https://www.tiktok.com/@punishedbacklog/, https://www.youtube.com/channel/UCXn9FDipYrHhIpzaJW-io9w"
+  },
+  {
+   "name": "startmenu",
+   "url": "https://www.startmenu.co.uk/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.startmenu.co.uk/home/the-best-of-februarys-steam-next-fest",
+   "social_url": "https://bsky.app/profile/did:plc:yhwrircv2e7ffn4faopkqmj4",
+   "notes": "Bluesky link from site footer is a DID URL (contact page names the handle @thestartmenu)"
+  },
+  {
+   "name": "Noisy Pixel",
+   "url": "https://noisypixel.net/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://noisypixel.net/no-im-not-a-human-review/",
+   "social_url": "https://bsky.app/profile/noisypixel.net",
+   "notes": "Other socials: https://twitter.com/noisypixelnews, https://www.instagram.com/noisypixelnews, https://www.reddit.com/r/NoisyPixel/. Footer lists pr@noisypixel.net, editors@noisypixel.net"
+  },
+  {
+   "name": "TheXboxHub",
+   "url": "https://www.thexboxhub.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.thexboxhub.com/quarantine-zone-the-last-check-review/",
+   "social_url": "https://twitter.com/thexboxhub",
+   "notes": "Other socials: https://instagram.com/thexboxhub, https://www.facebook.com/XboxHub"
+  },
+  {
+   "name": "KeenGamer",
+   "url": "https://www.keengamer.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.keengamer.com/articles/reviews/pc-reviews/contraband-police-review-searching-for-answers/",
+   "social_url": "https://www.instagram.com/keengamer/",
+   "notes": "Other socials: https://www.youtube.com/channel/UCcNgUw_UVcrG9J2uwQBiJQw, https://www.facebook.com/keengamer/. pr@ email masked by anti-spam plugin, not recorded"
+  },
+  {
+   "name": "Buried Treasure",
+   "url": "https://buried-treasure.org/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://buried-treasure.org/2022/01/fears-to-fathom/",
+   "public_email": "hello@buried-treasure.org"
+  },
+  {
+   "name": "Dread Central",
+   "url": "https://www.dreadcentral.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.dreadcentral.com/lists/488961/steam-next-fest-promising-upcoming-horror-games/",
+   "social_url": "https://twitter.com/dreadcentral",
+   "notes": "Other socials: https://www.instagram.com/dreadcentral/, https://www.tiktok.com/@dreadcentral"
+  },
+  {
+   "name": "GameRoom",
+   "url": "https://gameroom.substack.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://gameroom.substack.com/p/the-best-demos-of-steam-next-fest",
+   "public_email": "chrismsutcliffe@gmail.com"
+  },
+  {
+   "name": "Rambling Reviews",
+   "url": "https://ramblingreviews.substack.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://ramblingreviews.substack.com/p/demofest",
+   "public_email": "ramblingreviews@lydocia.com",
+   "submission_url": "https://ramblingreviews.substack.com/contact",
+   "notes": "Other socials: https://discord.gg/pDvsx4GHZV, https://store.steampowered.com/curator/45328227-Rambling-Reviews/"
+  },
+  {
+   "name": "GodisaGeek",
+   "url": "https://godisageek.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://godisageek.com/reviews/buckshot-roulette-review/",
+   "social_url": "https://twitter.com/godisageek",
+   "notes": "Other socials: https://www.instagram.com/godisageek/"
+  },
+  {
+   "name": "GamingTrend",
+   "url": "https://gamingtrend.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://gamingtrend.com/reviews/the-mortuary-assistant-review-exorcist-in-training/",
+   "social_url": "https://bsky.app/profile/gamingtrend.com",
+   "notes": "Other socials: https://x.com/GamingTrend, https://discord.gg/tkd2JKS, https://www.youtube.com/c/GamingTrendVideos"
+  },
+  {
+   "name": "GameGrin",
+   "url": "https://www.gamegrin.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.gamegrin.com/reviews/buckshot-roulette-review/",
+   "social_url": "https://twitter.com/GameGrin",
+   "notes": "Other socials: https://discord.gg/gamegrin, https://www.youtube.com/user/GameGrin"
+  },
+  {
+   "name": "NoobFeed",
+   "url": "https://www.noobfeed.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.noobfeed.com/reviews/buckshot-roulette-review",
+   "social_url": "https://x.com/noobfeed",
+   "notes": "Other socials: https://www.youtube.com/user/noobfeed. Contact page lists support@noobfeed.com (site support), not recorded"
+  },
+  {
+   "name": "GamesCreed",
+   "url": "https://www.gamescreed.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.gamescreed.com/reviews/buckshot-roulette-review-pc",
+   "social_url": "https://x.com/GamesCreed1",
+   "notes": "Other socials: https://www.youtube.com/channel/UC5gupft2x7fxEE3Q5H7PPUA. Contact page is a form only"
+  },
+  {
+   "name": "But Why Tho?",
+   "url": "https://butwhytho.net/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://butwhytho.net/2024/04/buckshot-roulette-review/",
+   "social_url": "https://bsky.app/profile/butwhytho.net",
+   "notes": "Other socials: https://twitter.com/butwhythopc, https://instagram.com/butwhythopc, https://www.youtube.com/@ButWhyThoPC. Contact page general email info@butwhythopodcast.com"
+  },
+  {
+   "name": "Rely on Horror",
+   "url": "https://www.relyonhorror.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.relyonhorror.com/reviews/review-the-mortuary-assistant/",
+   "social_url": "https://twitter.com/RelyonHorror",
+   "notes": "Other socials: https://www.youtube.com/user/RelyonHorror, https://discordapp.com/invite/fXCKMer, http://www.twitch.tv/relyonhorrortv. No contact email/form found"
+  },
+  {
+   "name": "Smash Jump",
+   "url": "https://www.smashjump.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.smashjump.com/reviews/the-mortuary-assistant-review-ps5/",
+   "social_url": "https://www.youtube.com/channel/UCi6K8PZLEOKI7eOM9YeoB_g"
+  },
+  {
+   "name": "Into Indie Games",
+   "url": "https://intoindiegames.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://intoindiegames.com/walkthrough-hub/quarantine-zone-the-last-check-walkthrough/",
+   "social_url": "https://twitter.com/intoindiegames_",
+   "notes": "Other socials: https://www.instagram.com/intoindiegames/, https://www.youtube.com/@intoindiegamesyt"
+  },
+  {
+   "name": "The Indie Game Website",
+   "url": "https://www.indiegamewebsite.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.indiegamewebsite.com/2020/01/31/forget-brexit-by-playing-not-tonight-on-switch/",
+   "social_url": "https://twitter.com/indiegameweb"
+  },
+  {
+   "name": "Gaming Nexus",
+   "url": "https://www.gamingnexus.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.gamingnexus.com/Article/16306/Contraband-Police/",
+   "social_url": "https://www.facebook.com/gamingnexus"
+  },
+  {
+   "name": "PC Gamer",
+   "url": "https://www.pcgamer.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.pcgamer.com/games/sim/quarantine-zone-the-last-check-review/",
+   "social_url": "https://twitter.com/pcgamer",
+   "notes": "Other socials: https://www.youtube.com/@pcgamer, https://www.tiktok.com/@pcgamer_mag. About page: editors@pcgamer.com, confidential tips tips@pcgamer.com"
+  },
+  {
+   "name": "GamesRadar+",
+   "url": "https://www.gamesradar.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.gamesradar.com/games/horror/the-most-unsettling-horror-game-of-the-year-is-the-mouthwashing-publishers-no-im-not-a-human-junji-ito-meets-papers-please-with-a-monstrous-twist/",
+   "social_url": "https://twitter.com/gamesradar",
+   "notes": "Other socials: https://www.instagram.com/gamesradar/, https://www.youtube.com/user/GamesRadar. Pitching guide: news tips news@gamesradar.com, article pitches pitches@gamesradar.com"
+  },
+  {
+   "name": "Kotaku",
+   "url": "https://kotaku.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://kotaku.com/steams-big-new-zombie-game-is-tense-but-comes-at-a-bad-time-2000658992",
+   "social_url": "https://bsky.app/profile/kotaku.com",
+   "notes": "Other socials: https://x.com/kotaku, https://instagram.com/kotakudotcom. About page: story pitches pitches@kotaku.com, media requests media@kotaku.com; footer tips@kotaku.com"
+  },
+  {
+   "name": "GameSpot",
+   "url": "https://www.gamespot.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.gamespot.com/articles/this-unsettling-horror-game-looks-like-papers-please-meets-post-apocalyptic-paranoia/1100-6530773/",
+   "social_url": "https://x.com/gamespot",
+   "notes": "Other socials: https://instagram.com/gamespot, https://facebook.com/gamespot. Contact page blocked (403); no email verified"
+  },
+  {
+   "name": "Destructoid",
+   "url": "https://www.destructoid.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.destructoid.com/thats-not-my-neighbour-brings-back-fond-memories-of-papers-please-but-with-monsters/",
+   "social_url": "https://twitter.com/destructoid",
+   "notes": "Other socials: https://www.youtube.com/@DTOID, https://www.instagram.com/destructoid_official. Contact page: tips@destructoid.com; 'Please DO send press releases and products to our contact email'"
+  },
+  {
+   "name": "TheGamer",
+   "url": "https://www.thegamer.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.thegamer.com/no-im-not-a-humans-lies-truth-horror-genre/",
+   "social_url": "https://twitter.com/thegamerwebsite",
+   "notes": "Other socials: https://www.tiktok.com/@thegamerwebsite, https://www.instagram.com/thegamerweb/. Valnet contact page lists no email"
+  },
+  {
+   "name": "TechRaptor",
+   "url": "https://techraptor.net",
+   "type": "Major outlet",
+   "evidence_url_1": "https://techraptor.net/gaming/reviews/no-im-not-human-review-underlow",
+   "social_url": "https://twitter.com/techraptor",
+   "notes": "Other socials: https://www.tiktok.com/@techraptor, https://youtube.com/user/TechRaptorVideo"
+  },
+  {
+   "name": "Hardcore Gamer",
+   "url": "https://hardcoregamer.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://hardcoregamer.com/review-buckshot-roulette/",
+   "social_url": "https://twitter.com/HardcoreGamer",
+   "notes": "Other socials: https://www.youtube.com/user/HardcoreGamerVideo. Valnet contact page lists no email"
+  },
+  {
+   "name": "Dot Esports",
+   "url": "https://dotesports.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://dotesports.com/indies/news/how-to-play-no-im-not-a-human",
+   "social_url": "https://twitter.com/DotEsports/",
+   "public_email": "tips@dotesports.com",
+   "notes": "Other socials: https://www.instagram.com/dotesports/, https://www.youtube.com/c/dotesports. About page also lists info@dotesports.com"
+  },
+  {
+   "name": "Gamereactor",
+   "url": "https://www.gamereactor.eu",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.gamereactor.eu/quarantine-zone-the-last-check-1663643/",
+   "social_url": "https://twitter.com/GameReactorUK",
+   "public_email": "info@gamereactor.com",
+   "notes": "Other socials: https://www.instagram.com/gamereactor/, https://www.youtube.com/user/gamereactorTV, https://discord.com/invite/JfMqyUmNmu"
+  },
+  {
+   "name": "PC Invasion",
+   "url": "https://www.pcinvasion.com",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.pcinvasion.com/if-you-like-buckshot-roulette-you-need-to-try-mike-klubnikas-other-games/",
+   "social_url": "https://twitter.com/pcinvasion",
+   "notes": "pcinvasion.com now redirects to primagames.com (Gamurs); outlet status uncertain"
+  },
+  {
+   "name": "PlayDay.One",
+   "url": "https://playday.one/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://playday.one/2026/02/23/steam-next-fest-demo-roundup-vol-7-february-26/",
+   "public_email": "contact@playday.one",
+   "notes": "Other socials: https://discord.gg/playdayone, https://www.youtube.com/@PlayDayOne"
+  },
+  {
+   "name": "GamingOnLinux",
+   "url": "https://www.gamingonlinux.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.gamingonlinux.com/2026/06/steam-next-fest-june-2026-is-live-with-thousands-of-demos/",
+   "social_url": "https://bsky.app/profile/gamingonlinux.com",
+   "public_email": "contact@gamingonlinux.com",
+   "submission_url": "https://www.gamingonlinux.com/contact-us/",
+   "press_policy_notes": "Contact page: quick tips/complaints by email; registered users can submit articles",
+   "notes": "Other socials: https://mastodon.social/@gamingonlinux, https://discord.gg/AghnYbMjYg"
+  },
+  {
+   "name": "TheSixthAxis",
+   "url": "https://www.thesixthaxis.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.thesixthaxis.com/2025/06/10/ten-horror-game-demos-to-chill-and-thrill-you-in-steam-next-fest-this-week/",
+   "social_url": "https://bsky.app/profile/thesixthaxis.com",
+   "notes": "Other socials: https://mastodonapp.uk/@TheSixthAxis, https://discord.gg/PHtJbsh, https://www.threads.net/@thesixthaxisofficial. Footer: Advertising and PR pr@thesixthaxis.com, News tips@thesixthaxis.com"
+  },
+  {
+   "name": "GamesBeat",
+   "url": "https://gamesbeat.com/",
+   "type": "Major outlet",
+   "evidence_url_1": "https://gamesbeat.com/the-steam-next-fest-demos-i-enjoyed-the-most-kaser-focus/",
+   "social_url": "https://x.com/gamesbeat",
+   "submission_url": "https://gamesbeat.com/contact/",
+   "press_policy_notes": "Contact page: single form routed by department (General, Partnerships, Editorial...); news tips via form; no email published",
+   "notes": "Other socials: https://www.youtube.com/@GamesBeatOfficial, https://www.instagram.com/gamesbeat_official"
+  },
+  {
+   "name": "Inverse",
+   "url": "https://www.inverse.com/gaming",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.inverse.com/gaming/best-steam-next-fest-demos",
+   "social_url": "https://x.com/inversedotcom",
+   "press_policy_notes": "Contact page is for freelance story pitches (video games: deputy gaming editor, subject 'Video Games Freelance Story Pitch'); no game-submission address published",
+   "notes": "Other socials: https://instagram.com/inverse"
+  },
+  {
+   "name": "Thinky Games",
+   "url": "https://thinkygames.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://thinkygames.com/features/we-played-over-50-thinky-demos-from-steam-next-fest-february-2026-here-are-the-best/",
+   "social_url": "https://bsky.app/profile/thinkygames.com",
+   "notes": "Other socials: https://x.com/thinky_games, https://youtube.com/@ThinkyGames, http://instagram.com/thinkygames"
+  },
+  {
+   "name": "Analog Stick Gaming",
+   "url": "https://www.analogstickgaming.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.analogstickgaming.com/news/steam-next-fest-highlights",
+   "social_url": "https://twitter.com/AnalogStkGaming",
+   "public_email": "jeff@analogstickgaming.com",
+   "press_policy_notes": "About page: publishers wanting preview/review coverage or news posts should reach out to Jeff (jeff@analogstickgaming.com); discloses provided codes; OpenCritic partner"
+  },
+  {
+   "name": "Set Side B",
+   "url": "https://setsideb.com/",
+   "type": "Roundup/curator",
+   "evidence_url_1": "https://setsideb.com/steam-nextfest-2025-coverage-part-9/",
+   "social_url": "https://wrestling.social/@setsideb",
+   "submission_url": "https://setsideb.com/contact/",
+   "press_policy_notes": "Footer: 'Do you have news for us? Contact us here!' -> contact form; no email published"
+  },
+  {
+   "name": "Game Wisdom",
+   "url": "https://www.youtube.com/@Game-wisdom",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=BitGv79Jhig",
+   "public_email": "josh@game-wisdom.com",
+   "social_url": "https://twitter.com/gwbycer",
+   "press_policy_notes": "Channel description: business inquiries to josh@game-wisdom.com",
+   "notes": "Other socials: https://discord.gg/MFdkhMz, http://Game-Wisdom.com"
+  },
+  {
+   "name": "Screen Rant",
+   "url": "https://screenrant.com/",
+   "type": "Major outlet",
+   "evidence_url_1": "https://screenrant.com/steam-next-fest-october-2025-best-demos/",
+   "social_url": "https://bsky.app/profile/screenrant.bsky.social",
+   "submission_url": "https://screenrant.com/contact/",
+   "press_policy_notes": "Valnet contact page with category forms (Events & PR, Editorial); no email published",
+   "notes": "Other socials: https://twitter.com/screenrant, https://discord.gg/8DEaAGuTwB"
+  },
+  {
+   "name": "All Things How",
+   "url": "https://allthings.how/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://allthings.how/steam-next-fest-june-2026-10-demos-worth-downloading-before-it-ends/",
+   "submission_url": "https://allthings.how/contact/",
+   "press_policy_notes": "Contact page has a form only; no email published"
+  },
+  {
+   "name": "DualShockers",
+   "url": "https://www.dualshockers.com/",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.dualshockers.com/coolest-demos-from-steam-next-fest-february-2026/",
+   "social_url": "https://x.com/DualShockers",
+   "submission_url": "https://www.dualshockers.com/contact/",
+   "press_policy_notes": "Valnet contact page with category forms (Events & PR, Editorial); no email published",
+   "notes": "Other socials: https://www.instagram.com/dualshockers/"
+  },
+  {
+   "name": "Six One Indie",
+   "url": "https://www.sixoneindie.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://www.sixoneindie.com/post/february-2026-steam-next-fest-demos",
+   "social_url": "https://bsky.app/profile/sixoneindie.com",
+   "notes": "Other socials: https://www.youtube.com/@SixOneIndie"
+  },
+  {
+   "name": "CBR",
+   "url": "https://www.cbr.com/",
+   "type": "Major outlet",
+   "evidence_url_1": "https://www.cbr.com/best-steam-next-fest-demos-february-2026/",
+   "social_url": "https://twitter.com/cbr",
+   "submission_url": "https://www.cbr.com/contact/",
+   "press_policy_notes": "Valnet contact page with category forms; no email published",
+   "notes": "Other socials: https://www.youtube.com/@cbr"
+  },
+  {
+   "name": "Engadget",
+   "url": "https://www.engadget.com/",
+   "type": "Major outlet",
+   "evidence_url_1": "https://engadget.com/2198112/steam-next-fest-demos-a-virtual-boy-inspired-shooter-and-other-new-indie-games-worth-checking-out",
+   "social_url": "https://x.com/engadget",
+   "notes": "Other socials: https://www.youtube.com/c/engadget, https://www.instagram.com/engadget, https://www.threads.com/@engadget"
+  },
+  {
+   "name": "tbreak",
+   "url": "https://tbreak.com/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://tbreak.com/16-steam-next-fest-demos-you-need-to-play/",
+   "social_url": "https://x.com/tbreakdotcom",
+   "public_email": "editor@tbreak.com",
+   "submission_url": "https://tbreak.com/contact/",
+   "notes": "Other socials: https://www.instagram.com/tbreakdotcom, https://www.youtube.com/@tbreakdotcom, https://www.tiktok.com/@tbreakdotcom"
+  },
+  {
+   "name": "The Indie Game Cafe",
+   "url": "https://theindiegamecafe.substack.com/",
+   "type": "Newsletter",
+   "evidence_url_1": "https://theindiegamecafe.substack.com/p/june25-next-fest",
+   "public_email": "theindiegamecafe@gmail.com",
+   "submission_url": "https://forms.gle/YseE1ECFvSggHYDY6",
+   "press_policy_notes": "About page: Contact theindiegamecafe@gmail.com; Contact nav links to a Google Form ('Contact Me!')"
+  },
+  {
+   "name": "Press Start",
+   "url": "https://press-start.com.au/",
+   "type": "Indie site/blog",
+   "evidence_url_1": "https://press-start.com.au/features/2023/06/23/here-are-our-favourite-demos-from-the-steam-next-fest/",
+   "social_url": "https://twitter.com/pressstartau",
+   "public_email": "hello@press-start.com.au",
+   "submission_url": "https://press-start.com.au/contact/",
+   "notes": "Other socials: https://instagram.com/pressstartau, https://facebook.com/pressstartau"
+  },
+  {
+   "name": "2 Headed Hero",
+   "url": "https://www.youtube.com/@2HeadedHero",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=34lxoSDIcPM",
+   "public_email": "2headedhero@gmail.com",
+   "social_url": "https://twitter.com/2HeadedHero",
+   "press_policy_notes": "Channel description: 'Biz: 2headedhero@gmail.com'; no gen-AI content",
+   "notes": "Other socials: https://discord.gg/U7tRk7EXu7"
+  },
+  {
+   "name": "Gaming with Kami",
+   "url": "https://www.youtube.com/@kamikorinaa",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=_jevWF-HxAA",
+   "public_email": "kamikorinaa@gmail.com",
+   "social_url": "https://x.com/kamikorinaa",
+   "press_policy_notes": "Channel description: Business Kamikorinaa@gmail.com; mostly horror variety streamer",
+   "notes": "Channel description lists @kamikorinaa on Twitch, TikTok, Instagram, Twitter, Threads"
+  },
+  {
+   "name": "I Dream of Indie Games",
+   "url": "https://www.youtube.com/@IDreamofIndie",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=aiJg2l_F1To",
+   "public_email": "angela@idreamofindie.com",
+   "press_policy_notes": "Channel description: business inquiries angela@idreamofindie.com",
+   "notes": "Other socials: http://instagram.com/idreamofindieofficial, https://linktr.ee/idreamofindie, http://idreamofindie.com"
+  },
+  {
+   "name": "Best Indie Games",
+   "url": "https://www.youtube.com/@ClemmyGames",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=TpVGInA0IGk",
+   "press_policy_notes": "Channel description: sponsorship enquiries via the channel's YouTube contact email (behind 'view email' button)",
+   "notes": "Other socials: http://twitter.com/clemmygames"
+  },
+  {
+   "name": "Nookrium",
+   "url": "https://www.youtube.com/@Nookrium",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=LeNFK7lrAr0",
+   "public_email": "nook@nookrium.com",
+   "notes": "Email published on Nookrium's own Steam profile (https://steamcommunity.com/id/Nookrium) as 'Nook |at| nookrium |dot| com'"
+  },
+  {
+   "name": "Blurbs",
+   "url": "https://www.youtube.com/@blurbstv",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=sIML6ozH-_s",
+   "social_url": "https://www.twitch.tv/blurbs_",
+   "notes": "Other socials: https://discord.gg/CKpEcTZdzk, https://store.steampowered.com/curator/45774631-Blurbs/"
+  },
+  {
+   "name": "Radically Misinformed",
+   "url": "https://www.youtube.com/@RadicallyMisinformed",
+   "type": "YouTube press",
+   "evidence_url_1": "https://www.youtube.com/watch?v=8ARCfPnpLJw",
+   "social_url": "https://bsky.app/profile/radmisinformed.bsky.social"
+  },
+  {
+   "name": "Margot Plays Video Games",
+   "url": "https://margotplays.substack.com",
+   "type": "Newsletter",
+   "evidence_url_1": "https://margotplays.substack.com/p/lists-steam-next-fest-demos-oct-2025",
+   "public_email": "margotplays21@gmail.com",
+   "press_policy_notes": "About page: open to commissions, review keys and collaborations; offers paid reviews, first-impressions and Steam Next Fest coverage"
+  },
+  {
+   "name": "Cat's Controller Corner",
+   "url": "https://catscontrollercorner.substack.com",
+   "type": "Newsletter",
+   "evidence_url_1": "https://catscontrollercorner.substack.com/p/my-favorite-steam-next-fest-demos",
+   "social_url": "https://bsky.app/profile/catscntrlercorner.bsky.social",
+   "public_email": "cats-corner.email@pm.me",
+   "press_policy_notes": "About page: indie devs wanting a highlight/review should email cats-corner.email@pm.me"
+  },
+  {
+   "name": "The Part Time Gamers",
+   "url": "https://caffeineinducedproductions.com/theparttimegamers/",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/the-part-time-gamers-ep-122-papers-please/id1620747273?i=1000752387517",
+   "social_url": "https://bsky.app/profile/searanex.bsky.social",
+   "notes": "Other socials: https://discord.gg/c38xAZRTrR, https://youtube.com/@searanex. Contact page has no form or email"
+  },
+  {
+   "name": "Hardcore Gaming 101 Podcast",
+   "url": "http://hardcoregaming101.net",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/buckshot-roulette-and-monster-madness-battle-for-suburbia/id594376523?i=1000746836944",
+   "social_url": "https://bsky.app/profile/hg101.bsky.social",
+   "public_email": "kurt@hardcoregaming101.net",
+   "notes": "Other socials: http://www.twitter.com/HG_101, http://discord.gg/E2atP2h"
+  },
+  {
+   "name": "GROGPOD Roguelike Podcast",
+   "url": "http://grogpod.zone/",
+   "type": "Podcast",
+   "evidence_url_1": "http://grogpod.zone/2025-05-21-buckshot/",
+   "social_url": "https://mastodon.gamedev.place/@grogpod",
+   "public_email": "grogpodzone@gmail.com",
+   "notes": "Other socials: https://www.youtube.com/@grogpod_roguelike_podcast"
+  },
+  {
+   "name": "DL Gaming: A PC Gamecast",
+   "url": "https://dlgaming.net/series/dl-gaming-a-pc-gamecast/",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/thats-not-my-neighbor-kingdom-come-deliverance-2-shotgun/id784862478?i=1000699674418",
+   "social_url": "https://discord.com/invite/FcdhNps",
+   "notes": "Other socials: https://www.reddit.com/r/DigitalLogik/"
+  },
+  {
+   "name": "Filthy Casuals",
+   "url": "http://filthycasuals.com.au",
+   "type": "Podcast",
+   "evidence_url_1": "https://shows.acast.com/filthycasualswithtommydassalobenvernelandadamknox/episodes/episode-435-mario-vs-donkey-kong-buckshot-roulette",
+   "public_email": "filthycasuals.pod@gmail.com",
+   "social_url": "https://twitter.com/filthycaspod",
+   "notes": "Other socials: https://www.instagram.com/filthycasualspodcast/, https://www.twitch.tv/filthycasualspod, https://www.youtube.com/channel/UCJLVm9ssvwSYtYz2u4ZKkRA"
+  },
+  {
+   "name": "Mini Indie Van",
+   "url": "https://podcasters.spotify.com/pod/show/sean-capri",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/sean-capri/episodes/Mini-Indie-Van-Detour-February-Steam-Next-Fest-Demos-e3g9flp",
+   "social_url": "https://bsky.app/profile/carpoolgaming.com",
+   "notes": "Episode notes link Carpool Gaming network: https://patreon.com/carpoolgaming, https://discord.gg/eBKUyABg8U"
+  },
+  {
+   "name": "Playlog Podcast",
+   "url": "https://podcasters.spotify.com/pod/show/cgdannyb",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/cgdannyb/episodes/We-Found-Hidden-Gems-at-Steam-Next-Fest--Playlog-Podcast-EP--103-e3l82i3",
+   "social_url": "https://linktr.ee/playnicekids",
+   "notes": "Linktree repeated in every episode description; host Instagram https://www.instagram.com/cgdannyb"
+  },
+  {
+   "name": "Chance Time!",
+   "url": "https://podcasters.spotify.com/pod/show/chance-time",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/chance-time/episodes/Episode-237---Next-Fest-and-Stuff-e3l8lpv",
+   "social_url": "https://discord.gg/kyKdwt9nJc"
+  },
+  {
+   "name": "Indieventure",
+   "url": "https://indieventurepodcast.co.uk",
+   "type": "Podcast",
+   "evidence_url_1": "https://indieventurepodcast.podbean.com/e/extra-demos-we-played-during-steam-next-fest-feb-2026-with-robin-bea/",
+   "social_url": "https://bsky.app/profile/sevenoutoften.co.uk",
+   "notes": "Other socials: https://discord.gg/XvxWzUJ6Mt, https://www.youtube.com/@SevenOutOfTen (Seven out of Ten network)"
+  },
+  {
+   "name": "Rand(Nerds)",
+   "url": "http://www.randnerds.co.uk",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasts.apple.com/us/podcast/rand-nerds-episode-296-contraband-police/id697784407?i=1000780095040",
+   "social_url": "https://twitter.com/randnerds",
+   "notes": "Other socials: http://discord.gg/ajaQJZZ, http://twitch.tv/randnerds"
+  },
+  {
+   "name": "Old Gamer's Almanac",
+   "url": "https://oldgamersalmanac.podbean.com",
+   "type": "Podcast",
+   "evidence_url_1": "https://oldgamersalmanac.podbean.com/e/steam-next-fest-demos-zero-parades-vampire-crawlers-panzer-dragoon-ii-remake-and-more/",
+   "public_email": "oldgamersalmanac@gmail.com",
+   "social_url": "https://discord.gg/ASG2YpyfPx",
+   "notes": "Podbean episode notes: email oldgamersalmanac(at)gmail(dot)com; Patreon https://www.patreon.com/oldgamersalmanac"
+  },
+  {
+   "name": "Overworld Weekly",
+   "url": "https://overworld.vg",
+   "type": "Podcast",
+   "evidence_url_1": "https://podcasters.spotify.com/pod/show/itswavelengths/episodes/Even-More-Great-Steam-Next-Fest-Demos-February-2026-e3fmn00",
+   "social_url": "https://bsky.app/profile/overworld.vg",
+   "notes": "Other socials: https://mastodon.social/@overworldvg"
+  },
+  {
+   "name": "The Game Informer Show",
+   "url": "https://www.spreaker.com/podcast/the-game-informer-show--6639255",
+   "type": "Podcast",
+   "evidence_url_1": "https://www.spreaker.com/episode/resident-evil-requiem-our-favorite-steam-next-fest-demos--70343003",
+   "public_email": "podcast@gameinformer.com"
+  }
+ ],
+ "journalists": []
+}
