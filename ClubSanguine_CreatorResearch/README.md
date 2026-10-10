@@ -1,5 +1,7 @@
 # Club Sanguine Creator Research
 
+> **New agent or collaborator? Start with [HANDOVER.md](HANDOVER.md)** — current state, decisions already made, and how to continue.
+
 This project supports creator/streamer research for the indie game **Club Sanguine**. It is designed to be handed off to a research agent ("Astra") that will find and evaluate relevant content creators, while keeping outreach as a strictly separate, human-gated phase.
 
 ## Workflow
