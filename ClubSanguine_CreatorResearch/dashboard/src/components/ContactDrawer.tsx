@@ -117,7 +117,7 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
               <CopyButton value={c.email}>{({ copied, copy }) =>
                 <Button size="xs" variant="default" onClick={copy} leftSection={copied ? <IconCheck size={14} /> : <IconCopy size={14} />}>
                   {copied ? "Copied" : "Copy email"} <Kbd size="xs" ml={6}>e</Kbd></Button>}</CopyButton>
-              <Button size="xs" component="a" href={mailtoHref(c.email, subject, body)} leftSection={<IconMail size={14} />}>Open in mail app</Button>
+              <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(c.email, subject, body)} leftSection={<IconMail size={14} />}>Open in mail app</Button>
             </Group>
           ) : c.route === "Gated email" ? (
             <Stack gap={6}>
@@ -140,7 +140,7 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
                     <CopyButton value={addr}>{({ copied, copy }) =>
                       <Button size="xs" variant="default" onClick={copy} leftSection={copied ? <IconCheck size={14} /> : <IconCopy size={14} />}>
                         {copied ? "Copied" : "Copy"}</Button>}</CopyButton>
-                    <Button size="xs" component="a" href={mailtoHref(addr, subject, body)} leftSection={<IconMail size={14} />}>Open in mail app</Button>
+                    <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(addr, subject, body)} leftSection={<IconMail size={14} />}>Open in mail app</Button>
                   </Group>
                 );
               })}

@@ -11,7 +11,7 @@ import {
 } from "@tabler/icons-react";
 import { fetchData, logActions, saveRevealedEmail } from "./api";
 import type { Contact, Kind, LogEntry, Payload } from "./types";
-import { actedToday, defaultTemplateId, isFollowUpDue, messagedToday, statusOf } from "./lib";
+import { actedToday, defaultTemplateId, isFollowUpDue, messagedToday, setGmailAccount, statusOf } from "./lib";
 import ContactsView from "./components/ContactsView";
 import TodayView from "./components/TodayView";
 import PipelineView from "./components/PipelineView";
@@ -95,6 +95,7 @@ export default function App() {
     pipeline: statuses.filter((s) => s.status).length,
   };
   const done = statuses.filter((s) => messagedToday(s, today)).length;
+  setGmailAccount(data.config.gmail_account);
   const target = Number(data.config.daily_target) || 30;
   const missing = ["steam_url", "press_kit_url"].filter((k) => !data.config[k]);
   const fest = data.config.nextfest_start

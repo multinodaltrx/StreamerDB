@@ -8,8 +8,9 @@ I came across your {game} video ({evidence_url}), and it seemed like exactly the
 
 {demo_note}
 
-Steam page: {steam_url}
-Press kit (trailer, screenshots, GIFs): {press_kit_url}
+Free demo: {demo_url}
+Trailer: {trailer_url}
+Wishlist: {steam_url}
 
 Happy to answer any questions. No pressure at all.
 

@@ -295,7 +295,10 @@ function Show-Card($rows, [int]$idx) {
       '^[mM]$' {
         if ($c.message.how -eq 'email') {
           $addr = $c.message.url.Substring(7)
-          $mailto = 'mailto:' + $addr + '?subject=' + (Q $c.subject) + '&body=' + (Q $c.body)
+          $gm = ''
+          try { $gm = [string](Get-Content (Join-Path $PSScriptRoot 'outreach\config.json') -Raw | ConvertFrom-Json).gmail_account } catch {}
+          if ($gm) { $mailto = 'https://mail.google.com/mail/?view=cm&fs=1&authuser=' + (Q $gm) + '&to=' + (Q $addr) + '&su=' + (Q $c.subject) + '&body=' + (Q $c.body) }
+          else { $mailto = 'mailto:' + $addr + '?subject=' + (Q $c.subject) + '&body=' + (Q $c.body) }
           Set-Clipboard -Value $c.body
           Open-Url $mailto
           Write-Host '  opened your mail app (message also on the clipboard). Press L once sent.' -ForegroundColor Green

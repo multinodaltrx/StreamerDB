@@ -28,7 +28,7 @@ export default function ReachPanel({ c, subject, body }: { c: Contact; subject: 
   const go = async () => {
     if (!route.url) return;
     if (route.how === "email") {
-      window.location.href = mailtoHref(route.url.slice(7), subject, body);
+      window.open(mailtoHref(route.url.slice(7), subject, body), "_blank", "noopener");
       return;
     }
     // For DMs, Discord and forms: put the message on the clipboard first, then open the page.

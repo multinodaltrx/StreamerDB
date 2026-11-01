@@ -2,6 +2,6 @@ Subject: Re: {game_title}
 
 Hi {name},
 
-Just following up on my earlier note about {game_title}, the "Papers, Please meets supernatural nightclub bouncer" game. No worries if it isn't a fit. If you'd like a build or any assets, everything is here: {press_kit_url}
+Just following up on my earlier note about {game_title}, the "Papers, Please meets supernatural nightclub bouncer" game. No worries if it isn't a fit. The free demo is here: {demo_url} (trailer: {trailer_url}). Happy to send screenshots or the press kit if useful.
 
 {signature}

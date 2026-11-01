@@ -55,6 +55,7 @@ export interface Template {
 export interface Config {
   game_title?: string;
   my_name?: string;
+  gmail_account?: string;
   steam_url?: string;
   press_kit_url?: string;
   trailer_url?: string;

@@ -1,1 +1,1 @@
-Hey {name}! I'm the dev of {game_title}, a "Papers, Please meets supernatural nightclub bouncer" deduction/horror game. I saw your {game} video and think it'd be a fun fit for your streams. {demo_note} Steam: {steam_url} · Press kit: {press_kit_url}. Is there a better place to send details?
+Hey {name}! I'm the dev of {game_title}, a "Papers, Please meets supernatural nightclub bouncer" deduction/horror game. I saw your {game} video and think it'd be a fun fit for your streams. {demo_note} Demo: {demo_url} · Trailer: {trailer_url}. Is there a better place to send details?

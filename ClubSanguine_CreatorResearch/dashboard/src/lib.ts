@@ -154,7 +154,14 @@ export function renderMessage(t: Template | undefined, c: Contact, config: Confi
   return { subject: fillTemplate(t.subject, c, config), body: fillTemplate(t.body, c, config) };
 }
 
+/** When set (config.gmail_account), email links open a Gmail compose window for that account instead of the default mail app. */
+let gmailAccount = "";
+export function setGmailAccount(a: string | undefined) { gmailAccount = (a || "").trim(); }
+
 export function mailtoHref(email: string, subject: string, body: string): string {
+  if (gmailAccount) {
+    return `https://mail.google.com/mail/?view=cm&fs=1&authuser=${encodeURIComponent(gmailAccount)}&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
   return `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
