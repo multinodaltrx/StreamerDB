@@ -251,6 +251,13 @@ function Open-Mail([string]$Url, [string]$Account) {
   else { Open-Url $Url }
 }
 
+function Open-Link([string]$Url) {
+  # YouTube links open in the signed-in Chrome profile so "View email address" works.
+  $gm = ''
+  try { $gm = [string](Get-Content (Join-Path $PSScriptRoot 'outreach\config.json') -Raw | ConvertFrom-Json).gmail_account } catch {}
+  if ($gm -and $Url -match '^https?://(www\.)?youtube\.com/') { Open-Mail ($Url -replace '://youtube\.com', '://www.youtube.com') $gm } else { Open-Url $Url }
+}
+
 function Default-Channel($c) {
   switch ($c.message.how) {
     'email' { return 'email' } 'gated' { return 'email' } 'discord' { return 'discord' } 'form' { return 'form' }
@@ -275,6 +282,8 @@ function Show-Card($rows, [int]$idx) {
     $st = if ($c.state.status) { "$($c.state.status) since $($c.state.since)" } else { 'not contacted yet' }
     if ($c.state.follow_up_on -and ($c.state.status -eq 'contacted' -or $c.state.status -eq 'followed_up')) { $st += "  (follow up $($c.state.follow_up_on))" }
     Write-Host "  $($c.id)  |  $st   ($($idx + 1) of $($rows.Count))" -ForegroundColor Gray
+    if ($c.state.status -eq 'declined') { Write-Host "  !! They declined. Don't contact them again on any channel." -ForegroundColor Red }
+    elseif ($c.state.status -and $c.state.status -ne 'queued' -and $c.state.status -ne 'skip') { Write-Host "  ! Already introduced. Don't send a second intro (follow-up template only, once)." -ForegroundColor Yellow }
     Write-Rule '='
     if ($c.kind -eq 'creator') {
       Write-Host ('  size      {0} subscribers   twitch: {1}   country: {2}' -f (Fmt-Subs $c.subs), $(if ($c.twitch) { 'yes' } else { 'no' }), $(if ($c.country) { $c.country } else { '?' }))
@@ -305,10 +314,13 @@ function Show-Card($rows, [int]$idx) {
     $cmd = (Read-Host '  >').Trim()
     switch -Regex ($cmd) {
       '^[mM]$' {
+        if ($c.state.status -eq 'declined') { Write-Host '  not opened: they declined.' -ForegroundColor Red; Start-Sleep -Milliseconds 1200; continue }
         if ($c.message.how -eq 'email') {
           $addr = $c.message.url.Substring(7)
           $gm = ''
           try { $gm = [string](Get-Content (Join-Path $PSScriptRoot 'outreach\config.json') -Raw | ConvertFrom-Json).gmail_account } catch {}
+          # Major outlets, Arabic press and IGN go out from config.press_major_account (server picks it).
+          if ($c.sender) { $gm = [string]$c.sender }
           if ($gm) { $mailto = 'https://mail.google.com/mail/?view=cm&fs=1&authuser=' + (Q $gm) + '&to=' + (Q $addr) + '&su=' + (Q $c.subject) + '&body=' + (Q $c.body) }
           else { $mailto = 'mailto:' + $addr + '?subject=' + (Q $c.subject) + '&body=' + (Q $c.body) }
           Set-Clipboard -Value $c.body
@@ -316,7 +328,7 @@ function Show-Card($rows, [int]$idx) {
           Write-Host ("  opened a draft FROM " + $(if ($gm) { $gm } else { 'your default mail app' }) + " (message also on the clipboard). Press L once sent.") -ForegroundColor Green
         } else {
           Set-Clipboard -Value $c.body
-          Open-Url $c.message.url
+          Open-Link $c.message.url
           if ($c.message.how -eq 'gated') {
             Write-Host '  opened their YouTube About page: press "View email address", then come back.' -ForegroundColor Green
             $em = Read-Host '  paste the revealed email to save it (Enter to skip)'
@@ -331,7 +343,7 @@ function Show-Card($rows, [int]$idx) {
         }
         Read-Host '  (Enter)' | Out-Null
       }
-      '^\d+$' { $i = [int]$cmd - 1; if ($i -ge 0 -and $i -lt $links.Count) { Open-Url $links[$i][1] } }
+      '^\d+$' { $i = [int]$cmd - 1; if ($i -ge 0 -and $i -lt $links.Count) { Open-Link $links[$i][1] } }
       '^[eE][1-3]$' { $i = [int]$cmd.Substring(1) - 1; if ($i -lt $ev.Count) { Open-Url $ev[$i] } }
       '^[vV]$' {
         Write-Rule; if ($c.subject) { Write-Host "  Subject: $($c.subject)" -ForegroundColor White; Write-Host '' }

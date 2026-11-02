@@ -1,18 +1,14 @@
-Subject: {game_title}: a bouncer game for the {game} crowd
+Subject: Club Sanguine free demo, from the developer
 
 Hi {name},
 
-I'm {my_name}, the developer of {game_title}. It's a stylized first-person deduction and dark-comedy horror game where you work the door of a supernatural nightclub: inspect each guest, work out what they really are, and decide who gets in. Think Papers, Please, but some of the guests are vampires.
+I'm {my_name}, the developer of Club Sanguine at {studio}. {seen_line}, so I thought I'd tell you about the game I'm making.
 
-I came across your {game} video ({evidence_url}), and it seemed like exactly the kind of game your audience enjoys: spotting who's lying, making the wrong call confidently, and dealing with the consequences.
+In Club Sanguine you work the door at a vampires-only nightclub. You inspect each guest, catch the impostors trying to get in, and deal with what happens when you get it wrong. It has gothic comic visuals and a dark sense of humor.
 
-{demo_note}
+The free demo is on Steam if you'd like to try it:
+{demo_url}
 
-Free demo: {demo_url}
-Trailer: {trailer_url}
-{media_line}
-Wishlist: {steam_url}
-
-Happy to answer any questions. No pressure at all.
+If it's not your kind of game, that's completely fine. Thanks for reading.
 
 {signature}

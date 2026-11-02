@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   ActionIcon, Alert, Anchor, Badge, Button, CopyButton, Divider, Drawer, Group, Kbd, Paper, Select, Stack, Text,
   TextInput, Textarea, Timeline, Title, Tooltip,
@@ -10,10 +10,10 @@ import {
 } from "@tabler/icons-react";
 import type { Ctx } from "../App";
 import ReachPanel from "./ReachPanel";
-import type { Action, Contact } from "../types";
+import type { Action, Contact, How } from "../types";
 import {
-  CHANNELS, STATUS_COLOR, STATUS_LABEL, TIER_COLOR, defaultChannel, fmtSubs, mailtoHref, openMail, renderMessage, statusOf,
-  templateLabel, unfilled,
+  CHANNELS, INTRODUCED, STATUS_COLOR, STATUS_LABEL, TIER_COLOR, defaultSender, defaultTemplateId, fmtSubs, logChannel, mailtoHref, openLink,
+  openMail, preferredRoute, renderMessage, senderOptions, statusOf, templateLabel, unfilled,
 } from "../lib";
 
 interface Props {
@@ -36,29 +36,54 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
   const nextId = idx >= 0 && idx < (state?.queue.length ?? 0) - 1 ? state!.queue[idx + 1] : null;
 
   const [tplId, setTplId] = useState("");
+  const [via, setVia] = useState<How>("email");
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
   const [channel, setChannel] = useState("email");
   const [note, setNote] = useState("");
   const [reveal, setReveal] = useState("");
+  // Gmail account this message goes out from; the ref lets the template effect see a sender picked in the same render.
+  const [sender, setSenderState] = useState("");
+  const senderRef = useRef("");
+  const withSender = (text: string, from: string) => {
+    const base = (data.config.gmail_account || "").trim();
+    return base && from && from !== base ? text.split(base).join(from) : text;
+  };
+  const changeSender = (s: string) => {
+    const prev = senderRef.current;
+    setBody((b) => (prev && prev !== s ? b.split(prev).join(s) : b));
+    senderRef.current = s; setSenderState(s);
+  };
 
-  // New contact: pick the remembered template for its audience and a sensible channel.
+  // New contact: reach them on the channel picked in the list filter (else the best one), with the
+  // template that fits that channel and where things stand with them.
+  const pickVia = (how: How) => {
+    if (!c) return;
+    const r = c.reach.find((x) => x.how === how) || c.reach[0];
+    setVia(r.how); setChannel(logChannel(r));
+    setTplId(defaultTemplateId(c, r.how, statusOf(data.status, c.id).status));
+  };
   useEffect(() => {
     if (!c) return;
-    setTplId(ctx.templateFor(c.kind)); setChannel(defaultChannel(c)); setNote(""); setReveal("");
+    pickVia(preferredRoute(c).how); setNote(""); setReveal("");
+    const s = defaultSender(c, data.config);
+    senderRef.current = s; setSenderState(s);
   }, [c?.id]);
   // Re-render the editable message whenever the contact, template or config changes.
   useEffect(() => {
     if (!c || !tplId) return;
     const m = renderMessage(data.templates.find((t) => t.id === tplId), c, data.config);
-    setSubject(m.subject); setBody(m.body);
+    setSubject(m.subject); setBody(withSender(m.body, senderRef.current));
   }, [c?.id, tplId, data.config]);
 
   const copy = (text: string) => navigator.clipboard.writeText(text);
   const record = async (action: Action, advance = false) => {
     if (!c) return;
-    await ctx.log([{ contact_id: c.id, kind: c.kind, name: c.name, action, channel: ["contacted", "followed_up"].includes(action) ? channel : "",
-      template: tplId, note }], `${c.name}: ${STATUS_LABEL[action] || action}`);
+    const sent = ["contacted", "followed_up"].includes(action);
+    // Record which account an email went out from, so the follow-up goes from the same one.
+    const from = sent && channel === "email" && sender ? `[from ${sender}]` : "";
+    await ctx.log([{ contact_id: c.id, kind: c.kind, name: c.name, action, channel: sent ? channel : "",
+      template: tplId, note: [note, from].filter(Boolean).join(" ") }], `${c.name}: ${STATUS_LABEL[action] || action}`);
     setNote("");
     if (advance && nextId) onNavigate(nextId);
   };
@@ -79,6 +104,11 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
   const missing = unfilled(subject + body);
   const about = c.links.find((l) => l[0] === "About (email)")?.[1];
   const outletMails = c.links.filter((l) => l[1].startsWith("mailto:"));
+  const route = c.reach.find((r) => r.how === via) || c.reach[0];
+  // Anyone else who shares this inbox (e.g. several writers pitched through one outlet address) and was already pitched.
+  const inbox = route.how === "email" ? route.url.slice(7).toLowerCase() : "";
+  const sameInbox = inbox ? data.contacts.filter((o) => o.id !== c.id && INTRODUCED.includes(statusOf(data.status, o.id).status)
+    && o.reach.some((r) => r.how === "email" && r.url.slice(7).toLowerCase() === inbox)) : [];
 
   return (
     <Drawer opened={!!state} onClose={onClose} position="right" size="xl" padding="lg"
@@ -106,7 +136,28 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
         </Text>
         {c.games.length > 0 && <Group gap={6}>{c.games.map((g) => <Badge key={g} variant="default" tt="none">{g}</Badge>)}</Group>}
 
-        <ReachPanel c={c} subject={subject} body={body} />
+        {st.status === "declined" ? (
+          <Alert color="red" variant="light" title="They said no">
+            Declined on {st.since}. Don't contact them again, on this or any other channel or account.
+          </Alert>
+        ) : INTRODUCED.includes(st.status) ? (
+          <Alert color="yellow" variant="light" title="Already introduced">
+            {STATUS_LABEL[st.status]} on {st.since}{st.channel && ` via ${st.channel}`}. Don't send a second introduction.
+            {["contacted", "followed_up"].includes(st.status) && " The one-time follow-up template is selected; send it only if they haven't replied after a week, and only on the same channel."}
+          </Alert>
+        ) : null}
+        {sameInbox.length > 0 && (
+          <Alert color="orange" variant="light" title="This inbox was already pitched">
+            {inbox} was already used for {sameInbox.map((o) => `${o.name} (${statusOf(data.status, o.id).since})`).join(", ")}.
+            Sending again would reach the same people twice.
+          </Alert>
+        )}
+        {c.policy && (
+          <Alert color="blue" variant="light" title="Their submission rules">{c.policy}</Alert>
+        )}
+
+        <ReachPanel c={c} subject={subject} body={body} via={via} onVia={pickVia} blocked={st.status === "declined"}
+          sender={sender} senders={senderOptions(data.config)} onSender={changeSender} />
 
         <Paper withBorder p="sm" radius="md">
           <Text size="xs" c="dimmed" fw={700} tt="uppercase" mb={6}>Contact route</Text>
@@ -117,13 +168,13 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
               <CopyButton value={c.email}>{({ copied, copy }) =>
                 <Button size="xs" variant="default" onClick={copy} leftSection={copied ? <IconCheck size={14} /> : <IconCopy size={14} />}>
                   {copied ? "Copied" : "Copy email"} <Kbd size="xs" ml={6}>e</Kbd></Button>}</CopyButton>
-              <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(c.email, subject, body)} onClick={(e) => { e.preventDefault(); openMail(c.email, subject, body); }} leftSection={<IconMail size={14} />}>Open in mail app</Button>
+              <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(c.email, subject, body, sender)} onClick={(e) => { e.preventDefault(); openMail(c.email, subject, body, sender); }} leftSection={<IconMail size={14} />}>Open in mail app</Button>
             </Group>
           ) : c.route === "Gated email" ? (
             <Stack gap={6}>
               <Text size="sm">The business email is behind YouTube sign-in. Open the About panel, press <b>View email address</b>, then paste it here so it's saved for next time.</Text>
               <Group gap="xs">
-                {about && <Button size="xs" component="a" href={about} target="_blank" rel="noopener" variant="light" rightSection={<IconExternalLink size={12} />}>Open About</Button>}
+                {about && <Button size="xs" component="a" href={about} target="_blank" rel="noopener" onClick={(e) => { e.preventDefault(); openLink(about); }} variant="light" rightSection={<IconExternalLink size={12} />}>Open About</Button>}
                 <TextInput size="xs" placeholder="paste revealed email" value={reveal} onChange={(e) => setReveal(e.currentTarget.value)} w={240} />
                 <Button size="xs" disabled={!reveal.includes("@")} onClick={() => ctx.reveal(c, reveal.trim())}>Save</Button>
               </Group>
@@ -140,7 +191,7 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
                     <CopyButton value={addr}>{({ copied, copy }) =>
                       <Button size="xs" variant="default" onClick={copy} leftSection={copied ? <IconCheck size={14} /> : <IconCopy size={14} />}>
                         {copied ? "Copied" : "Copy"}</Button>}</CopyButton>
-                    <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(addr, subject, body)} onClick={(e) => { e.preventDefault(); openMail(addr, subject, body); }} leftSection={<IconMail size={14} />}>Open in mail app</Button>
+                    <Button size="xs" component="a" target="_blank" rel="noopener" href={mailtoHref(addr, subject, body, sender)} onClick={(e) => { e.preventDefault(); openMail(addr, subject, body, sender); }} leftSection={<IconMail size={14} />}>Open in mail app</Button>
                   </Group>
                 );
               })}
@@ -157,7 +208,7 @@ export default function ContactDrawer({ ctx, state, onNavigate, onClose }: Props
             <Text size="xs" c="dimmed" fw={700} tt="uppercase">Message</Text>
             <Select size="xs" w={200} allowDeselect={false} value={tplId}
               data={data.templates.map((t) => ({ value: t.id, label: templateLabel(t.id) }))}
-              onChange={(v) => { if (v) { setTplId(v); ctx.setTemplateFor(c.kind, v); } }} />
+              onChange={(v) => v && setTplId(v)} />
           </Group>
           {missing.length > 0 && <Alert color="yellow" variant="light" p="xs" mb="xs">
             Unfilled: {missing.join(" ")}. Set them in <code>outreach/config.json</code> or edit them below.</Alert>}

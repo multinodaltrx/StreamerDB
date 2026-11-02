@@ -7,7 +7,7 @@ import { IconChevronDown, IconDownload, IconFilterOff, IconListCheck, IconPlayer
 import type { Ctx } from "../App";
 import type { Action, Filters, Kind, SortKey } from "../types";
 import {
-  EMPTY_FILTERS, STATUS_LABEL, TIERS, downloadCsv, matches, renderMessage, sortContacts, statusOf, templateLabel,
+  EMPTY_FILTERS, REACH_OPTIONS, STATUS_LABEL, TIERS, downloadCsv, matches, renderMessage, sortContacts, statusOf, templateLabel,
 } from "../lib";
 import ContactTable from "./ContactTable";
 
@@ -26,7 +26,6 @@ export default function ContactsView({ kind, ctx }: { kind: Kind; ctx: Ctx }) {
 
   const pool = useMemo(() => data.contacts.filter((c) => c.kind === kind), [data.contacts, kind]);
   const games = useMemo(() => [...new Set(pool.flatMap((c) => c.games))].sort(), [pool]);
-  const routes = useMemo(() => [...new Set(pool.map((c) => c.route))].sort(), [pool]);
   const types = useMemo(() => [...new Set(data.contacts.filter((c) => c.kind === "outlet").map((c) => c.type))].filter(Boolean).sort(), [data.contacts]);
 
   const rows = useMemo(() => sortContacts(
@@ -62,7 +61,7 @@ export default function ContactsView({ kind, ctx }: { kind: Kind; ctx: Ctx }) {
       }));
   };
 
-  const activeCount = Object.entries(f).filter(([k, v]) => k !== "status" && (Array.isArray(v) ? v.length : v !== "" && v !== false)).length;
+  const activeCount = Object.entries(f).filter(([k, v]) => k !== "status" && k !== "hideDead" && (Array.isArray(v) ? v.length : v !== "" && v !== false)).length;
 
   return (
     <Grid gutter="md">
@@ -85,7 +84,9 @@ export default function ContactsView({ kind, ctx }: { kind: Kind; ctx: Ctx }) {
             <Select label="Status" value={f.status} onChange={(v) => set("status", v ?? "")} allowDeselect={false}
               data={[{ value: "any", label: "Any status" }, ...Object.entries(STATUS_LABEL).map(([value, label]) => ({ value, label })),
                 { value: "awaiting", label: "Awaiting reply" }, { value: "due", label: "Follow-up due" }, { value: "positive", label: "Any positive reply" }]} />
-            <MultiSelect label="Contact route" data={routes} value={f.routes} onChange={(v) => set("routes", v)} clearable placeholder="Any" />
+            <MultiSelect label="Reach by" description="Only people you can message this way; Message them uses it"
+              data={REACH_OPTIONS} value={filters.reach} onChange={(v) => set("reach", v)} clearable placeholder="Any channel" />
+            <Switch label="Hide dead ends (no direct contact)" checked={filters.hideDead} onChange={(e) => set("hideDead", e.currentTarget.checked)} />
             <MultiSelect label="Games covered" data={games} value={f.games} onChange={(v) => set("games", v)} searchable clearable placeholder="Any" />
             {kind === "creator" ? (
               <>
@@ -147,7 +148,7 @@ export default function ContactsView({ kind, ctx }: { kind: Kind; ctx: Ctx }) {
               </Menu>
             </Group>
           </Group>
-          <ContactTable rows={rows} status={data.status} onOpen={(id) => ctx.open(id, rows.map((c) => c.id))}
+          <ContactTable rows={rows} status={data.status} via={filters.reach} onOpen={(id) => ctx.open(id, rows.map((c) => c.id))}
             selected={selected} onSelect={setSelected} sort={sort}
             onSort={(key) => setSort((s) => ({ key, dir: s.key === key && s.dir === "desc" ? "asc" : "desc" }))} />
         </Stack>

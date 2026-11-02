@@ -23,8 +23,18 @@ export interface Contact {
   outlet: string;
   nextfest?: string;
   notes: string;
-  message: { how: "email" | "gated" | "discord" | "form" | "dm" | "web" | "none"; label: string; url: string };
+  /** Submission rules / contact preference on record (press only). */
+  policy: string;
+  /** Title of a verified evidence video, quoted in creator drafts. */
+  evidence_title: string;
+  /** Best route; same as reach[0]. */
+  message: Route;
+  /** Every channel this contact can be messaged on, best first. */
+  reach: Route[];
 }
+
+export type How = "email" | "gated" | "discord" | "form" | "dm" | "web" | "none";
+export interface Route { how: How; label: string; url: string }
 
 export type Action =
   | "queued" | "contacted" | "followed_up" | "replied" | "interested"
@@ -56,15 +66,17 @@ export interface Config {
   game_title?: string;
   my_name?: string;
   gmail_account?: string;
+  /** Extra accounts selectable as "Send from". */
+  gmail_accounts?: string[];
+  /** Default sender for major outlets, Arabic press and IGN. */
+  press_major_account?: string;
   steam_url?: string;
   press_kit_url?: string;
-  press_kit_note?: string;
   press_kit_file?: string;
   trailer_file?: string;
   trailer_url?: string;
   nextfest?: string;
   nextfest_start?: string;
-  demo_note?: string;
   signature?: string;
   daily_target?: number;
   follow_up_days?: number;
@@ -94,6 +106,10 @@ export interface Filters {
   tiers: string[];
   status: string;
   routes: string[];
+  /** Only contacts reachable on one of these channels (Route.how). */
+  reach: string[];
+  /** Hide contacts with no direct way to message them (website only / nothing). */
+  hideDead: boolean;
   games: string[];
   types: string[];
   hp: boolean;

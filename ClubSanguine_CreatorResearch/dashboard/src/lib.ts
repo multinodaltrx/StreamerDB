@@ -1,5 +1,5 @@
-import { openMailInProfile } from "./api";
-import type { Config, Contact, Filters, Kind, SortKey, Status, Template } from "./types";
+import { openMailInProfile, openYoutubeInProfile } from "./api";
+import type { Config, Contact, Filters, How, Route, SortKey, Status, Template } from "./types";
 
 export const STATUS_LABEL: Record<string, string> = {
   "": "Not contacted",
@@ -31,10 +31,18 @@ export const TIER_COLOR: Record<string, string> = { S: "grape", A: "orange", B: 
 export const TIERS = ["S", "A", "B", "C", "Long Tail"];
 export const CHANNELS = ["email", "discord", "x", "bluesky", "twitch", "youtube", "form", "other"];
 export const POSITIVE = ["replied", "interested", "key_sent", "covered"];
+/** Statuses that mean an introduction already went out, so no second intro on any channel. */
+export const INTRODUCED = ["contacted", "followed_up", "replied", "interested", "key_sent", "covered"];
+
+export const HOW_LABEL: Record<How, string> = {
+  email: "Email", gated: "Gated email", discord: "Discord", form: "Form", dm: "Social DM", web: "Website only", none: "None",
+};
+export const REACH_OPTIONS = (["email", "discord", "dm", "form", "gated"] as How[]).map((value) => ({ value, label: HOW_LABEL[value] }));
+const isDead = (r: Route) => r.how === "web" || r.how === "none";
 export const AWAITING = ["contacted", "followed_up"];
 
 export const EMPTY_FILTERS: Filters = {
-  q: "", tiers: [], status: "", routes: [], games: [], types: [],
+  q: "", tiers: [], status: "", routes: [], reach: [], hideDead: true, games: [], types: [],
   hp: false, twitch: false, nextfest: false,
   minSubs: "", maxSubs: "", minScore: "", activeDays: "",
 };
@@ -80,7 +88,8 @@ export function matches(c: Contact, f: Filters, st: Status, today: string): bool
     else if (f.status === "due") { if (!isFollowUpDue(st, today)) return false; }
     else if (st.status !== f.status) return false;
   }
-  if (f.routes.length && !f.routes.includes(c.route)) return false;
+  if (f.reach?.length && !c.reach.some((r) => f.reach.includes(r.how))) return false;
+  if (f.hideDead && c.reach.every(isDead)) return false;
   if (f.games.length && !f.games.some((g) => c.games.includes(g))) return false;
   if (f.types.length && !f.types.some((t) => c.type.includes(t))) return false;
   if (f.hp && !c.hp) return false;
@@ -115,8 +124,29 @@ export function sortContacts(list: Contact[], key: SortKey, dir: "asc" | "desc",
   });
 }
 
-export function defaultTemplateId(kind: Kind): string {
-  return kind === "creator" ? "1_creator_email" : "3_press_pitch";
+/** Template that fits who they are, how they're being reached and where things stand.
+ *  Mirrors default_template() in tools/outreach_app.py. */
+export function defaultTemplateId(c: Contact, how: How, status = ""): string {
+  if (status === "contacted" || status === "followed_up") return "5_follow_up";
+  if (c.kind !== "creator") return status === "replied" || status === "interested" ? "7_send_press_kit" : "3_press_pitch";
+  if (status === "replied" || status === "interested") return ["discord", "dm", "form"].includes(how) ? "8_dm_steam_link" : "1_creator_email";
+  return how === "email" || how === "gated" ? "1_creator_email" : "2_creator_dm";
+}
+
+/** Route to message them on: the first channel picked in the list's "Reach by" filter, else the best one. */
+export function preferredRoute(c: Contact): Route {
+  let want: string[] = [];
+  try { want = JSON.parse(localStorage.getItem(`od-filters-${c.kind}`) || "{}").reach || []; } catch { /* storage blocked */ }
+  return c.reach.find((r) => want.includes(r.how)) || c.reach[0] || c.message;
+}
+
+/** Channel name for the log, from the route being used. */
+export function logChannel(r: Route): string {
+  if (r.how === "email" || r.how === "gated") return "email";
+  if (r.how === "discord" || r.how === "form") return r.how;
+  if (/(x|twitter)\.com/i.test(r.url)) return "x";
+  if (/bsky\.app/i.test(r.url)) return "bluesky";
+  return "other";
 }
 
 export function templateLabel(id: string): string {
@@ -138,11 +168,25 @@ export function fillTemplate(text: string, c: Contact, config: Config): string {
     games: c.games.join(", "),
     evidence_url: c.evidence[0] || "",
     outlet: c.outlet,
+    seen_line: seenLine(c),
+    coverage_line: coverageLine(c),
   };
   return text.replace(/\{(\w+)\}/g, (m, k) => {
     const v = vars[k];
-    return v !== undefined && v !== "" ? String(v) : m;
-  });
+    return v !== undefined && (v !== "" || k.endsWith("_line")) ? String(v) : m;
+  }).replace(/\n{3,}/g, "\n\n");
+}
+
+/** One verified, specific thing about a creator's channel. Never claims the owner watched it. */
+function seenLine(c: Contact): string {
+  if (c.evidence_title) return `I noticed your video "${c.evidence_title}"`;
+  if (c.game) return `I noticed you've played ${c.game} on your channel`;
+  return "I came across your channel while looking for people who play deduction games";
+}
+
+function coverageLine(c: Contact): string {
+  if (!c.game) return "";
+  return ` I saw ${c.kind === "journalist" ? "you've written about" : "you've covered"} ${c.game}, which is why I thought of you.`;
 }
 
 /** Placeholders still unfilled in a message, e.g. {steam_url} while config is blank. */
@@ -160,27 +204,43 @@ let gmailAccount = "";
 export function setGmailAccount(a: string | undefined) { gmailAccount = (a || "").trim(); }
 export function getGmailAccount() { return gmailAccount; }
 
-export function mailtoHref(email: string, subject: string, body: string): string {
-  if (gmailAccount) {
-    return `https://mail.google.com/mail/?view=cm&fs=1&authuser=${encodeURIComponent(gmailAccount)}&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+/** Every Gmail account the owner can send from: config.gmail_account first, then config.gmail_accounts. */
+export function senderOptions(config: Config): string[] {
+  return [...new Set([config.gmail_account, ...(config.gmail_accounts || [])].map((a) => (a || "").trim()).filter(Boolean))];
+}
+
+/** Major outlets, Arabic-language press and IGN go out from config.press_major_account; everyone else from config.gmail_account.
+ * Mirrors tools/outreach_app.py default_sender. */
+export function defaultSender(c: Contact, config: Config): string {
+  const major = (config.press_major_account || "").trim();
+  if (major && c.kind !== "creator"
+    && (/major outlet/i.test(c.type) || /arab/i.test(c.country) || /\bIGN\b/.test(`${c.name} ${c.outlet}`))) return major;
+  return (config.gmail_account || "").trim();
+}
+
+export function mailtoHref(email: string, subject: string, body: string, from = gmailAccount): string {
+  if (from) {
+    return `https://mail.google.com/mail/?view=cm&fs=1&authuser=${encodeURIComponent(from)}&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
   return `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
-/** Open the compose window: Gmail via the server (right Chrome profile), else the browser/default mail app. */
-export function openMail(email: string, subject: string, body: string) {
-  const href = mailtoHref(email, subject, body);
-  if (!gmailAccount) { window.open(href, "_blank", "noopener"); return; }
+/** Open the compose window: Gmail via the server (Chrome profile signed in as `from`), else the browser/default mail app. */
+export function openMail(email: string, subject: string, body: string, from = gmailAccount) {
+  const href = mailtoHref(email, subject, body, from);
+  if (!from) { window.open(href, "_blank", "noopener"); return; }
   openMailInProfile(href).catch(() => window.open(href, "_blank", "noopener"));
 }
 
-export function defaultChannel(c: Contact): string {
-  if (c.email) return "email";
-  const labels = c.links.map((l) => l[0].toLowerCase()).join(" ");
-  if (labels.includes("discord")) return "discord";
-  if (labels.includes("submit")) return "form";
-  return "x";
+export const isYoutube = (url: string) => /^https?:\/\/(www\.)?youtube\.com\//i.test(url);
+
+/** Open a link: YouTube goes through the signed-in Chrome profile when one is configured, everything else in a new tab. */
+export function openLink(url: string) {
+  const www = url.replace("://youtube.com", "://www.youtube.com");
+  if (gmailAccount && isYoutube(url)) { openYoutubeInProfile(www).catch(() => window.open(www, "_blank", "noopener")); return; }
+  window.open(isYoutube(url) ? www : url, "_blank", "noopener");
 }
+
 
 export function downloadCsv(filename: string, header: string[], rows: (string | number)[][]) {
   const q = (v: string | number) => `"${String(v ?? "").replace(/"/g, '""')}"`;

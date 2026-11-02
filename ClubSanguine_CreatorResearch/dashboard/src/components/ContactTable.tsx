@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ActionIcon, Badge, Checkbox, Group, Pagination, Paper, ScrollArea, Select, Table, Text, Tooltip, UnstyledButton } from "@mantine/core";
 import { IconChevronDown, IconChevronUp, IconMail, IconSelector, IconStarFilled } from "@tabler/icons-react";
 import type { Contact, SortKey, Status } from "../types";
-import { STATUS_COLOR, STATUS_LABEL, TIER_COLOR, fmtSubs, statusOf } from "../lib";
+import { HOW_LABEL, STATUS_COLOR, STATUS_LABEL, TIER_COLOR, fmtSubs, statusOf } from "../lib";
 
 interface Props {
   rows: Contact[];
@@ -15,12 +15,13 @@ interface Props {
   showKind?: boolean;
   dateLabel?: string;
   dateOf?: (c: Contact) => string;
+  /** Channels picked in the "Reach by" filter: the route badge shows that channel instead of the best one. */
+  via?: string[];
 }
 
-const HOW_LABEL: Record<string, string> = { email: "Email", gated: "Gated email", discord: "Discord", form: "Form", dm: "Social DM", web: "Website", none: "None" };
 const HOW_COLOR: Record<string, string> = { email: "teal", gated: "yellow", discord: "indigo", form: "blue", dm: "grape", web: "gray", none: "red" };
 
-export default function ContactTable({ rows, status, onOpen, selected, onSelect, sort, onSort, showKind, dateLabel = "Last active", dateOf }: Props) {
+export default function ContactTable({ rows, status, onOpen, selected, onSelect, sort, onSort, showKind, dateLabel = "Last active", dateOf, via = [] }: Props) {
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState("50");
   const pp = Number(perPage);
@@ -113,7 +114,8 @@ export default function ContactTable({ rows, status, onOpen, selected, onSelect,
                   </Table.Td>
                   <Table.Td>
                     <Group gap={4} wrap="nowrap">
-                      <Tooltip label={c.message.label}><Badge size="sm" variant="light" color={HOW_COLOR[c.message.how] || "gray"} tt="none">{HOW_LABEL[c.message.how]}</Badge></Tooltip>
+                      {(() => { const r = c.reach.find((x) => via.includes(x.how)) || c.message;
+                        return <Tooltip label={r.label}><Badge size="sm" variant="light" color={HOW_COLOR[r.how] || "gray"} tt="none">{HOW_LABEL[r.how]}</Badge></Tooltip>; })()}
                       {c.email && <Tooltip label={c.email}><ActionIcon size="sm" variant="subtle" component="a"
                         href={`mailto:${c.email}`} onClick={(e) => e.stopPropagation()}><IconMail size={14} /></ActionIcon></Tooltip>}
                     </Group>

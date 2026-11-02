@@ -1,12 +1,11 @@
-Subject: {game_title} demo is live for {nextfest}
+Subject: Club Sanguine demo in Steam Next Fest
 
 Hi {name},
 
-A quick heads-up: the {game_title} demo is now live as part of {nextfest}. It's the supernatural-nightclub bouncer deduction game I mentioned earlier.
+A short update: the Club Sanguine demo is part of {nextfest}. It's the vampire nightclub door game I wrote to you about earlier.
 
-Steam page and demo: {steam_url}
-{press_kit_note}
+{demo_url}
 
-If you're putting together a Next Fest roundup or streaming demos this week, I'd love for it to be considered.
+If you're playing or rounding up demos during the festival, it's there. Thanks either way.
 
 {signature}

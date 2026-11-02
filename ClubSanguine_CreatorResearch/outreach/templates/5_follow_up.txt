@@ -1,7 +1,10 @@
-Subject: Re: {game_title}
+Subject: Re: Club Sanguine free demo
 
 Hi {name},
 
-Just following up on my earlier note about {game_title}, the "Papers, Please meets supernatural nightclub bouncer" game. No worries if it isn't a fit. The free demo is here: {demo_url} (trailer: {trailer_url}). Trailers, screenshots and artwork are here if useful: {press_kit_url}
+Following up once on my note about Club Sanguine in case it got lost. If it's not for you, there's no need to reply and I won't write again.
 
+Free demo: {demo_url}
+
+Thanks,
 {signature}

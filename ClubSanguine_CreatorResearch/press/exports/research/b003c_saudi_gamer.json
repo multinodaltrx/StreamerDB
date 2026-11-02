@@ -1,0 +1,25 @@
+{
+  "outlets": [
+    {
+      "name": "Saudi Gamer",
+      "type": "Major outlet",
+      "url": "https://www.saudigamer.com",
+      "submission_url": "https://www.saudigamer.com/advertise/",
+      "public_email": "info@saudigamer.com",
+      "social_url": "https://twitter.com/saudigamer",
+      "press_policy_notes": "info@saudigamer.com is the only address on the site (read 2026-11-02): it is the mailto behind the site-wide 'اعلن معنا' (Advertise with us) button and appears in the footer, so it is a general/commercial inbox, not a dedicated editorial desk. Domain MX points to Microsoft 365 (saudigamer-com.mail.protection.outlook.com), so the address can receive mail. No /contact-us or /about-us page exists (404). Pitch in Arabic if possible and state clearly that it is an editorial pitch, not an ad enquiry.",
+      "audience_note": "Arabic-language Saudi games, esports and anime network founded 2009, owned by Webedia Arabia Group since Feb 2021. Large reach (YouTube @SaudiGamer approx. 2.5M subs, Instagram approx. 1.9M per third-party trackers). Publishes daily news plus indie-horror listicles.",
+      "comparable_coverage": "Mouthwashing; The Mortuary Assistant; Buckshot Roulette; Papers, Please",
+      "evidence_url_1": "https://www.saudigamer.com/best-horror-games-part-1/",
+      "evidence_url_2": "https://www.saudigamer.com/best-horror-games-multiplayer-part-2/",
+      "evidence_url_3": "https://www.saudigamer.com/unique-games-unlike-anything-youve-played-before/",
+      "last_relevant_article_date": "2026-05-31",
+      "region_language": "Arabic (Saudi Arabia / GCC)",
+      "focus_score": 5,
+      "reach_score": 6,
+      "notes": "Press Batch 003 (owner request: Saudi Gamer). Comparable games confirmed by text match on the pages (listicles, not dedicated reviews); Mouthwashing also in hidden-gems-from-the-last-two-years-you-probably-missed-p2 (2026-05-31). Other outlets: https://www.instagram.com/saudigamer/, https://www.youtube.com/@SaudiGamer, https://www.facebook.com/saudigamer, Apple Podcasts https://podcasts.apple.com/us/podcast/id305478704, TikTok (site links a TikTok publisher onelink: https://snssdk1233.onelink.me/bIdt/LocalUGPublisherSaudigamer, handle not confirmed). No Twitch, Snapchat, Discord or Threads account found.",
+      "source_query": "saudigamer.com homepage + wp-json search for comparable games"
+    }
+  ],
+  "journalists": []
+}

@@ -251,10 +251,32 @@ Log the queries in `press/search_history.csv` and write a report in `press/expor
 
 ## 9. Update 2026-11-02: press kit, IGN-style outlets, Gmail profile
 
-- **Press kit** lives in `press_kit/` (`Club_Sanguine_Press_Kit.pdf`, factsheet, verified-outlets list, IGN handoff, copy, tracker). There is no public link yet, so `press_kit_url` is empty. Templates use `{press_kit_note}` ("PDF attached"). Gmail compose links can't attach files: the Desk's **Show press kit PDF to attach** button selects the PDF in Explorer so the owner can drag it in. When a public Drive link exists, set `press_kit_url` and edit `press_kit_note`.
+- **Press kit** lives in `press_kit/` (`Club_Sanguine_Press_Kit.pdf`, factsheet, verified-outlets list, IGN handoff, copy, tracker). `press_kit_url` is the owner's public Drive folder (trailers, screenshots, artwork). Gmail compose links can't attach files: the Desk's **Show press kit PDF to attach** button selects the PDF in Explorer so the owner can drag it in (only for replies, see section 10).
 - **Press Batch 003** (`press/exports/research/b003_press_kit_outlets.json`): IGN got its editorial contact form; Alpha Beta Gamer and Wishlist or Not were added; Indie Games Plus (O0016) was merged. IGN's `trailers@`/`indies@`/`videowire@` addresses are community-reported and **unverified**, so they are in notes only. New rows have no comparable-game evidence yet (tiers Long Tail).
 - **Template `6_trailer_submission`**: non-exclusive trailer submission for IGN-style desks. Never claim exclusivity.
 - **Gmail:** compose links open in the Chrome profile signed in as `config.gmail_account` (found from Chrome's Local State, here "Profile 2"; fallback `gmail_chrome_profile`). The dashboard does this through `/api/open_mail`, so **restart `tools/outreach_app.py` after pulling**. `start_all.ps1` does the same via `Open-Mail`.
 
 - **Trailer MP4** (`trailer_file` in config, 143 MB, in Downloads): too big for Gmail (25 MB) and GitHub (100 MB), so it is NOT in the repo. Emails still link `trailer_url` (YouTube) until the owner supplies a public link to this file. The Desk has a **Show trailer MP4** button.
 - **IGN Middle East** (the 'IGN Arabia' edition, run by T-Break) was added as O0188 via Press Batch 003b; its only editorial route is editor@tbreak.com ('Review' in subject for demos). me.ign.com was not readable.
+
+## 10. Update 2026-11-02 (later): outreach rules, channels, duplicate guard
+
+Someone called the owner a scammer, and Gmail blocked several sends as suspicious. Outreach was rewritten to read like one developer writing to one person. **These rules are the owner's and override older copy in `press_kit/OUTREACH_AND_REDDIT_COPY.md`:**
+
+- Identity: **VertexVendor / Lunitech**, clearly the developer. Describe the game as: you work the door at a vampires-only nightclub, inspect guests and catch impostors, with gothic comic visuals and dark humor. Only the **free demo** is out. Never call the full game released, never mention wishlist numbers, never pressure.
+- Never invent familiarity or say the owner watched something. Drafts quote a **verified** evidence video title (`{seen_line}`, from `exports/evidence_titles.csv`) or fall back to "you've played <game> on your channel". Avoid "perfect fit for your audience", "exciting opportunity", forced jokes and stock praise.
+- **Discord / social DM** (`2_creator_dm`): no links, no attachments. Ask whether they take game suggestions. Only after a yes, `8_dm_steam_link` sends the demo link alone. Trailer or press kit only if they ask. Use a server's game-suggestion channel and follow its rules.
+- **Creator business email** (`1_creator_email`): short, one Steam link (the demo).
+- **Press** (`3_press_pitch`, `6_trailer_submission`): news angle is "free demo now on Steam", with the Steam page, trailer and Drive press-kit link. Follow the outlet's submission rules (shown in the drawer as "Their submission rules"). `7_send_press_kit` (PDF attached plus Drive link) is for replies.
+- `5_follow_up` is sent **once**, on the same channel, and says the owner won't write again. **Refusals are final:** no contact on another channel or account.
+
+**Desk changes:** each contact carries `reach` (every channel: email, gated, discord, form, dm; website only as a marked dead end). The **Reach by** filter keeps only people reachable that way, and **Message them** then uses that channel with the matching template; the drawer has a channel switcher. **Hide dead ends** is on by default. The drawer warns before a second intro, blocks messaging people who declined, and flags an inbox already pitched through another contact (e.g. several writers behind one outlet address). `start_all.ps1` shows the same warnings and won't open a draft for someone who declined.
+
+**Link checks:** `tools/check_outreach_links.py` (read-only, no login) records which Discord invites have expired (`exports/discord_invites.csv`, expired ones are hidden) and the title or removal of each evidence video (`exports/evidence_titles.csv`). Rerun before a big send day.
+
+Deliverability: `daily_target` is 10. Warm the Devai Gmail up slowly (3 to 5 a day at first) and edit each opening line.
+
+## 11. Update 2026-11-02 (evening): second sender account, Saudi Gamer
+
+- **Two Gmail senders.** `config.gmail_account` (devaisupp@gmail.com, Chrome "Profile 2") stays the default. `config.press_major_account` (omarkhtamimi@gmail.com, Chrome "Default" profile) is the default sender for **major outlets, Arabic-language outlets and IGN**, plus journalists at those outlets. The rule lives in `dashboard/src/lib.ts` `defaultSender` and `tools/outreach_app.py` `default_sender` (keep them in sync). `config.gmail_accounts` lists every account shown in the drawer's **Send from** picker, which overrides the rule per message. The signature's email line follows the chosen sender. `/api/open_mail` now opens Gmail in the Chrome profile that matches the URL's `authuser`. Logged sends get `[from <account>]` appended to the note, so follow-ups go out from the same account. `start_all.ps1` uses the server's `sender` field.
+- **Saudi Gamer** (O0189, Tier B, fit 66): `info@saudigamer.com` is the only address on the site (footer and "Advertise with us" button, so it is a general/commercial inbox). MX is Microsoft 365, so the address receives mail. Write in Arabic if possible and say it is an editorial pitch. Comparable games appear only in listicles (Mouthwashing, The Mortuary Assistant, Buckshot Roulette, Papers, Please). Other outlets (X, Instagram, YouTube, Facebook, Apple Podcasts, unconfirmed TikTok) are in the row's notes. Research file: `press/exports/research/b003c_saudi_gamer.json`.

@@ -12,7 +12,9 @@ small JSON API (/api/data, /api/log, /api/reveal). It NEVER sends anything: it l
 emails / links / filled-in message templates, and records what the owner did.
 
 Reads (never writes):  creators.csv, press/outlets.csv, press/journalists.csv,
-                       outreach/config.json, outreach/templates/*.txt
+                       outreach/config.json, outreach/templates/*.txt,
+                       exports/discord_invites.csv, exports/evidence_titles.csv
+                       (both from tools/check_outreach_links.py)
 Appends to:            outreach/outreach_log.csv       (one row per button press)
                        outreach/revealed_contacts.csv  (emails the owner revealed
                                                         by hand from YouTube's gate)
@@ -32,7 +34,7 @@ import webbrowser
 from datetime import date, datetime, timedelta
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
-from urllib.parse import parse_qs
+from urllib.parse import parse_qs, urlparse
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_DIR / "scripts"))
@@ -135,41 +137,74 @@ def add_link(links, label, url):
     links.append([label, url])
 
 
-def best_route(c):
-    """Where to go to message this contact, best option first: email, outlet email, the
-    YouTube About page (reveals a gated business email), Discord, submission form, a social DM,
-    then any website."""
-    links = c["links"]
-    if c["email"]:
-        return {"how": "email", "label": f"Email {c['email']}", "url": "mailto:" + c["email"]}
-    mails = [u for _, u in links if u.startswith("mailto:")]
+def reach_routes(c):
+    """Every way to message this contact, one per channel, best first: email (own, then outlet),
+    the YouTube About page (reveals a gated business email), Discord, submission form, a social DM.
+    A plain website is only offered when there is nothing else, and is marked as a dead end."""
+    links, out = c["links"], []
+    mails = ([c["email"]] if c["email"] else []) + [u[7:] for _, u in links if u.startswith("mailto:")]
     if mails:
-        return {"how": "email", "label": f"Email {mails[0][7:]}", "url": mails[0]}
+        out.append({"how": "email", "label": f"Email {mails[0]}", "url": "mailto:" + mails[0]})
     about = next((u for l, u in links if l == "About (email)"), "")
-    if c["route"] == "Gated email" and about:
-        return {"how": "gated", "label": "Reveal business email (YouTube About)", "url": about}
-    for label, url in links:
-        if platform_of(url) == "Discord":
-            return {"how": "discord", "label": "Join / DM on Discord", "url": url}
-    for label, url in links:
-        if label.lower().endswith("submit") or label == "Contact page":
-            return {"how": "form", "label": "Contact / submission form", "url": url}
-    for want in DM_PLATFORMS:
-        for label, url in links:
-            if platform_of(url) == want:
-                return {"how": "dm", "label": f"DM on {want}", "url": url}
-    for label, url in links:
-        if label not in ("YouTube", "About (email)", "Next Fest piece") and not label.startswith("Evidence"):
-            return {"how": "web", "label": f"Open {label}", "url": url}
-    if links:
-        return {"how": "web", "label": f"Open {links[0][0]}", "url": links[0][1]}
-    return {"how": "none", "label": "No public route", "url": ""}
+    if not mails and c["route"] == "Gated email" and about:
+        out.append({"how": "gated", "label": "Reveal business email (YouTube About)", "url": about})
+    discord = next((u for _, u in links if platform_of(u) == "Discord"), "")
+    if discord:
+        out.append({"how": "discord", "label": "Join / DM on Discord", "url": discord})
+    form = next((u for l, u in links if l.lower().endswith("submit") or l == "Contact page"), "")
+    if form:
+        out.append({"how": "form", "label": "Contact / submission form", "url": form})
+    dm = next(((want, u) for want in DM_PLATFORMS if want != "Discord"
+               for _, u in links if platform_of(u) == want), None)
+    if dm:
+        out.append({"how": "dm", "label": f"DM on {dm[0]}", "url": dm[1]})
+    if not out:
+        web = next(((l, u) for l, u in links if l not in ("YouTube", "About (email)", "Next Fest piece")
+                    and not l.startswith("Evidence")), None)
+        if web:
+            out.append({"how": "web", "label": f"Open {web[0]} (no direct contact)", "url": web[1]})
+    return out or [{"how": "none", "label": "No public route", "url": ""}]
 
 
 def other_socials(notes):
     """URLs a researcher listed as 'Other socials: <url>, <url>' in notes."""
     m = re.search(r"Other socials:\s*([^|]+)", notes or "")
     return re.findall(r"https?://[^\s,;|]+", m.group(1)) if m else []
+
+INVITE_RE = re.compile(r"(?:discord\.gg|discord(?:app)?\.com/invite)/([\w-]+)", re.I)
+VIDEO_RE = re.compile(r"(?:[?&]v=|youtu\.be/|/shorts/|/live/)([\w-]{11})")
+
+
+def dead_invites():
+    """Discord invite codes Discord reports as expired (tools/check_outreach_links.py discord)."""
+    return {r["code"].lower() for r in read_csv(PROJECT_DIR / "exports" / "discord_invites.csv")
+            if r.get("status") == "expired"}
+
+
+def is_dead_invite(url, dead):
+    m = INVITE_RE.search(url or "")
+    return bool(m and m.group(1).lower() in dead)
+
+
+def clean_title(t):
+    """Video title safe to quote in a message: no emoji, hashtags or runs of spaces."""
+    t = re.sub(r"#\w+", "", t or "")
+    t = t.replace("{", "(").replace("}", ")")  # braces would look like unfilled placeholders
+    t = "".join(ch for ch in t if ord(ch) < 0x2190 or 0x3000 <= ord(ch) < 0xD800 or 0xF900 <= ord(ch) < 0xFE00)
+    return re.sub(r"\s{2,}", " ", t).strip(" -|")
+
+
+def evidence_titles():
+    return {r["video_id"]: clean_title(r["title"]) for r in read_csv(PROJECT_DIR / "exports" / "evidence_titles.csv")
+            if r.get("status") == "ok" and r.get("title")}
+
+
+def pick_evidence_title(evidence, game, titles):
+    """Title of an evidence video to name in a message, preferring one that mentions the lead game."""
+    found = [titles[m.group(1)] for e in evidence if (m := VIDEO_RE.search(e)) and titles.get(m.group(1))]
+    key = norm_game(game) if game else ""
+    return next((t for t in found if key and key in norm_game(t)), found[0] if found else "")
+
 
 def creator_route(r, revealed):
     if r["creator_id"] in revealed or known(r.get("business_email")):
@@ -187,6 +222,7 @@ def creator_route(r, revealed):
 def load_contacts():
     seed_tiers = load_seed_tiers()
     revealed = {r["contact_id"]: r["email"] for r in read_csv(REVEALED_PATH) if known(r.get("email"))}
+    dead, titles = dead_invites(), evidence_titles()
     about_links = {}
     for r in read_csv(PROJECT_DIR / "exports" / "creator_links.csv"):
         about_links.setdefault(r["creator_id"], []).append((r["title"], r["url"]))
@@ -202,13 +238,16 @@ def load_contacts():
             links.append(["About (email)", yt.rstrip("/") + "/about"])
         if known(r.get("twitch_channel_url")):
             links.append(["Twitch", known(r["twitch_channel_url"])])
-        if contact_page:
+        if contact_page and not is_dead_invite(contact_page, dead):
             links.append(["Discord" if "discord" in contact_page.lower() else "Contact page", contact_page])
-        if known(r.get("other_social_url")):
+        if known(r.get("other_social_url")) and not is_dead_invite(r["other_social_url"], dead):
             add_link(links, platform_of(known(r["other_social_url"]), "Social"), known(r["other_social_url"]))
         for title, url in about_links.get(r["creator_id"], []):  # every link on their YouTube About panel
+            if is_dead_invite(url, dead):
+                continue
             add_link(links, title if url.startswith("mailto:") else platform_of(url, title or "Website"), url)
-        evidence = [known(r.get(f"evidence_url_{i}")) for i in (1, 2, 3)]
+        evidence = [e for e in (known(r.get(f"evidence_url_{i}")) for i in (1, 2, 3)) if e]
+        game = lead_game(games, seed_tiers)
         contacts.append({
             "id": r["creator_id"],
             "kind": "creator",
@@ -219,8 +258,9 @@ def load_contacts():
             "subs": to_int(r.get("youtube_subscribers")),
             "twitch": bool(known(r.get("twitch_channel_url"))),
             "games": games,
-            "game": lead_game(games, seed_tiers),
-            "evidence": [e for e in evidence if e],
+            "game": game,
+            "evidence": evidence,
+            "evidence_title": pick_evidence_title(evidence, game, titles),
             "links": links,
             "email": revealed.get(r["creator_id"]) or known(r.get("business_email")),
             "email_revealed": r["creator_id"] in revealed,
@@ -231,6 +271,7 @@ def load_contacts():
             "type": "",
             "outlet": "",
             "notes": known(r.get("notes")),
+            "policy": "",
         })
 
     outlets = read_csv(PROJECT_DIR / "press" / "outlets.csv")
@@ -246,11 +287,12 @@ def load_contacts():
             for label, field in (("Site", "url"), ("Author page", "author_page_url"),
                                  ("Submit", "submission_url"), ("Social", "social_url"),
                                  ("Next Fest piece", "nextfest_url")):
-                if known(r.get(field)):
+                if known(r.get(field)) and not is_dead_invite(r[field], dead):
                     add_link(links, platform_of(known(r[field]), label) if field == "social_url" else label,
                              known(r[field]))
             for url in other_socials(r.get("notes")):
-                add_link(links, platform_of(url, "Social"), url)
+                if not is_dead_invite(url, dead):
+                    add_link(links, platform_of(url, "Social"), url)
             evidence = [known(r.get(f"evidence_url_{i}")) for i in (1, 2, 3)]
             oids = [o.strip() for o in known(r.get("outlet_ids")).split(";") if o.strip()]
             route = known(r.get("public_contact_method")) or "Unknown"
@@ -283,6 +325,7 @@ def load_contacts():
                 "games": games,
                 "game": lead_game(games, seed_tiers),
                 "evidence": [e for e in evidence if e],
+                "evidence_title": "",
                 "links": links,
                 "email": known(r.get("public_email")),
                 "email_revealed": False,
@@ -295,9 +338,12 @@ def load_contacts():
                 "outlet": outlet,
                 "nextfest": known(r.get("nextfest_coverage")),
                 "notes": notes,
+                "policy": " | ".join(x for x in (known(r.get("press_policy_notes")),
+                                                 known(r.get("contact_preference"))) if x),
             })
     for c in contacts:
-        c["message"] = best_route(c)
+        c["reach"] = reach_routes(c)
+        c["message"] = c["reach"][0]
     return contacts
 
 
@@ -377,10 +423,24 @@ def chrome_profile_for(email, fallback=""):
     return fallback
 
 
+def default_sender(c, config):
+    """Major outlets, Arabic-language press and IGN go out from config.press_major_account; everyone else
+    from config.gmail_account. Mirrors dashboard/src/lib.ts defaultSender."""
+    major = (config.get("press_major_account") or "").strip()
+    if major and c["kind"] != "creator" and (
+            re.search(r"major outlet", c.get("type", ""), re.I) or re.search(r"arab", c.get("country", ""), re.I)
+            or re.search(r"\bIGN\b", f"{c['name']} {c.get('outlet', '')}")):
+        return major
+    return (config.get("gmail_account") or "").strip()
+
+
 def open_mail(url, config):
-    """Open a Gmail compose URL in the Chrome profile logged in as config.gmail_account."""
+    """Open a Gmail compose URL in the Chrome profile logged in as its authuser (else config.gmail_account)."""
     exe = chrome_exe()
-    profile = chrome_profile_for(config.get("gmail_account", ""), config.get("gmail_chrome_profile", ""))
+    account = (parse_qs(urlparse(url).query).get("authuser") or [config.get("gmail_account", "")])[0]
+    # Only the configured default account falls back to the fixed profile; another account must be found by sign-in.
+    fallback = config.get("gmail_chrome_profile", "") if account.lower() == config.get("gmail_account", "").lower() else ""
+    profile = chrome_profile_for(account, fallback)
     if exe and profile:
         subprocess.Popen([exe, f"--profile-directory={profile}", url])
         return {"ok": True, "profile": profile}
@@ -401,12 +461,46 @@ def greeting_name(c):
     return c["name"]
 
 
+def seen_line(c):
+    """One verified, specific thing about a creator's channel. Never claims the owner watched it."""
+    if c.get("evidence_title"):
+        return f'I noticed your video "{c["evidence_title"]}"'
+    if c["game"]:
+        return f"I noticed you've played {c['game']} on your channel"
+    return "I came across your channel while looking for people who play deduction games"
+
+
+def coverage_line(c):
+    """' I saw you've covered <game>...' for press, or nothing when no coverage is on record."""
+    if not c["game"]:
+        return ""
+    who = "you've written about" if c["kind"] == "journalist" else "you've covered"
+    return f" I saw {who} {c['game']}, which is why I thought of you."
+
+
+def default_template(c, how, status=""):
+    """Template that fits who they are, how the owner is reaching them, and where things stand.
+    Mirrors dashboard/src/lib.ts defaultTemplateId."""
+    if status in ("contacted", "followed_up"):
+        return "5_follow_up"
+    if c["kind"] != "creator":
+        return "7_send_press_kit" if status in ("replied", "interested") else "3_press_pitch"
+    if status in ("replied", "interested"):
+        return "8_dm_steam_link" if how in ("discord", "dm", "form") else "1_creator_email"
+    return "1_creator_email" if how in ("email", "gated") else "2_creator_dm"
+
+
 def fill_template(text, c, config):
     """Same placeholders as the React UI (dashboard/src/lib.ts fillTemplate)."""
     values = {**{k: str(v) for k, v in config.items()}, "name": greeting_name(c), "full_name": c["name"],
               "game": c["game"] or "indie horror", "games": ", ".join(c["games"]),
-              "evidence_url": (c["evidence"] or [""])[0], "outlet": c["outlet"]}
-    return re.sub(r"\{(\w+)\}", lambda m: values.get(m.group(1)) or m.group(0), text)
+              "evidence_url": (c["evidence"] or [""])[0], "outlet": c["outlet"],
+              "seen_line": seen_line(c), "coverage_line": coverage_line(c)}
+
+    def sub(m):
+        v = values.get(m.group(1))
+        return v if v or (v == "" and m.group(1).endswith("_line")) else m.group(0)
+    return re.sub(r"\n{3,}", "\n\n", re.sub(r"\{(\w+)\}", sub, text))
 
 
 def lite(c, st):
@@ -415,15 +509,17 @@ def lite(c, st):
             "hp": c["hp"], "subs": c["subs"], "games": c["games"], "outlet": c["outlet"], "type": c["type"],
             "country": c["country"], "last_active": c["last_active"], "email": c["email"],
             "how": c["message"]["how"], "status": s.get("status", ""), "since": s.get("since", ""),
-            "follow_up_on": s.get("follow_up_on", "")}
+            "follow_up_on": s.get("follow_up_on", ""), "channels": [r["how"] for r in c["reach"]]}
 
 
 def api_find(q):
-    """GET /api/find?kind=creator|journalist|outlet|any&q=&tier=S,A&status=new|any|today|due|<action>&email=1&limit=200"""
+    """GET /api/find?kind=creator|journalist|outlet|any&q=&tier=S,A&status=new|any|today|due|<action>&email=1&via=discord&limit=200
+
+    via: only contacts reachable on that channel (email, gated, discord, form, dm)."""
     today = date.today().isoformat()
     kind, text = q.get("kind", "any"), q.get("q", "").lower()
     tiers = [t for t in q.get("tier", "").split(",") if t]
-    want, need_email = q.get("status", "new"), q.get("email") == "1"
+    want, need_email, via = q.get("status", "new"), q.get("email") == "1", q.get("via", "")
     status = compute_status(read_csv(LOG_PATH))
     out = []
     for c in load_contacts():
@@ -434,6 +530,8 @@ def api_find(q):
         if tiers and c["tier"] not in tiers:
             continue
         if need_email and c["message"]["how"] != "email":
+            continue
+        if via and via not in (r["how"] for r in c["reach"]):
             continue
         if text and text not in f"{c['name']} {' '.join(c['games'])} {c['outlet']} {c['email']}".lower():
             continue
@@ -458,11 +556,17 @@ def api_contact(q):
         return None
     config = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
     templates = {t["id"]: t for t in load_templates()}
-    default = "1_creator_email" if c["kind"] == "creator" else "3_press_pitch"
+    st = compute_status(read_csv(LOG_PATH)).get(c["id"], {"status": "", "since": "", "follow_up_on": "", "history": []})
+    via = next((r for r in c["reach"] if r["how"] == q.get("via")), c["reach"][0])
+    c = {**c, "message": via}
+    default = default_template(c, via["how"], st.get("status", ""))
     t = templates.get(q.get("template") or default) or next(iter(templates.values()), {"id": "", "subject": "", "body": ""})
     subject, body = fill_template(t["subject"], c, config), fill_template(t["body"], c, config)
-    st = compute_status(read_csv(LOG_PATH)).get(c["id"], {"status": "", "since": "", "follow_up_on": "", "history": []})
+    sender, base = default_sender(c, config), (config.get("gmail_account") or "").strip()
+    if base and sender and sender != base:
+        body = body.replace(base, sender)
     return {**c, "state": st, "template": t["id"], "templates": list(templates), "subject": subject, "body": body,
+            "sender": sender,
             "unfilled": sorted(set(re.findall(r"\{\w+\}", subject + body)))}
 
 
@@ -580,6 +684,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(400, '{"error":"only Gmail compose links"}')
             config = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
             return self._send(200, json.dumps(open_mail(url, config)))
+
+        if self.path == "/api/open_url":
+            url = body.get("url") or ""
+            if not re.match(r"https://(www\.)?youtube\.com/", url):
+                return self._send(400, '{"error":"only YouTube links"}')
+            config = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
+            return self._send(200, json.dumps(open_mail(url.replace("://youtube.com", "://www.youtube.com", 1), config)))
 
         if self.path in ("/api/show_press_kit", "/api/show_trailer"):
             key = "trailer_file" if self.path.endswith("trailer") else "press_kit_file"

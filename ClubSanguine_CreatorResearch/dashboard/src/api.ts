@@ -41,3 +41,8 @@ export async function showPressKit(): Promise<void> {
 export async function showTrailer(): Promise<void> {
   await postJson("/api/show_trailer", {});
 }
+
+/** Open a YouTube link in the Chrome profile signed in as config.gmail_account (needed to reveal gated business emails). */
+export async function openYoutubeInProfile(url: string): Promise<void> {
+  await postJson("/api/open_url", { url });
+}

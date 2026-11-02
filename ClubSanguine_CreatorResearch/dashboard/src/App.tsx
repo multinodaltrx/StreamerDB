@@ -11,7 +11,7 @@ import {
 } from "@tabler/icons-react";
 import { fetchData, logActions, saveRevealedEmail } from "./api";
 import type { Contact, Kind, LogEntry, Payload } from "./types";
-import { actedToday, defaultTemplateId, isFollowUpDue, messagedToday, setGmailAccount, statusOf } from "./lib";
+import { actedToday, isFollowUpDue, messagedToday, setGmailAccount, statusOf } from "./lib";
 import ContactsView from "./components/ContactsView";
 import TodayView from "./components/TodayView";
 import PipelineView from "./components/PipelineView";
@@ -74,7 +74,7 @@ export default function App() {
       await reload();
     },
     open: (id, queue) => setDrawer({ id, queue }),
-    templateFor: (kind) => tpl[kind === "creator" ? "creator" : "press"] || defaultTemplateId(kind),
+    templateFor: (kind) => tpl[kind === "creator" ? "creator" : "press"] || (kind === "creator" ? "1_creator_email" : "3_press_pitch"),
     setTemplateFor: (kind, id) => setTpl((t) => ({ ...t, [kind === "creator" ? "creator" : "press"]: id })),
   }, [data, tpl, reload, setTpl]);
 
