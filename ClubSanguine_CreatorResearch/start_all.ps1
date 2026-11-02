@@ -239,6 +239,18 @@ function Open-Url([string]$Url) {
   try { Start-Process $Url } catch { Write-Host "  could not open $Url" -ForegroundColor Red }
 }
 
+function Open-Mail([string]$Url, [string]$Account) {
+  # Gmail compose must open in the Chrome profile signed in as $Account, not whichever browser is default.
+  $chrome = @("$env:ProgramFiles\Google\Chrome\Application\chrome.exe", "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe", "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
+  $profile = ''
+  try {
+    $st = Get-Content (Join-Path $env:LOCALAPPDATA 'Google\Chrome\User Data\Local State') -Raw | ConvertFrom-Json
+    foreach ($p in $st.profile.info_cache.PSObject.Properties) { if ($p.Value.user_name -eq $Account) { $profile = $p.Name } }
+  } catch {}
+  if ($chrome -and $profile) { Start-Process $chrome -ArgumentList @("--profile-directory=$profile", $Url) }
+  else { Open-Url $Url }
+}
+
 function Default-Channel($c) {
   switch ($c.message.how) {
     'email' { return 'email' } 'gated' { return 'email' } 'discord' { return 'discord' } 'form' { return 'form' }
@@ -300,8 +312,8 @@ function Show-Card($rows, [int]$idx) {
           if ($gm) { $mailto = 'https://mail.google.com/mail/?view=cm&fs=1&authuser=' + (Q $gm) + '&to=' + (Q $addr) + '&su=' + (Q $c.subject) + '&body=' + (Q $c.body) }
           else { $mailto = 'mailto:' + $addr + '?subject=' + (Q $c.subject) + '&body=' + (Q $c.body) }
           Set-Clipboard -Value $c.body
-          Open-Url $mailto
-          Write-Host '  opened your mail app (message also on the clipboard). Press L once sent.' -ForegroundColor Green
+          if ($gm) { Open-Mail $mailto $gm } else { Open-Url $mailto }
+          Write-Host ("  opened a draft FROM " + $(if ($gm) { $gm } else { 'your default mail app' }) + " (message also on the clipboard). Press L once sent.") -ForegroundColor Green
         } else {
           Set-Clipboard -Value $c.body
           Open-Url $c.message.url

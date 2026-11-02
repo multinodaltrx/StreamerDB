@@ -10,6 +10,7 @@ I came across your {game} video ({evidence_url}), and it seemed like exactly the
 
 Free demo: {demo_url}
 Trailer: {trailer_url}
+{media_line}
 Wishlist: {steam_url}
 
 Happy to answer any questions. No pressure at all.

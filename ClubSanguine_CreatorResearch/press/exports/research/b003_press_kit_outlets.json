@@ -1,0 +1,68 @@
+{
+  "outlets": [
+    {
+      "name": "IGN",
+      "type": "Major outlet",
+      "url": "https://www.ign.com",
+      "submission_url": "https://ign-corp.squarespace.com/contact",
+      "social_url": "https://bsky.app/profile/ign.com",
+      "press_policy_notes": "Use the 'Editorial News Tips & Content' option on the contact form (not sales/advertising or freelance-contributor routes). Community-reported, UNVERIFIED trailer/indie inboxes: trailers@ign.com, indies@ign.com, videowire@ign.com. Not recorded as public emails; confirm before use. Club Sanguine's trailer is already public, so pitch as NON-exclusive footage; never claim exclusivity.",
+      "evidence_url_1": "https://www.ign.com/articles/mouthwashing-review",
+      "evidence_url_2": "https://www.ign.com/articles/inscryption-review",
+      "region_language": "English",
+      "notes": "Press Batch 003 (press kit handoff, 2026-11-02). Contact form route from Club_Sanguine_IGN_Press_Outreach_Handoff.md and VERIFIED_OUTLETS.md (checked 1 Nov 2026 by owner's research session). Handoff case study: Scream Operator trailer was covered by IGN/GameTrailers, anecdotal only.",
+      "source_query": "Club Sanguine press kit handoff"
+    },
+    {
+      "name": "Alpha Beta Gamer",
+      "type": "Indie site/blog",
+      "url": "https://www.alphabetagamer.com",
+      "submission_url": "https://www.alphabetagamer.com/contact-us/",
+      "public_email": "Admin@alphabetagamer.com",
+      "press_policy_notes": "Contact page (read 2026-11-02): only features games in development; sign-ups/downloads must be free to the public (a free demo fits). Every submission is read, no guarantee of coverage or reply. Recommends including YouTube footage and images. Also reachable via Discord, Steam group, Twitter/Bluesky.",
+      "audience_note": "Covers free demos and in-development indie games; has Horror and Simulation categories.",
+      "comparable_coverage": "Unknown",
+      "evidence_url_1": "https://www.alphabetagamer.com/category/horror/",
+      "evidence_url_2": "https://www.alphabetagamer.com/category/simulation/",
+      "region_language": "English",
+      "focus_score": 9,
+      "reach_score": 3,
+      "notes": "Press Batch 003 (press kit handoff). Evidence URLs are category pages proving the beat, not a comparable-game article; none found yet.",
+      "source_query": "Club Sanguine press kit handoff"
+    },
+    {
+      "name": "Indie Games Plus",
+      "type": "Indie site/blog",
+      "url": "https://indiegamesplus.com",
+      "submission_url": "https://indiegamesplus.com/contact/",
+      "public_email": "editors@indiegamesplus.com",
+      "press_policy_notes": "Contact page (read 2026-11-02): 'Have a game to share with us?' email editors@indiegamesplus.com. No form. Page also lists editor Joel Couture and writers' emails.",
+      "audience_note": "Indie game coverage, previews and reviews.",
+      "comparable_coverage": "Unknown",
+      "evidence_url_1": "https://indiegamesplus.com/fangtopia-review/",
+      "evidence_url_2": "https://indiegamesplus.com/tidy-up-the-ark-preview/",
+      "region_language": "English",
+      "focus_score": 11,
+      "reach_score": 4,
+      "notes": "Press Batch 003 (press kit handoff). Evidence URLs are recent indie sim pieces from the contact page, not comparable-game coverage.",
+      "source_query": "Club Sanguine press kit handoff"
+    },
+    {
+      "name": "Wishlist or Not",
+      "type": "Indie site/blog",
+      "url": "https://wishlistornot.com",
+      "submission_url": "https://wishlistornot.com/press/",
+      "public_email": "press@wishlistornot.com",
+      "press_policy_notes": "Press page (read 2026-11-02): accepts indie PC (Steam/itch) reviews and coverage of demos and festival builds such as Next Fest. Email Steam page, release date, any embargo and a press kit link. Build needed at least two weeks before embargo. Keys via Curator Connect also accepted. No guarantee of coverage.",
+      "audience_note": "Indie PC demo and review coverage.",
+      "comparable_coverage": "Unknown",
+      "evidence_url_1": "https://wishlistornot.com/press/",
+      "region_language": "English",
+      "focus_score": 10,
+      "reach_score": 3,
+      "notes": "Press Batch 003 (press kit handoff). Evidence is the press policy page; no comparable-game article found yet.",
+      "source_query": "Club Sanguine press kit handoff"
+    }
+  ],
+  "journalists": []
+}

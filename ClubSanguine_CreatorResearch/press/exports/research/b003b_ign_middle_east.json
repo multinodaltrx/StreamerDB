@@ -1,0 +1,21 @@
+{
+  "outlets": [
+    {
+      "name": "IGN Middle East",
+      "type": "Major outlet",
+      "url": "https://me.ign.com",
+      "submission_url": "https://tbreak.com/contact/",
+      "public_email": "editor@tbreak.com",
+      "press_policy_notes": "IGN Middle East (the 'IGN Arabia' edition) is operated by T-Break. T-Break contact page (read 2026-11-02): editor@tbreak.com for story tips and news; product review enquiries and sample requests go to the same address with 'Review' in the subject. Sponsorships and media enquiries (sales@tbreak.com) are a commercial route: do not use for editorial pitches. No separate IGN Middle East editorial address is published. Content is in Arabic and English.",
+      "audience_note": "Arabic and English games coverage for the Middle East; reviews mostly mainstream titles.",
+      "comparable_coverage": "Unknown",
+      "evidence_url_1": "https://opencritic.com/outlet/553/ign-middle-east",
+      "region_language": "Arabic / English (Middle East)",
+      "focus_score": 3,
+      "reach_score": 5,
+      "notes": "Press Batch 003 (owner request: IGN Arabia). me.ign.com blocks our fetch tools, so the site itself was not read; contact route comes from tbreak.com. Evidence is the OpenCritic outlet listing (316 reviews, mostly mainstream), not a comparable-game article. Verify the address before sending.",
+      "source_query": "IGN Middle East contact editorial"
+    }
+  ],
+  "journalists": []
+}

@@ -1,3 +1,4 @@
+import { openMailInProfile } from "./api";
 import type { Config, Contact, Filters, Kind, SortKey, Status, Template } from "./types";
 
 export const STATUS_LABEL: Record<string, string> = {
@@ -157,12 +158,20 @@ export function renderMessage(t: Template | undefined, c: Contact, config: Confi
 /** When set (config.gmail_account), email links open a Gmail compose window for that account instead of the default mail app. */
 let gmailAccount = "";
 export function setGmailAccount(a: string | undefined) { gmailAccount = (a || "").trim(); }
+export function getGmailAccount() { return gmailAccount; }
 
 export function mailtoHref(email: string, subject: string, body: string): string {
   if (gmailAccount) {
     return `https://mail.google.com/mail/?view=cm&fs=1&authuser=${encodeURIComponent(gmailAccount)}&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
   return `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+/** Open the compose window: Gmail via the server (right Chrome profile), else the browser/default mail app. */
+export function openMail(email: string, subject: string, body: string) {
+  const href = mailtoHref(email, subject, body);
+  if (!gmailAccount) { window.open(href, "_blank", "noopener"); return; }
+  openMailInProfile(href).catch(() => window.open(href, "_blank", "noopener"));
 }
 
 export function defaultChannel(c: Contact): string {

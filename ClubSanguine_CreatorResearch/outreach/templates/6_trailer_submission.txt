@@ -1,0 +1,19 @@
+Subject: Trailer submission: {game_title} | vampire nightclub inspection sim (free demo live)
+
+Hi {name},
+
+I'm {my_name}, an independent developer at {studio}, and I'd love to submit the trailer for {game_title} for consideration.
+
+{game_title} is a dark-comedy first-person deduction game where you work the door at a vampire nightclub. Inspect suspicious guests with garlic, silver, UV lights and other strange equipment to uncover humans, demons, werewolves and impostors trying to sneak inside. Those who don't belong can be banished, thrown into a pit, or dealt with by a rather aggressive security guard named Frank.
+
+The free PC demo is available now on Steam.
+
+Trailer: {trailer_url}
+Main Steam page: {steam_url}
+Free demo: {demo_url}
+{press_kit_note}
+
+The trailer has already been publicly released, so this is a non-exclusive submission and you're welcome to feature it. I can provide clean footage, extra screenshots and a 16:9 thumbnail on request.
+
+Thank you for your consideration,
+{signature}

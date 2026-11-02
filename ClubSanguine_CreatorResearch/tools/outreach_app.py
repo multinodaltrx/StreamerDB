@@ -24,7 +24,9 @@ cancel the action before them, so history is never rewritten.
 import argparse
 import csv
 import json
+import os
 import re
+import subprocess
 import sys
 import webbrowser
 from datetime import date, datetime, timedelta
@@ -352,6 +354,41 @@ def build_payload():
 
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Gmail in the right Chrome profile
+# ---------------------------------------------------------------------------
+
+def chrome_exe():
+    for base in (os.environ.get("PROGRAMFILES"), os.environ.get("PROGRAMFILES(X86)"), os.environ.get("LOCALAPPDATA")):
+        if base and (Path(base) / "Google/Chrome/Application/chrome.exe").is_file():
+            return str(Path(base) / "Google/Chrome/Application/chrome.exe")
+    return None
+
+
+def chrome_profile_for(email, fallback=""):
+    """Chrome profile directory signed in as `email` (from Chrome's Local State), else `fallback`."""
+    try:
+        state = json.loads((Path(os.environ["LOCALAPPDATA"]) / "Google/Chrome/User Data/Local State").read_text(encoding="utf-8"))
+        for folder, info in state["profile"]["info_cache"].items():
+            if (info.get("user_name") or "").lower() == (email or "").lower():
+                return folder
+    except (KeyError, OSError, ValueError):
+        pass
+    return fallback
+
+
+def open_mail(url, config):
+    """Open a Gmail compose URL in the Chrome profile logged in as config.gmail_account."""
+    exe = chrome_exe()
+    profile = chrome_profile_for(config.get("gmail_account", ""), config.get("gmail_chrome_profile", ""))
+    if exe and profile:
+        subprocess.Popen([exe, f"--profile-directory={profile}", url])
+        return {"ok": True, "profile": profile}
+    webbrowser.open(url)
+    return {"ok": True, "profile": None}
+
+
+# ---------------------------------------------------------------------------
 # Small query API (used by start_all.ps1's terminal picker; Windows PowerShell 5.1
 # can't parse the full /api/data payload, so the server filters and fills templates)
 # ---------------------------------------------------------------------------
@@ -535,6 +572,22 @@ class Handler(BaseHTTPRequestHandler):
                 return self._send(400, '{"error":"need contact_id and email"}')
             append_csv(REVEALED_PATH, REVEALED_FIELDS, {
                 "contact_id": body["contact_id"], "email": email, "revealed_on": date.today().isoformat()})
+            return self._send(200, '{"ok":true}')
+
+        if self.path == "/api/open_mail":
+            url = body.get("url") or ""
+            if not url.startswith("https://mail.google.com/mail/"):
+                return self._send(400, '{"error":"only Gmail compose links"}')
+            config = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
+            return self._send(200, json.dumps(open_mail(url, config)))
+
+        if self.path in ("/api/show_press_kit", "/api/show_trailer"):
+            key = "trailer_file" if self.path.endswith("trailer") else "press_kit_file"
+            config = json.loads(CONFIG_PATH.read_text(encoding="utf-8")) if CONFIG_PATH.exists() else {}
+            f = (PROJECT_DIR / config.get(key, "")).resolve()
+            if not config.get(key) or not f.is_file():
+                return self._send(404, json.dumps({"error": f"{key} not found"}))
+            subprocess.Popen(["explorer", f"/select,{f}"])
             return self._send(200, '{"ok":true}')
 
         return self._send(404, '{"error":"not found"}')

@@ -26,3 +26,18 @@ export async function logActions(entries: LogEntry[]): Promise<Record<string, St
 export async function saveRevealedEmail(contact_id: string, email: string): Promise<void> {
   await postJson("/api/reveal", { contact_id, email });
 }
+
+/** Open a Gmail compose URL in the Chrome profile signed in as config.gmail_account (server-side launch). */
+export async function openMailInProfile(url: string): Promise<void> {
+  await postJson("/api/open_mail", { url });
+}
+
+/** Reveal the press kit PDF in Explorer so it can be dragged into the compose window. */
+export async function showPressKit(): Promise<void> {
+  await postJson("/api/show_press_kit", {});
+}
+
+/** Reveal the 1080p trailer MP4 in Explorer (too big to attach to Gmail; upload it and share the link). */
+export async function showTrailer(): Promise<void> {
+  await postJson("/api/show_trailer", {});
+}

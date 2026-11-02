@@ -5,7 +5,7 @@ Hi {name},
 A quick heads-up: the {game_title} demo is now live as part of {nextfest}. It's the supernatural-nightclub bouncer deduction game I mentioned earlier.
 
 Steam page and demo: {steam_url}
-Press kit: {press_kit_url}
+{press_kit_note}
 
 If you're putting together a Next Fest roundup or streaming demos this week, I'd love for it to be considered.
 

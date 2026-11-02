@@ -58,6 +58,9 @@ export interface Config {
   gmail_account?: string;
   steam_url?: string;
   press_kit_url?: string;
+  press_kit_note?: string;
+  press_kit_file?: string;
+  trailer_file?: string;
   trailer_url?: string;
   nextfest?: string;
   nextfest_start?: string;

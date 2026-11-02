@@ -248,3 +248,13 @@ Log the queries in `press/search_history.csv` and write a report in `press/expor
    ```
    Or, with Twitch API keys from the owner, add proper follower and viewer counts plus Twitch-only discovery.
 5. Before outreach, deduplicate remaining second channels by hand, and refresh activity and subscriber data for the shortlist.
+
+## 9. Update 2026-11-02: press kit, IGN-style outlets, Gmail profile
+
+- **Press kit** lives in `press_kit/` (`Club_Sanguine_Press_Kit.pdf`, factsheet, verified-outlets list, IGN handoff, copy, tracker). There is no public link yet, so `press_kit_url` is empty. Templates use `{press_kit_note}` ("PDF attached"). Gmail compose links can't attach files: the Desk's **Show press kit PDF to attach** button selects the PDF in Explorer so the owner can drag it in. When a public Drive link exists, set `press_kit_url` and edit `press_kit_note`.
+- **Press Batch 003** (`press/exports/research/b003_press_kit_outlets.json`): IGN got its editorial contact form; Alpha Beta Gamer and Wishlist or Not were added; Indie Games Plus (O0016) was merged. IGN's `trailers@`/`indies@`/`videowire@` addresses are community-reported and **unverified**, so they are in notes only. New rows have no comparable-game evidence yet (tiers Long Tail).
+- **Template `6_trailer_submission`**: non-exclusive trailer submission for IGN-style desks. Never claim exclusivity.
+- **Gmail:** compose links open in the Chrome profile signed in as `config.gmail_account` (found from Chrome's Local State, here "Profile 2"; fallback `gmail_chrome_profile`). The dashboard does this through `/api/open_mail`, so **restart `tools/outreach_app.py` after pulling**. `start_all.ps1` does the same via `Open-Mail`.
+
+- **Trailer MP4** (`trailer_file` in config, 143 MB, in Downloads): too big for Gmail (25 MB) and GitHub (100 MB), so it is NOT in the repo. Emails still link `trailer_url` (YouTube) until the owner supplies a public link to this file. The Desk has a **Show trailer MP4** button.
+- **IGN Middle East** (the 'IGN Arabia' edition, run by T-Break) was added as O0188 via Press Batch 003b; its only editorial route is editor@tbreak.com ('Review' in subject for demos). me.ign.com was not readable.

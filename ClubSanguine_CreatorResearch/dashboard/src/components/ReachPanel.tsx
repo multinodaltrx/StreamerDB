@@ -6,7 +6,8 @@ import {
   IconBrandX, IconBrandYoutube, IconExternalLink, IconFileText, IconForms, IconLink, IconMail, IconSend, IconWorld,
 } from "@tabler/icons-react";
 import type { Contact } from "../types";
-import { mailtoHref } from "../lib";
+import { showPressKit, showTrailer } from "../api";
+import { getGmailAccount, mailtoHref, openMail } from "../lib";
 
 const ICONS: [RegExp, typeof IconLink][] = [
   [/discord/i, IconBrandDiscord], [/bsky\.app/i, IconBrandBluesky], [/(x|twitter)\.com/i, IconBrandX],
@@ -28,7 +29,7 @@ export default function ReachPanel({ c, subject, body }: { c: Contact; subject: 
   const go = async () => {
     if (!route.url) return;
     if (route.how === "email") {
-      window.open(mailtoHref(route.url.slice(7), subject, body), "_blank", "noopener");
+      openMail(route.url.slice(7), subject, body);
       return;
     }
     // For DMs, Discord and forms: put the message on the clipboard first, then open the page.
@@ -50,6 +51,25 @@ export default function ReachPanel({ c, subject, body }: { c: Contact; subject: 
           rightSection={route.how !== "email" && route.url ? <IconExternalLink size={14} /> : null}>
           Message them: {route.label}
         </Button>
+        {route.how === "email" && (
+          <Text size="xs" c="dimmed" ta="center">
+            Sends from <b>{getGmailAccount() || "your default mail app"}</b>{getGmailAccount() ? " (opens in its Chrome profile)" : ""}
+          </Text>
+        )}
+        {c.kind !== "creator" && (
+          <Button size="xs" variant="default" leftSection={<IconFileText size={14} />}
+            onClick={() => showPressKit().then(() => notifications.show({ message: "Press kit PDF selected in Explorer: drag it into the compose window", color: "teal", autoClose: 3500 }))
+              .catch(() => notifications.show({ message: "Press kit file not found (config press_kit_file)", color: "red" }))}>
+            Show press kit PDF to attach
+          </Button>
+        )}
+        {c.kind !== "creator" && (
+          <Button size="xs" variant="default" leftSection={<IconFileText size={14} />}
+            onClick={() => showTrailer().then(() => notifications.show({ message: "Trailer MP4 selected in Explorer", color: "teal", autoClose: 3000 }))
+              .catch(() => notifications.show({ message: "Trailer file not found (config trailer_file)", color: "red" }))}>
+            Show trailer MP4
+          </Button>
+        )}
         {reach.length > 0 && (
           <Group gap={6}>
             {reach.map(([label, url]) => {
@@ -58,7 +78,8 @@ export default function ReachPanel({ c, subject, body }: { c: Contact; subject: 
               return (
                 <Tooltip key={url} label={isMail ? url.slice(7) : url} withinPortal>
                   <Button component="a" size="xs" variant="light" leftSection={<Icon size={14} />}
-                    href={isMail ? mailtoHref(url.slice(7), subject, body) : url} target={isMail ? undefined : "_blank"} rel="noopener">
+                    href={isMail ? mailtoHref(url.slice(7), subject, body) : url} target={isMail ? undefined : "_blank"} rel="noopener"
+                    onClick={isMail ? (e) => { e.preventDefault(); openMail(url.slice(7), subject, body); } : undefined}>
                     {label}
                   </Button>
                 </Tooltip>

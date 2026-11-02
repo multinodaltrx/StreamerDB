@@ -9,8 +9,8 @@ I came across your writing on games like {game} ({evidence_url}), so I thought {
 {demo_note}
 
 Steam page: {steam_url}
-Press kit (trailer, screenshots, fact sheet): {press_kit_url}
 Trailer: {trailer_url}
+{press_kit_note}
 
 I'm happy to provide a preview build, answer questions, or do an interview.
 
